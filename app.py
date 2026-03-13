@@ -161,6 +161,18 @@ st.markdown("""
         margin-top: 4px;
         margin-bottom: 20px;
     }
+
+    /* ── Force sidebar toggle button to always show ── */
+    [data-testid="collapsedControl"] {
+        display: block !important;
+        visibility: visible !important;
+        color: #f97316 !important;
+    }
+    [data-testid="stSidebarCollapsedControl"] {
+        display: block !important;
+        visibility: visible !important;
+    }
+            
     hr { border: none; border-top: 1px solid #e2e8f0; margin: 20px 0; }
 </style>
 """, unsafe_allow_html=True)
@@ -383,7 +395,7 @@ with tab_charts:
         st.markdown('<div class="section-header">🔥 Burn Time — All Skin Types</div>', unsafe_allow_html=True)
         st.plotly_chart(burn_time_chart(uv, activity), use_container_width=True)
         st.caption(f"⚠️ Without sunscreen · UV Index {uv} · {activity}")
-        
+
 # ══════════════════════════════════════════════════════════════
 #  TAB 3 — AI SCANNER
 # ══════════════════════════════════════════════════════════════
