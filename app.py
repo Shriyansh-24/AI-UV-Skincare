@@ -449,10 +449,10 @@ with tab_charts:
                 burn = calculate_burn_time(uv, i+1, activity)
                 rows.append({
                     "Skin Type": name,
-                    "MED (J/m²)": burn["med_j_m2"],
-                    "Dose Rate (J/m²/min)": burn["effective_rate"],
+                    "MED (J/m²)": burn.get("med_j_m2", "N/A"),
+                    "Dose Rate (J/m²/min)": burn.get("effective_rate", "N/A"),
                     "Burn Time (min)": burn["burn_time_min"] if not burn["no_risk"] else "N/A",
-                    "Activity Multiplier": burn["activity_multiplier"],
+                    "Activity Multiplier": burn.get("activity_multiplier", "N/A"),
                 })
             st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
             st.caption("Formula: Burn Time = MED ÷ (UV Index × 1.5 × Activity Multiplier) · Diffey (2002)")
