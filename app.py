@@ -161,19 +161,20 @@ st.markdown("""
         margin-top: 4px;
         margin-bottom: 20px;
     }
-
-    /* ── Force sidebar toggle button to always show ── */
-    [data-testid="collapsedControl"] {
-        display: block !important;
-        visibility: visible !important;
-        color: #f97316 !important;
-    }
-    [data-testid="stSidebarCollapsedControl"] {
-        display: block !important;
-        visibility: visible !important;
-    }
-            
     hr { border: none; border-top: 1px solid #e2e8f0; margin: 20px 0; }
+
+    /* ── Force sidebar toggle arrow to always be visible ── */
+    [data-testid="collapsedControl"] {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background-color: #f97316 !important;
+        border-radius: 0 8px 8px 0 !important;
+        padding: 8px !important;
+    }
+    [data-testid="collapsedControl"] svg {
+        fill: #ffffff !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -395,6 +396,22 @@ with tab_charts:
         st.markdown('<div class="section-header">🔥 Burn Time — All Skin Types</div>', unsafe_allow_html=True)
         st.plotly_chart(burn_time_chart(uv, activity), use_container_width=True)
         st.caption(f"⚠️ Without sunscreen · UV Index {uv} · {activity}")
+
+        with st.expander("📋 Raw data table (for project report)"):
+            import pandas as pd
+            rows = []
+            for i, name in enumerate(["Type I — Very Fair","Type II — Fair","Type III — Medium",
+                                       "Type IV — Olive","Type V — Brown","Type VI — Dark"]):
+                burn = calculate_burn_time(uv, i+1, activity)
+                rows.append({
+                    "Skin Type": name,
+                    "MED (J/m²)": burn["med_j_m2"],
+                    "Dose Rate (J/m²/min)": burn["effective_rate"],
+                    "Burn Time (min)": burn["burn_time_min"] if not burn["no_risk"] else "N/A",
+                    "Activity Multiplier": burn["activity_multiplier"],
+                })
+            st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            st.caption("Formula: Burn Time = MED ÷ (UV Index × 1.5 × Activity Multiplier) · Diffey (2002)")
 
 # ══════════════════════════════════════════════════════════════
 #  TAB 3 — AI SCANNER
