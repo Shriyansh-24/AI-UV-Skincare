@@ -26,10 +26,10 @@ FITZPATRICK_LABELS = [
     "Type V — Brown",     "Type VI — Dark",
 ]
 
-PLOT_BG   = "#ffffff"
-PAPER_BG  = "#f8fafc"
-GRID_COLOR = "#f1f5f9"
-TEXT_COLOR = "#1e293b"
+PLOT_BG   = "#1e2130"
+PAPER_BG  = "#161b2a"
+GRID_COLOR = "#2d3348"
+TEXT_COLOR = "#e2e8f0"
 FONT_FAMILY = "Inter, system-ui, sans-serif"
 
 

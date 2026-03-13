@@ -22,57 +22,55 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ── CLEAN MINIMAL CSS ─────────────────────────────────────────
+# ── DARK MOODY CSS ────────────────────────────────────────────
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     html, body, [class*="css"] { font-family: 'Inter', system-ui, sans-serif; }
-    .main { background-color: #f8fafc; }
+
+    /* ── Dark base ── */
+    .main { background-color: #0f1117 !important; }
+    .block-container { background-color: #0f1117 !important; padding-top: 2rem !important; }
+    [data-testid="stAppViewContainer"] { background-color: #0f1117 !important; }
+    [data-testid="stHeader"] { background-color: #0f1117 !important; }
+
+    /* ── Global text ── */
+    .main p, .main span, .main div, .main label,
+    .main h1, .main h2, .main h3, .main h4 { color: #e2e8f0; }
+
     #MainMenu, footer, header { visibility: hidden; }
 
-    .main p, .main span, .main div, .main label,
-    .main h1, .main h2, .main h3, .main h4 { color: #1e293b; }
-
+    /* ── Metrics ── */
     [data-testid="stMetricLabel"] p,
-    [data-testid="stMetricLabel"] span { color: #64748b !important; font-size: 0.82rem !important; }
-    [data-testid="stMetricValue"]       { color: #0f172a !important; font-weight: 700 !important; }
-    [data-testid="stMetricDelta"] span  { color: #64748b !important; }
+    [data-testid="stMetricLabel"] span { color: #94a3b8 !important; font-size: 0.82rem !important; }
+    [data-testid="stMetricValue"]       { color: #f1f5f9 !important; font-weight: 700 !important; }
+    [data-testid="stMetricDelta"] span  { color: #94a3b8 !important; }
 
+    /* ── Alerts ── */
     [data-testid="stAlert"] p,
     [data-testid="stAlert"] span,
-    [data-testid="stAlert"] div { color: #1e293b !important; }
+    [data-testid="stAlert"] div { color: #e2e8f0 !important; }
 
-    [data-testid="stCaptionContainer"] p { color: #94a3b8 !important; font-size: 0.8rem !important; }
+    /* ── Captions ── */
+    [data-testid="stCaptionContainer"] p { color: #64748b !important; font-size: 0.8rem !important; }
 
+    /* ── Expander ── */
+    [data-testid="stExpander"] { background: #1e2130 !important; border: 1px solid #2d3348 !important; border-radius: 10px !important; }
     [data-testid="stExpander"] p,
-    [data-testid="stExpander"] span { color: #1e293b !important; }
+    [data-testid="stExpander"] span { color: #e2e8f0 !important; }
 
-    section[data-testid="stSidebar"] {
-        background-color: #ffffff;
-        border-right: 1px solid #e2e8f0;
-    }
-    section[data-testid="stSidebar"] h1, h2, h3, h4, p, label,
-    section[data-testid="stSidebar"] span:not([data-baseweb]),
-    section[data-testid="stSidebar"] div[data-testid="stMarkdownContainer"] {
-        color: #1e293b !important;
-    }
+    /* ── Input fields ── */
+    [data-testid="stTextInput"] input,
+    [data-testid="stSelectbox"] div,
+    [data-baseweb="select"] { background: #1e2130 !important; color: #e2e8f0 !important; border-color: #2d3348 !important; }
+    [data-baseweb="select"] * { color: #e2e8f0 !important; }
+    [data-testid="stSlider"] { color: #e2e8f0 !important; }
 
-    section[data-testid="stSidebar"] .stButton button {
-        background: linear-gradient(135deg, #f97316, #ea580c) !important;
-        color: #ffffff !important;
-        font-weight: 600 !important;
-        border: none !important;
-        border-radius: 10px !important;
-        box-shadow: 0 2px 8px rgba(249,115,22,0.3) !important;
-    }
-    section[data-testid="stSidebar"] .stButton button:hover {
-        box-shadow: 0 4px 16px rgba(249,115,22,0.4) !important;
-    }
-
+    /* ── Tabs ── */
     [data-testid="stTabs"] [data-baseweb="tab-list"] {
         gap: 4px;
-        background: #f1f5f9;
+        background: #1e2130;
         padding: 4px;
         border-radius: 12px;
         border: none !important;
@@ -86,95 +84,126 @@ st.markdown("""
         border: none !important;
     }
     [data-testid="stTabs"] [aria-selected="true"] {
-        background: #ffffff !important;
-        color: #0f172a !important;
+        background: #2d3348 !important;
+        color: #f97316 !important;
         font-weight: 600 !important;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+        box-shadow: 0 1px 6px rgba(249,115,22,0.2) !important;
     }
     [data-testid="stTabs"] [data-baseweb="tab-highlight"],
     [data-testid="stTabs"] [data-baseweb="tab-border"] { display: none !important; }
 
+    /* ── Primary button ── */
+    [data-testid="stButton"] button[kind="primary"],
+    .stButton button {
+        background: linear-gradient(135deg, #f97316, #ea580c) !important;
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        border: none !important;
+        border-radius: 10px !important;
+        box-shadow: 0 2px 12px rgba(249,115,22,0.35) !important;
+    }
+    .stButton button:hover {
+        box-shadow: 0 4px 20px rgba(249,115,22,0.5) !important;
+        transform: translateY(-1px) !important;
+    }
+
+    /* ── Cards ── */
     .card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: #1e2130;
+        border: 1px solid #2d3348;
         border-radius: 14px;
         padding: 20px 24px;
         margin-bottom: 16px;
     }
     .card-accent {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: #1e2130;
+        border: 1px solid #2d3348;
         border-radius: 14px;
         padding: 16px 20px;
         border-left: 4px solid #f97316;
         margin-bottom: 10px;
     }
+
+    /* ── UV card ── */
     .uv-card {
         border-radius: 18px;
         padding: 32px 28px;
         color: #ffffff !important;
         text-align: center;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        box-shadow: 0 8px 40px rgba(0,0,0,0.4);
     }
     .uv-card div, .uv-card span { color: #ffffff !important; }
 
+    /* ── Section headers ── */
     .section-header {
-        font-size: 1.05rem;
-        font-weight: 700;
-        color: #0f172a;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
         margin-bottom: 14px;
     }
+
+    /* ── Pills ── */
     .pill {
         display: inline-block;
-        background: #f1f5f9;
-        border: 1px solid #e2e8f0;
+        background: #1e2130;
+        border: 1px solid #2d3348;
         border-radius: 20px;
         padding: 4px 12px;
         font-size: 0.82rem;
-        color: #475569 !important;
+        color: #94a3b8 !important;
         margin: 3px 2px;
     }
-    .pill-orange { background: #fff7ed; border-color: #fed7aa; color: #9a3412 !important; }
-    .pill-blue   { background: #eff6ff; border-color: #bfdbfe; color: #1e40af !important; }
+    .pill-orange { background: #2d1f0e; border-color: #7c3c10; color: #fb923c !important; }
+    .pill-blue   { background: #0f1f33; border-color: #1e3a5c; color: #60a5fa !important; }
 
+    /* ── Science box ── */
     .science-box {
-        background: #f0f9ff;
+        background: #131c2e;
         border-left: 4px solid #3b82f6;
         border-radius: 10px;
         padding: 16px 20px;
         font-size: 0.91rem;
-        color: #0c4a6e !important;
+        color: #93c5fd !important;
         line-height: 1.7;
     }
-    .science-box b { color: #0c4a6e !important; }
+    .science-box b { color: #bfdbfe !important; }
 
+    /* ── Controls bar ── */
+    .controls-bar {
+        background: #1e2130;
+        border: 1px solid #2d3348;
+        border-radius: 16px;
+        padding: 20px 24px;
+        margin-bottom: 24px;
+    }
+
+    /* ── App title ── */
     .app-title {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         font-weight: 800;
-        color: #0f172a;
+        color: #f1f5f9;
         letter-spacing: -0.5px;
+        line-height: 1.1;
     }
     .app-title span { color: #f97316; }
     .app-subtitle {
-        font-size: 0.93rem;
-        color: #64748b;
-        margin-top: 4px;
-        margin-bottom: 20px;
+        font-size: 0.9rem;
+        color: #475569;
+        margin-top: 6px;
+        margin-bottom: 28px;
     }
-    hr { border: none; border-top: 1px solid #e2e8f0; margin: 20px 0; }
 
-    /* ── Force sidebar toggle arrow to always be visible ── */
-    [data-testid="collapsedControl"] {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        background-color: #f97316 !important;
-        border-radius: 0 8px 8px 0 !important;
-        padding: 8px !important;
-    }
-    [data-testid="collapsedControl"] svg {
-        fill: #ffffff !important;
-    }
+    /* ── Divider ── */
+    hr { border: none; border-top: 1px solid #2d3348; margin: 20px 0; }
+
+    /* ── Selectbox dropdown ── */
+    [data-baseweb="popover"] { background: #1e2130 !important; border: 1px solid #2d3348 !important; }
+    [data-baseweb="menu"] { background: #1e2130 !important; }
+    [data-baseweb="menu"] li { color: #e2e8f0 !important; }
+    [data-baseweb="menu"] li:hover { background: #2d3348 !important; }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -202,8 +231,8 @@ st.markdown(
 # ══════════════════════════════════════════════════════════════
 with st.container():
     st.markdown("""
-    <div style='background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;
-    padding:20px 24px;margin-bottom:20px;'>
+    <div style='background:#1e2130;border:1px solid #2d3348;border-radius:14px;
+    padding:4px 24px 0px 24px;margin-bottom:4px;'>
     </div>""", unsafe_allow_html=True)
 
     ctrl1, ctrl2, ctrl3, ctrl4, ctrl5 = st.columns([1.2, 1.5, 1, 1, 0.8])
@@ -328,9 +357,9 @@ with tab_dashboard:
                 st.metric("Today's peak UV", str(result["uv_index_max_today"]))
                 with st.expander("🔬 See the MED formula"):
                     st.markdown(
-                        f"""<div style='background:#fffbf0;border:1px solid #fde68a;
+                        f"""<div style='background:#161b2e;border:1px solid #2d3348;
                         border-radius:10px;padding:14px 18px;font-family:monospace;
-                        font-size:0.86rem;color:#1e293b;white-space:pre-line;'>
+                        font-size:0.86rem;color:#94a3b8;white-space:pre-line;'>
                         {burn["explanation"]}</div>""", unsafe_allow_html=True)
                     st.caption("Source: Diffey B.L. (2002) · WHO CIE")
         else:
@@ -366,8 +395,8 @@ with tab_dashboard:
                 st.markdown(
                     f"""<div class="card-accent">
                     <span style="font-size:1.3rem;">{tip['emoji']}</span>
-                    <b style="color:#0f172a;font-size:0.93rem;"> {tip['title']}</b><br>
-                    <span style="color:#475569;font-size:0.84rem;">{tip['detail']}</span>
+                    <b style="color:#f1f5f9;font-size:0.93rem;"> {tip['title']}</b><br>
+                    <span style="color:#94a3b8;font-size:0.84rem;">{tip['detail']}</span>
                     </div>""", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════
@@ -393,9 +422,9 @@ with tab_charts:
             risk = classify_uv_risk(uv)
             burn_note = f"Type I skin can start to burn in ~{round(200/(uv*1.5))} min." if uv > 0 else "UV Index is 0 — no burn risk. 🌙"
             st.markdown(
-                f"""<div style='background:#f8fafc;border-radius:10px;
+                f"""<div style='background:#1e2130;border-radius:10px;
                 border-left:3px solid {risk["color"]};padding:12px 16px;
-                font-size:0.85rem;color:#1e293b;'>
+                font-size:0.85rem;color:#e2e8f0;'>
                 <b>{risk["emoji"]} {risk["level"]} Risk</b><br>{burn_note}
                 </div>""", unsafe_allow_html=True)
 
@@ -435,8 +464,8 @@ with tab_ai:
     st.markdown('<div class="section-header">🤖 AI Sunscreen Ingredient Scanner</div>',
                 unsafe_allow_html=True)
     st.markdown("""
-    <div style='background:#f0fdf4;border-left:4px solid #22c55e;border-radius:10px;
-    padding:12px 18px;font-size:0.9rem;color:#14532d;margin-bottom:20px;'>
+    <div style='background:#13261a;border-left:4px solid #22c55e;border-radius:10px;
+    padding:12px 18px;font-size:0.9rem;color:#86efac;margin-bottom:20px;'>
     <b>How to use:</b> Copy the ingredient list from the back of any sunscreen bottle
     and paste it below. The AI will analyse every UV filter, flag concerns, and give
     personalised advice based on your Fitzpatrick skin type.
@@ -458,7 +487,7 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
     with ai_col2:
         st.markdown("**🧪 What the AI checks**")
         st.markdown("""
-        <div style='font-size:0.87rem;color:#475569;line-height:1.9;'>
+        <div style='font-size:0.87rem;color:#64748b;line-height:1.9;'>
         ✅ UV-A and UV-B filter coverage<br>
         ✅ Photostability of each filter<br>
         ✅ Broad spectrum protection<br>
@@ -466,17 +495,17 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
         ✅ Skin type compatibility<br>
         ✅ Reapplication guidance<br>
         ✅ Chemistry science fact<br><br>
-        <b style='color:#1e293b;'>Powered by:</b> Groq · Llama 3.3 70B<br>
-        <b style='color:#1e293b;'>Science:</b> INCI, EU Cosmetics Reg, FDA
+        <b style='color:#94a3b8;'>Powered by:</b> Groq · Llama 3.3 70B<br>
+        <b style='color:#94a3b8;'>Science:</b> INCI, EU Cosmetics Reg, FDA
         </div>""", unsafe_allow_html=True)
         if result and result.get("success"):
             st.markdown("<br>", unsafe_allow_html=True)
             st.markdown(
-                f"""<div style='background:#f8fafc;border:1px solid #e2e8f0;
-                border-radius:10px;padding:12px 16px;font-size:0.85rem;color:#1e293b;'>
-                <b>Current context</b><br>
-                UV Index: <b>{result['uv_index']}</b> · {result['city']}<br>
-                Skin: <b>Fitzpatrick {selected_skin['id']}</b>
+                f"""<div style='background:#1e2130;border:1px solid #2d3348;
+                border-radius:10px;padding:12px 16px;font-size:0.85rem;color:#94a3b8;'>
+                <b style='color:#e2e8f0;'>Current context</b><br>
+                UV Index: <b style='color:#f97316;'>{result['uv_index']}</b> · {result['city']}<br>
+                Skin: <b style='color:#e2e8f0;'>Fitzpatrick {selected_skin['id']}</b>
                 </div>""", unsafe_allow_html=True)
 
     if scan_button:
@@ -529,9 +558,9 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
                         </div>""", unsafe_allow_html=True)
 
             st.markdown(
-                f"""<div style='background:#f8fafc;border-radius:10px;
+                f"""<div style='background:#1e2130;border-radius:10px;
                 border-left:3px solid {r_color};padding:14px 18px;
-                margin:16px 0;font-size:0.92rem;color:#1e293b;'>
+                margin:16px 0;font-size:0.92rem;color:#e2e8f0;'>
                 <b>AI Verdict:</b> {scan.get("overall_verdict","")}
                 </div>""", unsafe_allow_html=True)
 
@@ -546,12 +575,12 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
                     ps = "✅ Stable" if f.get("photostable") else "⚠️ Unstable"
                     with fc[i % 3]:
                         st.markdown(
-                            f"""<div style='background:#fff;border:1px solid #e2e8f0;
+                            f"""<div style='background:#1e2130;border:1px solid #2d3348;
                             border-left:4px solid {cc};border-radius:12px;
                             padding:14px;margin-bottom:12px;'>
-                            <b style='color:#0f172a;'>{f.get("name","")}</b><br>
-                            <span style='font-size:0.78rem;color:#94a3b8;'>{f.get("type","")}</span><br>
-                            <span style='font-size:0.83rem;color:#475569;display:block;margin-top:6px;'>
+                            <b style='color:#f1f5f9;'>{f.get("name","")}</b><br>
+                            <span style='font-size:0.78rem;color:#64748b;'>{f.get("type","")}</span><br>
+                            <span style='font-size:0.83rem;color:#94a3b8;display:block;margin-top:6px;'>
                             {f.get("function","")}</span>
                             <div style='margin-top:10px;font-size:0.8rem;'>
                             {ps} · <span style='color:{cc};font-weight:600;'>
@@ -563,10 +592,10 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
                 st.markdown('<div class="section-header">✅ Beneficial Ingredients</div>', unsafe_allow_html=True)
                 for b in scan.get("beneficial_ingredients", []):
                     st.markdown(
-                        f"""<div style='background:#f0fdf4;border-radius:10px;
+                        f"""<div style='background:#13261a;border-radius:10px;
                         border-left:3px solid #22c55e;padding:10px 14px;
-                        margin-bottom:8px;font-size:0.87rem;color:#1e293b;'>
-                        <b>{b.get("name","")}</b><br>{b.get("benefit","")}
+                        margin-bottom:8px;font-size:0.87rem;color:#86efac;'>
+                        <b style='color:#bbf7d0;'>{b.get("name","")}</b><br>{b.get("benefit","")}
                         </div>""", unsafe_allow_html=True)
             with bc2:
                 st.markdown('<div class="section-header">⚠️ Ingredients of Concern</div>', unsafe_allow_html=True)
@@ -575,10 +604,10 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
                     for c in concerning:
                         sc_color = concern_color(c.get("severity","Low"))
                         st.markdown(
-                            f"""<div style='background:#fff7ed;border-radius:10px;
+                            f"""<div style='background:#1e1510;border-radius:10px;
                             border-left:3px solid {sc_color};padding:10px 14px;
-                            margin-bottom:8px;font-size:0.87rem;color:#1e293b;'>
-                            <b>{c.get("name","")}</b>
+                            margin-bottom:8px;font-size:0.87rem;color:#fcd34d;'>
+                            <b style='color:#fde68a;'>{c.get("name","")}</b>
                             <span style='float:right;color:{sc_color};font-weight:700;font-size:0.8rem;'>
                             {c.get("severity","")} risk</span><br>
                             {c.get("concern","")}
@@ -590,25 +619,25 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
             n1, n2 = st.columns(2, gap="medium")
             with n1:
                 st.markdown(
-                    f"""<div style='background:#eff6ff;border-left:4px solid #3b82f6;
-                    border-radius:10px;padding:16px 18px;font-size:0.9rem;color:#1e3a5f;'>
-                    <b>🎨 Fitzpatrick Type {selected_skin["id"]} Notes</b><br><br>
+                    f"""<div style='background:#131c2e;border-left:4px solid #3b82f6;
+                    border-radius:10px;padding:16px 18px;font-size:0.9rem;color:#93c5fd;'>
+                    <b style='color:#bfdbfe;'>🎨 Fitzpatrick Type {selected_skin["id"]} Notes</b><br><br>
                     {scan.get("skin_type_notes","")}
                     </div>""", unsafe_allow_html=True)
             with n2:
                 st.markdown(
-                    f"""<div style='background:#fff7ed;border-left:4px solid #f97316;
-                    border-radius:10px;padding:16px 18px;font-size:0.9rem;color:#431407;'>
-                    <b>🔁 Reapplication Note</b><br><br>
+                    f"""<div style='background:#2d1f0e;border-left:4px solid #f97316;
+                    border-radius:10px;padding:16px 18px;font-size:0.9rem;color:#fdba74;'>
+                    <b style='color:#fed7aa;'>🔁 Reapplication Note</b><br><br>
                     {scan.get("reapplication_note","")}
                     </div>""", unsafe_allow_html=True)
 
             if scan.get("science_fact"):
                 st.markdown(
-                    f"""<div style='background:#faf5ff;border-left:4px solid #a855f7;
+                    f"""<div style='background:#1a1228;border-left:4px solid #a855f7;
                     border-radius:10px;padding:14px 18px;margin-top:12px;
-                    font-size:0.9rem;color:#3b0764;'>
-                    <b>⚛️ Science Fact:</b> {scan.get("science_fact","")}
+                    font-size:0.9rem;color:#d8b4fe;'>
+                    <b style='color:#e9d5ff;'>⚛️ Science Fact:</b> {scan.get("science_fact","")}
                     </div>""", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════
