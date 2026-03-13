@@ -189,45 +189,6 @@ FITZPATRICK_TYPES = {
 }
 
 # ══════════════════════════════════════════════════════════════
-#  SIDEBAR
-# ══════════════════════════════════════════════════════════════
-with st.sidebar:
-    st.markdown("### ☀️ UV Skincare Advisor")
-    st.markdown("<hr>", unsafe_allow_html=True)
-
-    st.markdown("**📍 Location**")
-    city_name = st.text_input("City", value="Mumbai",
-        placeholder="e.g. Delhi, London, Sydney",
-        label_visibility="collapsed")
-
-    st.markdown("<br>**🎨 Skin Type**", unsafe_allow_html=True)
-    selected_skin_label = st.selectbox("Skin type",
-        options=list(FITZPATRICK_TYPES.keys()), index=2,
-        label_visibility="collapsed")
-    selected_skin = FITZPATRICK_TYPES[selected_skin_label]
-
-    text_color = "#ffffff" if selected_skin["id"] >= 5 else "#1a1a1a"
-    st.markdown(
-        f"""<div style='background:{selected_skin["color_hex"]};border-radius:10px;
-        padding:10px 14px;font-size:0.85rem;color:{text_color};
-        border:1px solid rgba(0,0,0,0.15);margin-top:6px;'>
-        <b>Fitzpatrick Type {selected_skin["id"]}</b><br>
-        {selected_skin["description"]}
-        </div>""", unsafe_allow_html=True)
-
-    st.markdown("<br>**🏃 Activity**", unsafe_allow_html=True)
-    activity = st.selectbox("Activity",
-        ["Casual walk / commute", "Sports / exercise",
-         "Beach / swimming", "Gardening", "Just checking"],
-        label_visibility="collapsed")
-    duration_hours = st.slider("Time outdoors (hours)",
-        min_value=0.5, max_value=8.0, value=1.0, step=0.5, format="%.1f hrs")
-
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.success("✅ No API key needed for UV data!\nPowered by Open-Meteo.")
-    analyze_button = st.button("🔍 Analyze My UV Risk", use_container_width=True)
-
-# ══════════════════════════════════════════════════════════════
 #  HEADER
 # ══════════════════════════════════════════════════════════════
 st.markdown('<div class="app-title">☀️ UV <span>Skincare</span> Advisor</div>',
@@ -235,6 +196,60 @@ st.markdown('<div class="app-title">☀️ UV <span>Skincare</span> Advisor</div
 st.markdown(
     '<div class="app-subtitle">Real-time UV intelligence · Personalised by Fitzpatrick skin type · Powered by Open-Meteo & Groq AI</div>',
     unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════════════════
+#  INLINE CONTROLS (replaces sidebar)
+# ══════════════════════════════════════════════════════════════
+with st.container():
+    st.markdown("""
+    <div style='background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;
+    padding:20px 24px;margin-bottom:20px;'>
+    </div>""", unsafe_allow_html=True)
+
+    ctrl1, ctrl2, ctrl3, ctrl4, ctrl5 = st.columns([1.2, 1.5, 1, 1, 0.8])
+
+    with ctrl1:
+        st.markdown("**📍 City**")
+        city_name = st.text_input("City", value="Mumbai",
+            placeholder="e.g. Delhi, London",
+            label_visibility="collapsed")
+
+    with ctrl2:
+        st.markdown("**🎨 Skin Type**")
+        selected_skin_label = st.selectbox("Skin type",
+            options=list(FITZPATRICK_TYPES.keys()), index=2,
+            label_visibility="collapsed")
+        selected_skin = FITZPATRICK_TYPES[selected_skin_label]
+
+    with ctrl3:
+        st.markdown("**🏃 Activity**")
+        activity = st.selectbox("Activity",
+            ["Casual walk / commute", "Sports / exercise",
+             "Beach / swimming", "Gardening", "Just checking"],
+            label_visibility="collapsed")
+
+    with ctrl4:
+        st.markdown("**⏱ Hours outdoors**")
+        duration_hours = st.slider("Hours",
+            min_value=0.5, max_value=8.0, value=1.0,
+            step=0.5, format="%.1f hrs",
+            label_visibility="collapsed")
+
+    with ctrl5:
+        st.markdown("** **")
+        analyze_button = st.button("🔍 Analyze", use_container_width=True, type="primary")
+
+    # Skin swatch
+    text_color = "#ffffff" if selected_skin["id"] >= 5 else "#1a1a1a"
+    st.markdown(
+        f"""<div style='background:{selected_skin["color_hex"]};border-radius:8px;
+        padding:8px 14px;font-size:0.83rem;color:{text_color};
+        border:1px solid rgba(0,0,0,0.1);display:inline-block;margin-top:4px;'>
+        <b>Fitzpatrick Type {selected_skin["id"]}</b> —
+        {selected_skin["description"]}
+        </div>""", unsafe_allow_html=True)
+
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # ── Session state ─────────────────────────────────────────────
 if "uv_result"   not in st.session_state: st.session_state.uv_result   = None
