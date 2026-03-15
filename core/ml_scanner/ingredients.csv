@@ -1,0 +1,501 @@
+ingredient_name,inci_name,category,uv_filter_type,filter_mechanism,photostable,uva_protection,uvb_protection,skin_type_1_safe,skin_type_2_safe,skin_type_3_safe,concern_level,concern_reason,eu_approved,fda_approved,overall_score,source,oily_score,dry_score,combination_score,sensitive_score,normal_score
+Zinc Oxide,Zinc Oxide,UV Filter - Mineral,Broad,Physical,Yes,5,5,Yes,Yes,Yes,,,Yes,Yes,9,FDA/EWG,9,9,9,9,9
+Titanium Dioxide,Titanium Dioxide,UV Filter - Mineral,Broad,Physical,Yes,3,5,Yes,Yes,Yes,Low,Potential inhalation risk in sprays,Yes,Yes,8,FDA/EWG,8,8,8,8,8
+Zinc Oxide Nano,Zinc Oxide,UV Filter - Mineral,Broad,Physical,Yes,5,5,Yes,Yes,Yes,Low,Nanoparticle environmental concern,Yes,Yes,8,EWG,8,8,8,8,8
+Titanium Dioxide Nano,Titanium Dioxide,UV Filter - Mineral,Broad,Physical,Yes,3,5,Yes,Yes,Yes,Low,Nanoparticle inhalation risk,Yes,Yes,7,EWG,7,7,7,7,7
+Avobenzone,Butyl Methoxydibenzoylmethane,UV Filter - Chemical,UVA,Chemical,No,5,1,Yes,Yes,Yes,Medium,"Photounstable, endocrine disruption concern, requires stabiliser",Yes,Yes,6,FDA/EWG,6,6,6,5,6
+Oxybenzone,Benzophenone-3,UV Filter - Chemical,Broad,Chemical,Yes,3,4,No,No,Yes,High,"Hormone disruption, coral reef damage, high skin absorption",Yes,Yes,3,FDA/EWG,3,3,3,3,3
+Octinoxate,Ethylhexyl Methoxycinnamate,UV Filter - Chemical,UVB,Chemical,No,1,5,Yes,Yes,Yes,High,"Endocrine disruption, 16x FDA safety threshold in blood",Yes,Yes,3,FDA/EWG,3,3,3,3,3
+Octisalate,Ethylhexyl Salicylate,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,Medium,"Skin absorption above FDA threshold, salicylate concerns",Yes,Yes,5,FDA/EWG,5,5,5,5,5
+Octocrylene,Octocrylene,UV Filter - Chemical,UVB,Chemical,Yes,2,5,Yes,Yes,Yes,Medium,"Potential endocrine disruption, coral reef concerns",Yes,Yes,5,FDA/EWG,5,5,5,5,5
+Homosalate,Homosalate,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,High,"Hormone disruption, EU restricting to 0.5-7.34%",Yes,Yes,4,FDA/EWG,3,3,3,3,4
+Ensulizole,Phenylbenzimidazole Sulfonic Acid,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,Low,"Water-soluble, limited UVA protection",Yes,Yes,6,FDA,6,6,6,6,6
+Dioxybenzone,Benzophenone-8,UV Filter - Chemical,Broad,Chemical,Yes,3,4,No,No,Yes,High,"Turns skin blue on UV, hormone disruption",No,Yes,2,FDA,2,2,2,2,2
+Padimate O,Padimate O,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,Medium,"PABA derivative, allergy risk",Yes,Yes,5,FDA,5,5,5,5,5
+Sulisobenzone,Benzophenone-4,UV Filter - Chemical,Broad,Chemical,Yes,3,4,Yes,Yes,Yes,Medium,Systemic absorption concerns,Yes,Yes,5,FDA,5,5,5,5,5
+Cinoxate,2-Ethoxyethyl p-methoxycinnamate,UV Filter - Chemical,UVB,Chemical,No,1,3,Yes,Yes,Yes,Medium,Largely discontinued,Yes,Yes,4,FDA,4,4,4,4,4
+Meradimate,Menthyl Anthranilate,UV Filter - Chemical,UVA,Chemical,No,3,1,Yes,Yes,Yes,Low,"Weak UVA filter, limited use",Yes,Yes,5,FDA,5,5,5,5,5
+Trolamine Salicylate,Trolamine Salicylate,UV Filter - Chemical,UVB,Chemical,Yes,1,3,Yes,Yes,Yes,High,"Non-GRASE, no longer permitted in US sunscreens",No,No,2,FDA,2,2,2,2,2
+PABA,p-Aminobenzoic Acid,UV Filter - Chemical,UVB,Chemical,No,1,4,No,No,Yes,High,"Banned EU, allergy risk, thyroid disruption, stains clothing",No,No,1,FDA/EU,1,1,1,1,1
+Bemotrizinol,Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine,UV Filter - Chemical,Broad,Chemical,Yes,5,5,Yes,Yes,Yes,,"Excellent broad spectrum, highly photostable, pending FDA",Yes,No,9,EU/EWG,9,9,9,9,9
+Bisoctrizole,Methylene Bis-Benzotriazolyl Tetramethylbutylphenol,UV Filter - Chemical,Broad,Chemical,Yes,5,5,Yes,Yes,Yes,,"Excellent broad spectrum, very stable",Yes,No,9,EU,9,9,9,9,9
+Drometrizole Trisiloxane,Drometrizole Trisiloxane,UV Filter - Chemical,Broad,Chemical,Yes,4,4,Yes,Yes,Yes,,"Silicone-based, good stability",Yes,No,8,EU,8,8,8,8,8
+Ecamsule,Terephthalylidene Dicamphor Sulfonic Acid,UV Filter - Chemical,UVA,Chemical,Yes,5,2,Yes,Yes,Yes,Low,"Strong UVA filter, limited FDA approval (Mexoryl SX)",Yes,Limited,8,EU/FDA-limited,8,8,8,8,8
+Enzacamene,4-Methylbenzylidene Camphor,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,Medium,Endocrine disruption concerns in EU review,Yes,No,5,EU,5,5,5,5,5
+Amiloxate,Isopentyl 4-Methoxycinnamate,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,Low,"UVB filter, awaiting FDA review",Yes,No,6,EU,6,6,6,6,6
+Octyl Triazone,Ethylhexyl Triazone,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,,Highly photostable UVB filter,Yes,No,8,EU,8,8,8,8,8
+Iscotrizinol,Diethylhexyl Butamido Triazone,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,,Photostable UVB filter,Yes,No,7,EU,7,7,7,7,7
+TDSA,Terephthalylidene Dicamphor Sulfonic Acid,UV Filter - Chemical,UVA,Chemical,Yes,5,2,Yes,Yes,Yes,,"Strong UVA protection, not FDA approved",Yes,No,8,EU,8,8,8,8,8
+Neo Heliopan AP,Disodium Phenyl Dibenzimidazole Tetrasulfonate,UV Filter - Chemical,UVA,Chemical,Yes,5,1,Yes,Yes,Yes,,Water-soluble UVA filter,Yes,No,7,EU,7,7,7,7,7
+Mexoryl XL,Drometrizole Trisiloxane,UV Filter - Chemical,Broad,Chemical,Yes,4,4,Yes,Yes,Yes,,"Broad spectrum, photostable",Yes,No,8,EU,8,8,8,8,8
+Tinosorb A2B,Tris-Biphenyl Triazine,UV Filter - Chemical,Broad,Chemical,Yes,5,5,Yes,Yes,Yes,,New generation broad spectrum filter,Yes,No,9,EU,9,9,9,9,9
+Ethylhexyl Methoxycrylene,Ethylhexyl Methoxycrylene,Photostabiliser,,,Yes,0,0,Yes,Yes,Yes,,Stabilises avobenzone and other filters,Yes,Yes,8,CosDNA,8,8,8,8,8
+Butyloctyl Salicylate,Butyloctyl Salicylate,Photostabiliser,UVB,Chemical,Yes,0,2,Yes,Yes,Yes,Low,"Inactive SPF booster, salicylate absorption concern",Yes,Yes,6,EWG,6,6,6,6,6
+Polyester-8,Polyester-8,Photostabiliser,,,Yes,0,0,Yes,Yes,Yes,,Film-former and photostabiliser,Yes,Yes,8,CosDNA,8,8,8,8,8
+Polyester-25,Polyester-25,Photostabiliser,,,Yes,0,0,Yes,Yes,Yes,,Stabilises UV filters in formulation,Yes,Yes,7,CosDNA,7,7,7,7,7
+Neopentyl Glycol Diheptanoate,Neopentyl Glycol Diheptanoate,Photostabiliser,,,Yes,0,0,Yes,Yes,Yes,,Emollient and photostabiliser,Yes,Yes,8,CosDNA,8,8,8,9,8
+Dimethicone,Dimethicone,Emollient,,,,0,0,Yes,Yes,Yes,,"Silicone, non-comedogenic, skin barrier",Yes,Yes,9,CosDNA,9,9,9,9,9
+Cyclomethicone,Cyclomethicone,Emollient,,,,0,0,Yes,Yes,Yes,Low,"Volatile silicone, environmental persistence",Yes,Yes,7,CosDNA,7,7,7,7,7
+Cyclopentasiloxane,Cyclopentasiloxane,Emollient,,,,0,0,Yes,Yes,Yes,Low,"Volatile silicone, EU restrictions",Yes,Yes,7,EU/CosDNA,7,7,7,7,7
+Mineral Oil,Paraffinum Liquidum,Emollient,,,,0,0,Yes,Yes,Yes,Low,"Occlusive, may clog pores for oily skin",Yes,Yes,7,CosDNA,4,7,7,7,7
+Petrolatum,Petrolatum,Emollient,,,,0,0,Yes,Yes,Yes,,"Excellent occlusive barrier, non-comedogenic",Yes,Yes,9,CosDNA/FDA,4,10,9,9,9
+Isopropyl Myristate,Isopropyl Myristate,Emollient,,,,0,0,No,No,Yes,Medium,Comedogenic for sensitive/acne-prone skin,Yes,Yes,5,CosDNA,4,5,5,5,5
+Caprylic/Capric Triglyceride,Caprylic/Capric Triglyceride,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, non-comedogenic, from coconut",Yes,Yes,9,CosDNA,9,9,9,9,9
+Squalane,Squalane,Emollient,,,,0,0,Yes,Yes,Yes,,"Excellent emollient, non-comedogenic, from olives/sugarcane",Yes,Yes,10,CosDNA,10,10,10,10,10
+Jojoba Oil,Simmondsia Chinensis Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Non-comedogenic, antibacterial, all skin types",Yes,Yes,9,CosDNA,9,10,9,9,9
+Coconut Oil,Cocos Nucifera Oil,Emollient,,,,0,0,No,No,Yes,Low,"Highly comedogenic (rating 4), avoid acne-prone skin",Yes,Yes,5,CosDNA,4,5,5,5,5
+Shea Butter,Butyrospermum Parkii Butter,Emollient,,,,0,0,Yes,Yes,Yes,,"Rich occlusive, good for dry skin",Yes,Yes,8,CosDNA,4,9,8,8,8
+Cetyl Alcohol,Cetyl Alcohol,Emollient,,,,0,0,Yes,Yes,Yes,,"Fatty alcohol, emollient and thickener",Yes,Yes,9,CosDNA,9,9,9,9,9
+Stearyl Alcohol,Stearyl Alcohol,Emollient,,,,0,0,Yes,Yes,Yes,,"Fatty alcohol, skin conditioning",Yes,Yes,8,CosDNA,8,8,8,8,8
+Cetearyl Alcohol,Cetearyl Alcohol,Emollient,,,,0,0,Yes,Yes,Yes,,"Mix of cetyl and stearyl alcohol, emollient",Yes,Yes,9,CosDNA,9,9,9,9,9
+Isononyl Isononanoate,Isononyl Isononanoate,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, low comedogenicity",Yes,Yes,8,CosDNA,8,8,8,9,8
+C12-15 Alkyl Benzoate,C12-15 Alkyl Benzoate,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight emollient, good spreading",Yes,Yes,8,CosDNA,8,8,8,9,8
+Diisopropyl Sebacate,Diisopropyl Sebacate,Emollient,,,,0,0,Yes,Yes,Yes,,Lightweight emollient,Yes,Yes,8,CosDNA,8,8,8,8,8
+Octyldodecanol,Octyldodecanol,Emollient,,,,0,0,Yes,Yes,Yes,,Solvent and emollient,Yes,Yes,8,CosDNA,8,8,8,8,8
+Diethylhexyl Carbonate,Diethylhexyl Carbonate,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight emollient, solvent for UV filters",Yes,Yes,8,CosDNA,8,8,8,8,8
+Neopentyl Glycol Dicaprylate,Neopentyl Glycol Dicaprylate/Dicaprate,Emollient,,,,0,0,Yes,Yes,Yes,,Emollient with good spreading,Yes,Yes,8,CosDNA,8,8,8,8,8
+Meadowfoam Seed Oil,Limnanthes Alba Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Very stable, non-greasy emollient",Yes,Yes,9,CosDNA,9,9,9,9,9
+Rosehip Oil,Rosa Canina Fruit Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Rich in linoleic acid, good for dry skin",Yes,Yes,8,CosDNA,8,8,8,8,8
+Argan Oil,Argania Spinosa Kernel Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Rich in Vitamin E, non-comedogenic",Yes,Yes,9,CosDNA,9,10,9,9,9
+Sweet Almond Oil,Prunus Amygdalus Dulcis Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, all skin types",Yes,Yes,8,CosDNA,8,8,8,8,8
+Glycerin,Glycerin,Humectant,,,,0,0,Yes,Yes,Yes,,"Most common humectant, attracts moisture",Yes,Yes,10,CosDNA,10,10,10,10,10
+Hyaluronic Acid,Sodium Hyaluronate,Humectant,,,,0,0,Yes,Yes,Yes,,"Excellent hydration, all skin types",Yes,Yes,10,CosDNA,10,10,10,10,10
+Propylene Glycol,Propylene Glycol,Humectant,,,,0,0,Yes,Yes,Yes,Low,"Skin penetration enhancer, irritant at high concentrations",Yes,Yes,7,CosDNA,7,8,7,7,7
+Butylene Glycol,Butylene Glycol,Humectant,,,,0,0,Yes,Yes,Yes,,"Gentle humectant, less irritating than PG",Yes,Yes,9,CosDNA,9,10,9,9,9
+Panthenol,Panthenol,Humectant,,,,0,0,Yes,Yes,Yes,,"Provitamin B5, moisturising and soothing",Yes,Yes,10,CosDNA,10,10,10,10,10
+Sorbitol,Sorbitol,Humectant,,,,0,0,Yes,Yes,Yes,,Plant-derived humectant,Yes,Yes,8,CosDNA,8,9,8,8,8
+Sodium PCA,Sodium PCA,Humectant,,,,0,0,Yes,Yes,Yes,,Natural moisturising factor component,Yes,Yes,9,CosDNA,9,10,9,9,9
+Urea,Urea,Humectant,,,,0,0,Yes,Yes,Yes,,"Keratolytic and humectant, good for dry skin",Yes,Yes,8,CosDNA,8,9,8,8,8
+Allantoin,Allantoin,Humectant,,,,0,0,Yes,Yes,Yes,,"Soothing and hydrating, all skin types",Yes,Yes,9,CosDNA,9,10,9,10,9
+Betaine,Betaine,Humectant,,,,0,0,Yes,Yes,Yes,,"Sugar beet-derived, gentle humectant",Yes,Yes,9,CosDNA,9,10,9,9,9
+Polysorbate 20,Polysorbate 20,Emulsifier,,,,0,0,Yes,Yes,Yes,,"Mild emulsifier, solubiliser",Yes,Yes,8,CosDNA,8,8,8,8,8
+Polysorbate 60,Polysorbate 60,Emulsifier,,,,0,0,Yes,Yes,Yes,,O/W emulsifier,Yes,Yes,8,CosDNA,8,8,8,8,8
+Polysorbate 80,Polysorbate 80,Emulsifier,,,,0,0,Yes,Yes,Yes,,"O/W emulsifier, commonly used",Yes,Yes,8,CosDNA,8,8,8,8,8
+Glyceryl Stearate,Glyceryl Stearate,Emulsifier,,,,0,0,Yes,Yes,Yes,,O/W emulsifier and emollient,Yes,Yes,9,CosDNA,9,9,9,9,9
+Glyceryl Stearate SE,Glyceryl Stearate SE,Emulsifier,,,,0,0,Yes,Yes,Yes,,Self-emulsifying grade,Yes,Yes,8,CosDNA,8,8,8,8,8
+PEG-100 Stearate,PEG-100 Stearate,Emulsifier,,,,0,0,Yes,Yes,Yes,Low,"PEG-derived, possible contamination concerns",Yes,Yes,7,CosDNA,7,7,7,7,7
+Ceteareth-20,Ceteareth-20,Emulsifier,,,,0,0,Yes,Yes,Yes,Low,"Ethoxylated emulsifier, PEG concern",Yes,Yes,7,CosDNA,7,7,7,7,7
+Steareth-21,Steareth-21,Emulsifier,,,,0,0,Yes,Yes,Yes,Low,PEG-derived emulsifier,Yes,Yes,7,CosDNA,7,7,7,7,7
+Lecithin,Lecithin,Emulsifier,,,,0,0,Yes,Yes,Yes,,Natural phospholipid emulsifier,Yes,Yes,9,CosDNA,9,9,9,9,9
+Sorbitan Oleate,Sorbitan Oleate,Emulsifier,,,,0,0,Yes,Yes,Yes,,W/O emulsifier,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sorbitan Palmitate,Sorbitan Palmitate,Emulsifier,,,,0,0,Yes,Yes,Yes,,W/O emulsifier,Yes,Yes,8,CosDNA,8,8,8,8,8
+Triethanolamine,Triethanolamine,Emulsifier,,,,0,0,Yes,Yes,Yes,Medium,"pH adjuster, potential nitrosamine formation",Yes,Yes,5,CosDNA/EWG,5,3,5,3,5
+Behenyl Alcohol,Behenyl Alcohol,Emulsifier,,,,0,0,Yes,Yes,Yes,,"Fatty alcohol, W/O emulsifier",Yes,Yes,8,CosDNA,8,8,8,8,8
+Polyglyceryl-4 Olivate,Polyglyceryl-4 Olivate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Natural-derived W/O emulsifier,Yes,Yes,9,CosDNA,9,9,9,9,9
+Carbomer,Carbomer,Thickener,,,,0,0,Yes,Yes,Yes,,Acrylic acid polymer thickener,Yes,Yes,8,CosDNA,8,8,8,8,8
+Xanthan Gum,Xanthan Gum,Thickener,,,,0,0,Yes,Yes,Yes,,Natural polysaccharide thickener,Yes,Yes,9,CosDNA,9,9,9,9,9
+Hydroxyethylcellulose,Hydroxyethylcellulose,Thickener,,,,0,0,Yes,Yes,Yes,,Cellulose-derived thickener,Yes,Yes,9,CosDNA,9,9,9,9,9
+Hydroxypropyl Methylcellulose,Hydroxypropyl Methylcellulose,Thickener,,,,0,0,Yes,Yes,Yes,,Water-soluble thickener,Yes,Yes,9,CosDNA,9,9,9,9,9
+Acrylates/C10-30 Alkyl Acrylate Crosspolymer,Acrylates/C10-30 Alkyl Acrylate Crosspolymer,Thickener,,,,0,0,Yes,Yes,Yes,,Emulsion stabiliser and thickener,Yes,Yes,8,CosDNA,8,8,8,8,8
+Polyacrylamide,Polyacrylamide,Thickener,,,,0,0,Yes,Yes,Yes,Low,Acrylamide monomer impurity concern,Yes,Yes,6,EWG,6,6,6,6,6
+Silica,Silica,Thickener,,,,0,0,Yes,Yes,Yes,,Mattifying agent and thickener,Yes,Yes,9,CosDNA,10,9,9,9,9
+Microcrystalline Cellulose,Microcrystalline Cellulose,Thickener,,,,0,0,Yes,Yes,Yes,,Natural thickener and opacifier,Yes,Yes,9,CosDNA,9,9,9,9,9
+Phenoxyethanol,Phenoxyethanol,Preservative,,,,0,0,Yes,Yes,Yes,Low,"Most common preservative, mild irritant at high levels",Yes,Yes,7,CosDNA/EWG,7,3,7,3,7
+Ethylhexylglycerin,Ethylhexylglycerin,Preservative,,,,0,0,Yes,Yes,Yes,,"Mild preservative booster, skin conditioning",Yes,Yes,9,CosDNA,9,9,9,9,9
+Caprylyl Glycol,Caprylyl Glycol,Preservative,,,,0,0,Yes,Yes,Yes,,Gentle preservative and humectant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Benzyl Alcohol,Benzyl Alcohol,Preservative,,,,0,0,Yes,Yes,Yes,Low,"Natural preservative, possible sensitizer",Yes,Yes,7,CosDNA,7,7,7,7,7
+Potassium Sorbate,Potassium Sorbate,Preservative,,,,0,0,Yes,Yes,Yes,,"Natural preservative, mild",Yes,Yes,8,CosDNA,8,8,8,8,8
+Sodium Benzoate,Sodium Benzoate,Preservative,,,,0,0,Yes,Yes,Yes,Low,Can form benzene with Vitamin C,Yes,Yes,6,CosDNA/EWG,6,6,6,7,6
+Methylparaben,Methylparaben,Preservative,,,,0,0,Yes,Yes,Yes,Medium,"Paraben, weak estrogenic activity concern",Yes,Yes,5,EWG,5,5,5,5,5
+Propylparaben,Propylparaben,Preservative,,,,0,0,Yes,Yes,Yes,Medium,"Paraben, endocrine disruption concern",Yes,Yes,5,EWG,5,5,5,5,5
+Butylparaben,Butylparaben,Preservative,,,,0,0,Yes,Yes,Yes,High,"Strongest estrogenic paraben, EU restrictions",Yes,Yes,3,EWG/EU,3,3,3,3,3
+Ethylparaben,Ethylparaben,Preservative,,,,0,0,Yes,Yes,Yes,Medium,"Paraben family, moderate concern",Yes,Yes,5,EWG,5,5,5,5,5
+DMDM Hydantoin,DMDM Hydantoin,Preservative,,,,0,0,No,No,Yes,High,"Formaldehyde releaser, sensitizer",Yes,Yes,3,EWG,3,3,3,1,3
+Imidazolidinyl Urea,Imidazolidinyl Urea,Preservative,,,,0,0,No,No,Yes,High,Formaldehyde releaser,Yes,Yes,3,EWG,3,3,3,1,3
+Pentylene Glycol,Pentylene Glycol,Preservative,,,,0,0,Yes,Yes,Yes,,Gentle preservative and humectant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Sorbic Acid,Sorbic Acid,Preservative,,,,0,0,Yes,Yes,Yes,,"Natural preservative, gentle",Yes,Yes,8,CosDNA,8,8,8,8,8
+Chlorphenesin,Chlorphenesin,Preservative,,,,0,0,Yes,Yes,Yes,Low,"Preservative, muscle relaxant concern at high doses",Yes,Yes,6,CosDNA,6,6,6,6,6
+Tocopheryl Acetate,Tocopheryl Acetate,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Vitamin E ester, antioxidant",Yes,Yes,9,CosDNA,9,9,9,9,9
+Tocopherol,Tocopherol,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Vitamin E, strong antioxidant",Yes,Yes,9,CosDNA,9,9,9,9,9
+Ascorbic Acid,Ascorbic Acid,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Vitamin C, brightening and antioxidant",Yes,Yes,9,CosDNA,9,9,9,9,9
+Sodium Ascorbyl Phosphate,Sodium Ascorbyl Phosphate,Antioxidant,,,,0,0,Yes,Yes,Yes,,Stable Vitamin C derivative,Yes,Yes,9,CosDNA,9,9,9,9,9
+Retinyl Palmitate,Retinyl Palmitate,Antioxidant,,,,0,0,No,No,Yes,Medium,"Vitamin A ester, photosensitising, avoid in sun products",Yes,Yes,5,EWG,5,5,5,5,5
+Niacinamide,Niacinamide,Skin Active,,,,0,0,Yes,Yes,Yes,,"Vitamin B3, pore minimising, all skin types",Yes,Yes,10,CosDNA,10,10,10,10,10
+Resveratrol,Resveratrol,Antioxidant,,,,0,0,Yes,Yes,Yes,,Polyphenol antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Green Tea Extract,Camellia Sinensis Leaf Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Polyphenol antioxidant, anti-inflammatory",Yes,Yes,9,CosDNA,9,9,9,9,9
+Ferulic Acid,Ferulic Acid,Antioxidant,,,,0,0,Yes,Yes,Yes,,Potentiates Vitamins C and E activity,Yes,Yes,9,CosDNA,9,9,9,9,9
+Coenzyme Q10,Ubiquinone,Antioxidant,,,,0,0,Yes,Yes,Yes,,Cellular energy antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Idebenone,Idebenone,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Synthetic CoQ10, potent antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Astaxanthin,Astaxanthin,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Carotenoid antioxidant, very potent",Yes,Yes,9,CosDNA,9,9,9,9,9
+Aloe Vera,Aloe Barbadensis Leaf Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Soothing, hydrating, anti-inflammatory",Yes,Yes,10,CosDNA,10,10,10,10,10
+Centella Asiatica,Centella Asiatica Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Wound healing, soothing, sensitive skin",Yes,Yes,10,CosDNA,10,10,10,10,10
+Bisabolol,Bisabolol,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Chamomile-derived, anti-inflammatory",Yes,Yes,9,CosDNA,9,10,9,10,9
+Chamomile Extract,Chamomilla Recutita Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Anti-inflammatory, sensitive skin",Yes,Yes,9,CosDNA,9,10,9,10,9
+Oat Extract,Avena Sativa Kernel Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Colloidal oat, anti-itch, eczema",Yes,Yes,9,CosDNA,9,10,9,10,9
+Licorice Root Extract,Glycyrrhiza Glabra Root Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Brightening, anti-inflammatory",Yes,Yes,9,CosDNA,9,10,9,9,9
+Cucumber Extract,Cucumis Sativus Fruit Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Cooling, soothing, hydrating",Yes,Yes,9,CosDNA,9,10,9,9,9
+Calendula Extract,Calendula Officinalis Flower Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Wound healing, anti-inflammatory",Yes,Yes,9,CosDNA,9,10,9,9,9
+Disodium EDTA,Disodium EDTA,Chelating Agent,,,,0,0,Yes,Yes,Yes,Low,"Chelates metals, preservative booster, penetration enhancer",Yes,Yes,6,CosDNA/EWG,6,6,6,6,6
+Tetrasodium EDTA,Tetrasodium EDTA,Chelating Agent,,,,0,0,Yes,Yes,Yes,Low,Strong chelator,Yes,Yes,6,CosDNA/EWG,6,6,6,6,6
+Citric Acid,Citric Acid,pH Adjuster,,,,0,0,Yes,Yes,Yes,,"pH adjuster, chelator, AHA at high concentrations",Yes,Yes,8,CosDNA,8,8,8,8,8
+Sodium Hydroxide,Sodium Hydroxide,pH Adjuster,,,,0,0,Yes,Yes,Yes,,pH adjustment only,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sodium Citrate,Sodium Citrate,pH Adjuster,,,,0,0,Yes,Yes,Yes,,pH buffer,Yes,Yes,9,CosDNA,9,9,9,9,9
+Acrylates Copolymer,Acrylates Copolymer,Film Former,,,,0,0,Yes,Yes,Yes,,"Water resistance, film former",Yes,Yes,8,CosDNA,8,8,8,8,8
+VP/Eicosene Copolymer,VP/Eicosene Copolymer,Film Former,,,,0,0,Yes,Yes,Yes,,Water resistance agent,Yes,Yes,8,CosDNA,8,8,8,8,8
+PVP,PVP,Film Former,,,,0,0,Yes,Yes,Yes,,Film former and binder,Yes,Yes,8,CosDNA,8,8,8,8,8
+Trimethylsiloxysilicate,Trimethylsiloxysilicate,Film Former,,,,0,0,Yes,Yes,Yes,,"Silicone film former, long-wear",Yes,Yes,8,CosDNA,9,8,8,8,8
+Styrene/Acrylates Copolymer,Styrene/Acrylates Copolymer,Film Former,,,,0,0,Yes,Yes,Yes,,Water resistance,Yes,Yes,8,CosDNA,8,8,8,8,8
+Fragrance,Fragrance,Fragrance,,,,0,0,No,No,Yes,Medium,Can contain hundreds of undisclosed allergens,Yes,Yes,4,EWG,4,4,4,2,4
+Parfum,Parfum,Fragrance,,,,0,0,No,No,Yes,Medium,"EU term for fragrance mix, allergen risk",Yes,Yes,4,EWG,4,4,4,2,4
+Linalool,Linalool,Fragrance,,,,0,0,No,No,Yes,Medium,"Common fragrance allergen, EU disclosure required",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Limonene,Limonene,Fragrance,,,,0,0,No,No,Yes,Medium,"Citrus fragrance, allergen",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Benzyl Benzoate,Benzyl Benzoate,Fragrance,,,,0,0,No,No,Yes,Medium,"Fragrance allergen, EU restricted",Yes,Yes,4,EU/EWG,4,4,4,5,4
+Geraniol,Geraniol,Fragrance,,,,0,0,No,No,Yes,Medium,"Floral fragrance, allergen",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Citronellol,Citronellol,Fragrance,,,,0,0,No,No,Yes,Medium,"Rose fragrance, allergen",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Eugenol,Eugenol,Fragrance,,,,0,0,No,No,Yes,High,"Clove fragrance, sensitizer",Yes,Yes,3,EU/EWG,3,3,3,2,3
+Cinnamal,Cinnamal,Fragrance,,,,0,0,No,No,Yes,High,"Cinnamon fragrance, strong sensitizer",Yes,Yes,2,EU/EWG,2,2,2,2,2
+Isoeugenol,Isoeugenol,Fragrance,,,,0,0,No,No,Yes,High,"Strong sensitizer, EU restricted",Yes,Yes,2,EU/EWG,2,2,2,2,2
+Water,Aqua,Solvent,,,,0,0,Yes,Yes,Yes,,Primary solvent in most formulations,Yes,Yes,10,FDA,10,10,10,10,10
+Alcohol Denat,Alcohol Denat,Solvent,,,,0,0,No,No,Yes,Medium,"Drying, disrupts skin barrier, sensitizer",Yes,Yes,4,CosDNA/EWG,5,3,4,3,4
+Ethanol,Ethanol,Solvent,,,,0,0,No,No,Yes,Low,Drying at high concentrations,Yes,Yes,6,CosDNA,6,3,6,3,6
+Isopropyl Alcohol,Isopropyl Alcohol,Solvent,,,,0,0,No,No,Yes,Medium,"Drying, irritating for sensitive skin",Yes,Yes,5,CosDNA,6,3,4,5,5
+Dipropylene Glycol,Dipropylene Glycol,Solvent,,,,0,0,Yes,Yes,Yes,,Solvent and humectant,Yes,Yes,8,CosDNA,8,8,8,8,8
+"1,2-Hexanediol","1,2-Hexanediol",Solvent,,,,0,0,Yes,Yes,Yes,,Gentle solvent and preservative booster,Yes,Yes,8,CosDNA,8,8,8,8,8
+Cyclohexasiloxane,Cyclohexasiloxane,Solvent,,,,0,0,Yes,Yes,Yes,Low,"Volatile silicone, environmental concern",Yes,Yes,6,EU/CosDNA,6,6,6,6,6
+Iron Oxides,Iron Oxides,Pigment,,,,0,0,Yes,Yes,Yes,,"Mineral pigments, also provide HEV light protection",Yes,Yes,9,FDA,9,9,9,9,9
+Mica,Mica,Pigment,,,,0,0,Yes,Yes,Yes,,"Natural mineral pigment, synergistic UV effect",Yes,Yes,8,CosDNA,8,8,8,8,8
+Ultramarines,Ultramarines,Pigment,,,,0,0,Yes,Yes,Yes,,Blue mineral pigment,Yes,Yes,8,FDA,8,8,8,8,8
+Chromium Oxide Greens,Chromium Oxide Greens,Pigment,,,,0,0,Yes,Yes,Yes,,Green mineral pigment,Yes,Yes,8,FDA,8,8,8,8,8
+Polyester-7,Polyester-7,SPF Booster,,,,0,0,Yes,Yes,Yes,,Film-forming SPF booster,Yes,Yes,8,CosDNA,8,8,8,8,8
+"Diethylhexyl 2,6-Naphthalate","Diethylhexyl 2,6-Naphthalate",SPF Booster,UVB,Chemical,No,0,2,Yes,Yes,Yes,,SPF boosting solvent,Yes,Yes,7,CosDNA,7,7,7,7,7
+Stearic Acid,Stearic Acid,Emollient,,,,0,0,Yes,Yes,Yes,,"Fatty acid, emollient and emulsifier",Yes,Yes,8,CosDNA,8,8,8,8,8
+Palmitic Acid,Palmitic Acid,Emollient,,,,0,0,Yes,Yes,Yes,,"Fatty acid, skin conditioning",Yes,Yes,8,CosDNA,8,8,8,8,8
+Linoleic Acid,Linoleic Acid,Skin Active,,,,0,0,Yes,Yes,Yes,,"Essential fatty acid, acne-prone skin benefit",Yes,Yes,9,CosDNA,9,9,9,9,9
+Salicylic Acid,Salicylic Acid,Skin Active,,,,0,0,No,No,Yes,Low,"BHA exfoliant, great for acne-prone skin",Yes,Yes,8,CosDNA,8,6,8,8,8
+Lactic Acid,Lactic Acid,Skin Active,,,,0,0,No,No,Yes,,"AHA, gentle exfoliant, good for dry skin",Yes,Yes,8,CosDNA,8,8,8,8,8
+Kojic Acid,Kojic Acid,Skin Active,,,,0,0,Yes,Yes,Yes,Low,"Brightening agent, avoid high concentrations",Yes,Yes,7,CosDNA,7,7,7,7,7
+Azelaic Acid,Azelaic Acid,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, anti-acne, rosacea",Yes,Yes,9,CosDNA,9,9,9,9,9
+Caffeine,Caffeine,Skin Active,,,,0,0,Yes,Yes,Yes,,"Antioxidant, anti-inflammatory, reduces puffiness",Yes,Yes,9,CosDNA,9,9,9,9,9
+Ceramide NP,Ceramide NP,Skin Active,,,,0,0,Yes,Yes,Yes,,"Skin barrier repair, all skin types",Yes,Yes,10,CosDNA,10,10,10,10,10
+Ceramide AP,Ceramide AP,Skin Active,,,,0,0,Yes,Yes,Yes,,Skin barrier ceramide,Yes,Yes,10,CosDNA,10,10,10,10,10
+Ceramide EOP,Ceramide EOP,Skin Active,,,,0,0,Yes,Yes,Yes,,Skin barrier ceramide,Yes,Yes,10,CosDNA,10,10,10,10,10
+Cholesterol,Cholesterol,Skin Active,,,,0,0,Yes,Yes,Yes,,Barrier repair lipid,Yes,Yes,9,CosDNA,9,9,9,9,9
+Adenosine,Adenosine,Skin Active,,,,0,0,Yes,Yes,Yes,,"Anti-ageing, wound healing",Yes,Yes,9,CosDNA,9,9,9,9,9
+Epigallocatechin Gallate,Epigallocatechin Gallate,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Green tea EGCG, potent antioxidant",Yes,Yes,9,CosDNA,9,9,9,9,9
+Peptide-1,Palmitoyl Tripeptide-1,Skin Active,,,,0,0,Yes,Yes,Yes,,"Anti-ageing peptide, collagen stimulation",Yes,Yes,9,CosDNA,9,9,9,9,9
+Peptide-5,Palmitoyl Pentapeptide-4,Skin Active,,,,0,0,Yes,Yes,Yes,,"Matrixyl, anti-wrinkle peptide",Yes,Yes,9,CosDNA,9,9,9,9,9
+Sodium Lactate,Sodium Lactate,Humectant,,,,0,0,Yes,Yes,Yes,,"Natural moisturising factor, humectant",Yes,Yes,9,CosDNA,9,10,9,9,9
+Trehalose,Trehalose,Humectant,,,,0,0,Yes,Yes,Yes,,"Sugar-based humectant, protective",Yes,Yes,9,CosDNA,9,10,9,9,9
+Zinc Gluconate,Zinc Gluconate,Skin Active,,,,0,0,Yes,Yes,Yes,,"Sebum control, anti-acne",Yes,Yes,8,CosDNA,8,8,8,8,8
+Sulfur,Sulfur,Skin Active,,,,0,0,No,No,Yes,Low,"Anti-acne, avoid sensitive skin",Yes,Yes,6,CosDNA,6,6,6,3,6
+Witch Hazel,Hamamelis Virginiana Extract,Skin Active,,,,0,0,No,No,Yes,Low,"Astringent, tannins, avoid dry skin",Yes,Yes,6,CosDNA,6,6,6,3,6
+Sea Kelp Extract,Macrocystis Pyrifera Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Marine algae, mineral-rich",Yes,Yes,8,CosDNA,8,8,8,8,8
+Bakuchiol,Bakuchiol,Skin Active,,,,0,0,Yes,Yes,Yes,,"Natural retinol alternative, anti-ageing",Yes,Yes,9,CosDNA,9,9,9,9,9
+Snow Mushroom Extract,Tremella Fuciformis Sporocarp Extract,Humectant,,,,0,0,Yes,Yes,Yes,,Natural hyaluronic acid alternative,Yes,Yes,9,CosDNA,9,10,9,9,9
+Sea Buckthorn Oil,Hippophae Rhamnoides Fruit Oil,Emollient,,,,0,0,Yes,Yes,Yes,,Rich in carotenoids and omega fatty acids,Yes,Yes,8,CosDNA,8,8,8,8,8
+Hemp Seed Oil,Cannabis Sativa Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Balanced omega fatty acids, non-comedogenic",Yes,Yes,9,CosDNA,9,9,9,9,9
+Marula Oil,Sclerocarya Birrea Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, high oleic acid",Yes,Yes,9,CosDNA,9,10,9,9,9
+Mexoryl SX,Ecamsule,UV Filter - Chemical,UVA,Chemical,Yes,5,1,Yes,Yes,Yes,,"Strong UVA filter, FDA limited approval",Yes,Limited,8,EU/FDA,8,8,8,8,8
+Parsol SLX,Polysilicone-15,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,,Silicone-based photostable UVB,Yes,No,8,EU,8,8,8,8,8
+Uvinul A Plus,Diethylamino Hydroxybenzoyl Hexyl Benzoate,UV Filter - Chemical,UVA,Chemical,Yes,5,2,Yes,Yes,Yes,,Very photostable UVA filter,Yes,No,9,EU,9,9,9,9,9
+Uvinul T 150,Ethylhexyl Triazone,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,,Highly photostable UVB,Yes,No,8,EU,8,8,8,8,8
+Uvinul MS 40,Benzophenone-4,UV Filter - Chemical,Broad,Chemical,Yes,3,4,Yes,Yes,Yes,Low,Water-soluble broad spectrum,Yes,No,7,EU,7,7,7,7,7
+Tinosorb S,Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine,UV Filter - Chemical,Broad,Chemical,Yes,5,5,Yes,Yes,Yes,,"Same as Bemotrizinol, excellent filter",Yes,No,9,EU,9,9,9,9,9
+Tinosorb M,Methylene Bis-Benzotriazolyl Tetramethylbutylphenol,UV Filter - Chemical,Broad,Chemical,Yes,5,5,Yes,Yes,Yes,,Same as Bisoctrizole,Yes,No,9,EU,9,9,9,9,9
+Neo Heliopan 303,Benzophenone-3,UV Filter - Chemical,Broad,Chemical,Yes,3,4,No,No,Yes,High,"Oxybenzone brand name, same concerns",Yes,Yes,3,EU/EWG,3,3,3,3,3
+Parsol 1789,Butyl Methoxydibenzoylmethane,UV Filter - Chemical,UVA,Chemical,No,5,1,Yes,Yes,Yes,Medium,"Avobenzone brand name, photounstable",Yes,Yes,6,EU/FDA,6,6,6,5,6
+Uvasorb HEB,Diethylhexyl Butamido Triazone,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,,Photostable UVB filter,Yes,No,8,EU,8,8,8,8,8
+Isopropyl Palmitate,Isopropyl Palmitate,Emollient,,,,0,0,No,No,Yes,Low,Comedogenic for acne-prone skin,Yes,Yes,5,CosDNA,4,5,5,5,5
+Ethylhexyl Palmitate,Ethylhexyl Palmitate,Emollient,,,,0,0,Yes,Yes,Yes,,Lightweight emollient,Yes,Yes,8,CosDNA,8,8,8,8,8
+Diisostearyl Malate,Diisostearyl Malate,Emollient,,,,0,0,Yes,Yes,Yes,,Occlusive emollient,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sunflower Seed Oil,Helianthus Annuus Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"High linoleic, good for acne-prone",Yes,Yes,8,CosDNA,8,8,8,8,8
+Olive Oil,Olea Europaea Fruit Oil,Emollient,,,,0,0,Yes,Yes,Yes,Low,"High oleic, may worsen eczema",Yes,Yes,7,CosDNA,7,7,7,7,7
+Avocado Oil,Persea Gratissima Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Rich, nourishing, all skin types",Yes,Yes,8,CosDNA,8,9,8,8,8
+Grape Seed Oil,Vitis Vinifera Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, high linoleic",Yes,Yes,9,CosDNA,9,9,9,9,9
+Rice Bran Oil,Oryza Sativa Bran Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, antioxidant-rich",Yes,Yes,8,CosDNA,8,8,8,8,8
+Macadamia Oil,Macadamia Ternifolia Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Rich in palmitoleic acid, dry skin",Yes,Yes,8,CosDNA,8,8,8,8,8
+Borage Oil,Borago Officinalis Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"High GLA, eczema and dry skin",Yes,Yes,8,CosDNA,8,8,8,8,8
+Evening Primrose Oil,Oenothera Biennis Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"High GLA, good for sensitive skin",Yes,Yes,8,CosDNA,8,8,8,8,8
+Castor Oil,Ricinus Communis Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Thick emollient, ricinoleic acid",Yes,Yes,7,CosDNA,4,7,5,7,7
+Tamanu Oil,Calophyllum Inophyllum Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Anti-inflammatory, wound healing",Yes,Yes,8,CosDNA,8,8,8,8,8
+Bakuchiol Oil,Psoralea Corylifolia Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,Contains bakuchiol retinol alternative,Yes,Yes,8,CosDNA,8,8,8,8,8
+Mango Butter,Mangifera Indica Seed Butter,Emollient,,,,0,0,Yes,Yes,Yes,,"Rich butter, dry skin",Yes,Yes,8,CosDNA,8,9,8,8,8
+Cocoa Butter,Theobroma Cacao Seed Butter,Emollient,,,,0,0,Yes,Yes,Yes,Low,Highly comedogenic (rating 4),Yes,Yes,5,CosDNA,4,6,5,5,5
+Lanolin,Lanolin,Emollient,,,,0,0,No,No,Yes,Medium,"Wool-derived, allergen for some",Yes,Yes,6,CosDNA,4,6,5,5,6
+Beeswax,Cera Alba,Emollient,,,,0,0,Yes,Yes,Yes,,"Natural wax, occlusive",Yes,Yes,8,CosDNA,8,8,8,8,8
+Candelilla Wax,Euphorbia Cerifera Cera,Emollient,,,,0,0,Yes,Yes,Yes,,Vegan wax alternative to beeswax,Yes,Yes,8,CosDNA,8,8,8,8,8
+Carnauba Wax,Copernicia Cerifera Cera,Emollient,,,,0,0,Yes,Yes,Yes,,Hard natural wax,Yes,Yes,8,CosDNA,8,8,8,8,8
+Retinol,Retinol,Skin Active,,,,0,0,No,No,Yes,Medium,"Vitamin A, photosensitising, not for sun products",Yes,Yes,7,CosDNA/EWG,6,6,6,5,6
+Retinaldehyde,Retinaldehyde,Skin Active,,,,0,0,No,No,Yes,Medium,"More potent retinol, photosensitising",Yes,Yes,7,CosDNA,6,6,6,5,6
+Glycolic Acid,Glycolic Acid,Skin Active,,,,0,0,No,No,Yes,Low,"AHA, increases sun sensitivity",Yes,Yes,7,CosDNA,7,5,7,7,7
+Mandelic Acid,Mandelic Acid,Skin Active,,,,0,0,Yes,Yes,Yes,,"Gentle AHA, good for sensitive skin",Yes,Yes,8,CosDNA,8,8,8,8,8
+Tranexamic Acid,Tranexamic Acid,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, hyperpigmentation",Yes,Yes,9,CosDNA,9,9,9,9,9
+Alpha Arbutin,Alpha-Arbutin,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, gentler than hydroquinone",Yes,Yes,9,CosDNA,9,9,9,9,9
+Hydroquinone,Hydroquinone,Skin Active,,,,0,0,No,No,Yes,High,"Skin lightening, banned EU cosmetics",No,Yes,3,EU/EWG,3,3,3,3,3
+Glutathione,Glutathione,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Master antioxidant, brightening",Yes,Yes,9,CosDNA,9,9,9,9,9
+Phytic Acid,Phytic Acid,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, chelating",Yes,Yes,8,CosDNA,8,8,8,8,8
+Willow Bark Extract,Salix Alba Bark Extract,Skin Active,,,,0,0,No,No,Yes,Low,"Natural BHA source, acne",Yes,Yes,7,CosDNA,7,7,7,7,7
+Tea Tree Oil,Melaleuca Alternifolia Leaf Oil,Skin Active,,,,0,0,No,No,Yes,Low,"Antimicrobial, sensitizer at high levels",Yes,Yes,6,CosDNA/EWG,6,6,6,3,6
+Turmeric Extract,Curcuma Longa Root Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Anti-inflammatory, brightening",Yes,Yes,8,CosDNA,8,8,8,8,8
+Pomegranate Extract,Punica Granatum Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,Polyphenol antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Mushroom Extract,Ganoderma Lucidum Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Anti-inflammatory, adaptogen",Yes,Yes,8,CosDNA,8,8,8,8,8
+Collagen,Hydrolyzed Collagen,Skin Active,,,,0,0,Yes,Yes,Yes,,"Protein, moisturising film",Yes,Yes,8,CosDNA,8,8,8,8,8
+Elastin,Hydrolyzed Elastin,Skin Active,,,,0,0,Yes,Yes,Yes,,"Protein, film-forming",Yes,Yes,8,CosDNA,8,8,8,8,8
+Silk Amino Acids,Serica,Skin Active,,,,0,0,Yes,Yes,Yes,,"Protein, skin conditioning",Yes,Yes,8,CosDNA,8,8,8,8,8
+Keratin,Hydrolyzed Keratin,Skin Active,,,,0,0,Yes,Yes,Yes,,"Structural protein, barrier repair",Yes,Yes,8,CosDNA,8,8,8,8,8
+Marine Collagen,Hydrolyzed Marine Collagen,Skin Active,,,,0,0,Yes,Yes,Yes,,Fish-derived collagen peptides,Yes,Yes,8,CosDNA,8,8,8,8,8
+Probiotic Lysate,Lactobacillus Ferment,Skin Active,,,,0,0,Yes,Yes,Yes,,"Microbiome support, barrier function",Yes,Yes,9,CosDNA,9,9,9,9,9
+Gluconolactone,Gluconolactone,Preservative,,,,0,0,Yes,Yes,Yes,,"PHA, gentle preservative booster",Yes,Yes,9,CosDNA,9,9,9,9,9
+Lactobionic Acid,Lactobionic Acid,Preservative,,,,0,0,Yes,Yes,Yes,,"PHA, antioxidant properties",Yes,Yes,9,CosDNA,9,9,9,9,9
+Dehydroacetic Acid,Dehydroacetic Acid,Preservative,,,,0,0,Yes,Yes,Yes,Low,"Preservative, low toxicity",Yes,Yes,7,CosDNA,7,7,7,7,7
+Iodopropynyl Butylcarbamate,Iodopropynyl Butylcarbamate,Preservative,,,,0,0,No,No,Yes,High,"Strong preservative, not for face or children",Yes,Yes,3,EWG,3,3,3,1,3
+Methylisothiazolinone,Methylisothiazolinone,Preservative,,,,0,0,No,No,No,High,"Strong sensitizer, banned in EU leave-on",No,Yes,2,EU/EWG,2,2,2,1,2
+Methylchloroisothiazolinone,Methylchloroisothiazolinone,Preservative,,,,0,0,No,No,No,High,"Strong sensitizer, banned EU leave-on",No,Yes,2,EU/EWG,2,2,2,1,2
+BHA,Butylated Hydroxyanisole,Antioxidant,,,,0,0,No,No,Yes,High,"Possible carcinogen, endocrine disruptor",Yes,Yes,3,EWG/EU,3,3,3,3,3
+BHT,Butylated Hydroxytoluene,Antioxidant,,,,0,0,Yes,Yes,Yes,Low,"Synthetic antioxidant, low concern at cosmetic levels",Yes,Yes,6,CosDNA/EWG,6,6,6,6,6
+Sodium Sulfate,Sodium Sulfate,Filler,,,,0,0,No,No,Yes,Low,Can be drying and irritating,Yes,Yes,5,CosDNA,5,5,5,5,5
+Magnesium Sulfate,Magnesium Sulfate,Filler,,,,0,0,Yes,Yes,Yes,,"Skin conditioning, Epsom salt",Yes,Yes,8,CosDNA,8,8,8,8,8
+Cetyl PEG/PPG-10/1 Dimethicone,Cetyl PEG/PPG-10/1 Dimethicone,Emulsifier,,,,0,0,Yes,Yes,Yes,,"Silicone emulsifier, W/O",Yes,Yes,8,CosDNA,8,8,8,8,8
+Aluminium Starch Octenylsuccinate,Aluminium Starch Octenylsuccinate,Thickener,,,,0,0,Yes,Yes,Yes,,"Absorbs oil, mattifying",Yes,Yes,7,CosDNA,8,7,7,7,7
+Kaolin,Kaolin,Thickener,,,,0,0,Yes,Yes,Yes,,"Clay, absorbs sebum, mattifying",Yes,Yes,8,CosDNA,9,8,8,8,8
+Bentonite,Bentonite,Thickener,,,,0,0,Yes,Yes,Yes,,"Clay, oil-absorbing",Yes,Yes,8,CosDNA,9,8,8,8,8
+Magnesium Aluminum Silicate,Magnesium Aluminum Silicate,Thickener,,,,0,0,Yes,Yes,Yes,,Mineral thickener,Yes,Yes,8,CosDNA,9,8,8,8,8
+Talc,Talc,Thickener,,,,0,0,Yes,Yes,Yes,Low,"Mineral powder, inhalation concern in sprays",Yes,Yes,7,FDA/EWG,7,7,7,7,7
+Nylon-12,Nylon-12,Texture Agent,,,,0,0,Yes,Yes,Yes,,Smooth skin feel,Yes,Yes,8,CosDNA,9,8,8,8,8
+Boron Nitride,Boron Nitride,Texture Agent,,,,0,0,Yes,Yes,Yes,,"Optical blurring, silky texture",Yes,Yes,9,CosDNA,10,9,9,9,9
+Polymethylsilsesquioxane,Polymethylsilsesquioxane,Texture Agent,,,,0,0,Yes,Yes,Yes,,"Silicone powder, soft focus",Yes,Yes,8,CosDNA,9,8,8,8,8
+Cetyl Esters,Cetyl Esters,Emollient,,,,0,0,Yes,Yes,Yes,,"Synthetic wax, emollient",Yes,Yes,8,CosDNA,8,8,8,8,8
+Hydrogenated Polyisobutene,Hydrogenated Polyisobutene,Emollient,,,,0,0,Yes,Yes,Yes,,Lightweight emollient,Yes,Yes,8,CosDNA,8,8,8,8,8
+Tricaprylin,Tricaprylin,Emollient,,,,0,0,Yes,Yes,Yes,,Lightweight oil,Yes,Yes,8,CosDNA,8,8,8,8,8
+Tridecyl Salicylate,Tridecyl Salicylate,Emollient,,,,0,0,Yes,Yes,Yes,,Emollient with SPF boosting,Yes,Yes,7,CosDNA,7,7,7,7,7
+Pentaerythrityl Tetraisostearate,Pentaerythrityl Tetraisostearate,Emollient,,,,0,0,Yes,Yes,Yes,,Rich emollient,Yes,Yes,8,CosDNA,8,8,8,8,8
+Lauryl Glucoside,Lauryl Glucoside,Emulsifier,,,,0,0,Yes,Yes,Yes,,"Gentle surfactant, derived from glucose",Yes,Yes,9,CosDNA,9,9,9,9,9
+Cocamidopropyl Betaine,Cocamidopropyl Betaine,Emulsifier,,,,0,0,Yes,Yes,Yes,Low,"Mild surfactant, possible sensitizer",Yes,Yes,7,CosDNA,7,7,7,7,7
+Sodium Cocoyl Isethionate,Sodium Cocoyl Isethionate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Gentle cleansing agent,Yes,Yes,9,CosDNA,9,9,9,9,9
+Coco Glucoside,Coco Glucoside,Emulsifier,,,,0,0,Yes,Yes,Yes,,Natural surfactant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Sodium Lauryl Sulfate,Sodium Lauryl Sulfate,Emulsifier,,,,0,0,No,No,No,High,"Harsh surfactant, strips skin barrier",Yes,Yes,3,CosDNA/EWG,3,3,3,3,3
+Sodium Laureth Sulfate,Sodium Laureth Sulfate,Emulsifier,,,,0,0,No,No,Yes,Medium,Milder than SLS but still stripping,Yes,Yes,5,CosDNA/EWG,5,5,5,5,5
+Hexylresorcinol,Hexylresorcinol,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, more potent than kojic",Yes,Yes,8,CosDNA,8,8,8,8,8
+Diacetyl Boldine,Diacetyl Boldine,Skin Active,,,,0,0,Yes,Yes,Yes,,Brightening agent,Yes,Yes,8,CosDNA,8,8,8,8,8
+Undecylenoyl Phenylalanine,Undecylenoyl Phenylalanine,Skin Active,,,,0,0,Yes,Yes,Yes,,Skin tone evening,Yes,Yes,8,CosDNA,8,8,8,8,8
+Copper Peptide,Copper Tripeptide-1,Skin Active,,,,0,0,Yes,Yes,Yes,,"Wound healing, anti-ageing",Yes,Yes,9,CosDNA,9,9,9,9,9
+EGF,Sh-Oligopeptide-1,Skin Active,,,,0,0,Yes,Yes,Yes,,"Epidermal growth factor, regenerative",Yes,Yes,9,CosDNA,9,9,9,9,9
+Stem Cell Extract,Apple Stem Cell Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Anti-ageing, cell renewal",Yes,Yes,8,CosDNA,8,8,8,8,8
+Seaweed Extract,Fucus Vesiculosus Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,Marine antioxidant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sophora Japonica Extract,Sophora Japonica Flower Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Rutin-rich, antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Lotus Extract,Nelumbo Nucifera Flower Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Antioxidant, brightening",Yes,Yes,8,CosDNA,8,8,8,8,8
+Ginseng Extract,Panax Ginseng Root Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,Anti-ageing adaptogen,Yes,Yes,8,CosDNA,8,8,8,8,8
+Mugwort Extract,Artemisia Vulgaris Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Soothing, K-beauty staple",Yes,Yes,8,CosDNA,8,9,8,8,8
+Snail Secretion Filtrate,Snail Secretion Filtrate,Skin Active,,,,0,0,Yes,Yes,Yes,,"Wound healing, hydration",Yes,Yes,8,CosDNA,8,8,8,8,8
+Propolis Extract,Propolis Extract,Skin Active,,,,0,0,Yes,Yes,Yes,Low,"Antimicrobial, allergy risk for bee allergies",Yes,Yes,7,CosDNA,7,7,7,7,7
+Honey,Mel,Humectant,,,,0,0,Yes,Yes,Yes,,Natural humectant and antimicrobial,Yes,Yes,8,CosDNA,8,9,8,8,8
+Royal Jelly,Royal Jelly,Skin Active,,,,0,0,Yes,Yes,Yes,Low,"Bee product, sensitizer risk",Yes,Yes,7,CosDNA,7,7,7,7,7
+Oat Beta Glucan,Beta-Glucan,Humectant,,,,0,0,Yes,Yes,Yes,,"Immunomodulating, soothing",Yes,Yes,9,CosDNA,9,10,9,10,9
+Sodium Hyaluronate Crosspolymer,Sodium Hyaluronate Crosspolymer,Humectant,,,,0,0,Yes,Yes,Yes,,"Long-lasting HA, deeper hydration",Yes,Yes,10,CosDNA,10,10,10,10,10
+Hydrolyzed Hyaluronic Acid,Hydrolyzed Hyaluronic Acid,Humectant,,,,0,0,Yes,Yes,Yes,,Smaller HA for deeper penetration,Yes,Yes,10,CosDNA,10,10,10,10,10
+Polyglutamic Acid,Polyglutamic Acid,Humectant,,,,0,0,Yes,Yes,Yes,,4x more moisturising than HA,Yes,Yes,10,CosDNA,10,10,10,10,10
+Ectoin,Ectoin,Humectant,,,,0,0,Yes,Yes,Yes,,"Extremophile-derived, exceptional moisturiser",Yes,Yes,10,CosDNA,10,10,10,10,10
+Erythritol,Erythritol,Humectant,,,,0,0,Yes,Yes,Yes,,Sugar alcohol humectant,Yes,Yes,9,CosDNA,9,10,9,9,9
+Pentavitin,Saccharide Isomerate,Humectant,,,,0,0,Yes,Yes,Yes,,"Binds to keratin, long-lasting moisture",Yes,Yes,9,CosDNA,9,10,9,9,9
+Aquaporin Booster,Tremella Fuciformis Sporocarp Extract,Humectant,,,,0,0,Yes,Yes,Yes,,Enhances skin water channels,Yes,Yes,9,CosDNA,9,10,9,9,9
+Fungal Ferment,Aspergillus Ferment,Skin Active,,,,0,0,Yes,Yes,Yes,,Brightening enzymes,Yes,Yes,8,CosDNA,8,8,8,8,8
+Galactomyces Ferment,Galactomyces Ferment Filtrate,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, pore refining, K-beauty",Yes,Yes,9,CosDNA,9,9,9,9,9
+Pitera,Galactomyces Ferment Filtrate,Skin Active,,,,0,0,Yes,Yes,Yes,,SK-II brand name for Galactomyces,Yes,Yes,9,CosDNA,9,9,9,9,9
+Bifida Ferment Lysate,Bifida Ferment Lysate,Skin Active,,,,0,0,Yes,Yes,Yes,,"Probiotic, barrier strengthening",Yes,Yes,9,CosDNA,9,9,9,9,9
+Fermented Rice Water,Oryza Sativa Fermented,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, traditional remedy",Yes,Yes,8,CosDNA,8,8,8,8,8
+Kombucha Filtrate,Kombucha Filtrate,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Fermented tea, antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Tannins,Tannins,Antioxidant,,,,0,0,No,No,Yes,Low,"Astringent, may irritate sensitive skin",Yes,Yes,6,CosDNA,6,6,6,6,6
+Phytoene,Phytoene,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Carotenoid, photoprotective",Yes,Yes,8,CosDNA,8,8,8,8,8
+Lycopene,Lycopene,Antioxidant,,,,0,0,Yes,Yes,Yes,,Tomato-derived antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Beta-Carotene,Beta-Carotene,Antioxidant,,,,0,0,Yes,Yes,Yes,,Provitamin A antioxidant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Lutein,Lutein,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Carotenoid, blue light protection",Yes,Yes,8,CosDNA,8,8,8,8,8
+Zinc Oxide 25%,Zinc Oxide,UV Filter - Mineral,Broad,Physical,Yes,5,5,Yes,Yes,Yes,,,Yes,Yes,9,FDA/EWG,9,9,9,9,9
+Micronized Zinc Oxide,Zinc Oxide,UV Filter - Mineral,Broad,Physical,Yes,5,5,Yes,Yes,Yes,Low,"Small particle size, environmental concern",Yes,Yes,8,EWG,8,8,8,7,8
+Coated Titanium Dioxide,Titanium Dioxide,UV Filter - Mineral,UVB,Physical,Yes,3,5,Yes,Yes,Yes,,,Yes,Yes,8,FDA,8,8,8,8,8
+Aluminum Oxide Coated Zinc Oxide,Zinc Oxide,UV Filter - Mineral,Broad,Physical,Yes,5,5,Yes,Yes,Yes,,Coated for stability,Yes,Yes,9,FDA,9,9,9,9,9
+Polysilicone-15,Polysilicone-15,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,,"Silicone-based, photostable",Yes,No,8,EU,8,7,8,8,8
+Diethylamino Hydroxybenzoyl Hexyl Benzoate,Diethylamino Hydroxybenzoyl Hexyl Benzoate,UV Filter - Chemical,UVA,Chemical,Yes,5,1,Yes,Yes,Yes,,Excellent photostable UVA filter,Yes,No,9,EU,9,9,9,9,9
+Ethylhexyl Dimethyl PABA,Ethylhexyl Dimethyl PABA,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,Medium,"PABA derivative, allergy risk",Yes,Yes,5,FDA,5,5,5,3,5
+Camphor Benzalkonium Methosulfate,Camphor Benzalkonium Methosulfate,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,Low,"EU approved, limited data",Yes,No,6,EU,6,6,6,5,6
+Phenylbenzimidazole Sulfonic Acid,Phenylbenzimidazole Sulfonic Acid,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,,"Water-soluble, good UVB",Yes,Yes,7,FDA,7,7,7,7,7
+Dimethiconol,Dimethiconol,Emollient,,,,0,0,Yes,Yes,Yes,,Silicone polymer,Yes,Yes,8,CosDNA,7,8,7,8,8
+Phenyl Trimethicone,Phenyl Trimethicone,Emollient,,,,0,0,Yes,Yes,Yes,,"Adds shine, lightweight",Yes,Yes,8,CosDNA,7,8,7,8,8
+Amodimethicone,Amodimethicone,Emollient,,,,0,0,Yes,Yes,Yes,,Amino-functional silicone,Yes,Yes,8,CosDNA,7,8,7,8,8
+Stearoxy Dimethicone,Stearoxy Dimethicone,Emollient,,,,0,0,Yes,Yes,Yes,,Silicone wax emollient,Yes,Yes,8,CosDNA,6,8,7,8,8
+Bis-PEG/PPG-16/16 PEG/PPG-16/16 Dimethicone,Bis-PEG/PPG-16/16 Dimethicone,Emulsifier,,,,0,0,Yes,Yes,Yes,Low,PEG-silicone emulsifier,Yes,Yes,7,CosDNA,7,7,7,7,7
+Hydroxy-Terminated Polydimethylsiloxane,Dimethicone,Emollient,,,,0,0,Yes,Yes,Yes,,High MW silicone film,Yes,Yes,8,CosDNA,7,8,7,8,8
+Dimethicone Crosspolymer,Dimethicone Crosspolymer,Thickener,,,,0,0,Yes,Yes,Yes,,"Silicone elastomer, luxurious texture",Yes,Yes,9,CosDNA,8,9,8,9,9
+Cyclotetradimethylsiloxane,Cyclotetradimethylsiloxane,Solvent,,,,0,0,Yes,Yes,Yes,Low,"Volatile silicone, environmental concern",Yes,Yes,6,EU,6,6,6,6,6
+Trimethylsiloxyphenyl Dimethicone,Trimethylsiloxyphenyl Dimethicone,Emollient,,,,0,0,Yes,Yes,Yes,,"Phenyl silicone, adds radiance",Yes,Yes,8,CosDNA,7,8,7,8,8
+Licorice Extract,Glycyrrhiza Uralensis Root Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Brightening, anti-inflammatory",Yes,Yes,9,CosDNA,9,9,9,9,9
+Bearberry Extract,Arctostaphylos Uva Ursi Leaf Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Arbutin source, brightening",Yes,Yes,8,CosDNA,8,8,8,8,8
+Mulberry Extract,Morus Alba Root Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Tyrosinase inhibitor, brightening",Yes,Yes,8,CosDNA,8,8,8,8,8
+Papaya Extract,Carica Papaya Fruit Extract,Skin Active,,,,0,0,Yes,Yes,Yes,Low,"Papain enzyme, avoid sensitive skin",Yes,Yes,7,CosDNA,8,6,7,5,7
+Pineapple Extract,Ananas Sativus Fruit Extract,Skin Active,,,,0,0,Yes,Yes,Yes,Low,"Bromelain enzyme, exfoliating",Yes,Yes,7,CosDNA,8,5,7,4,7
+Watercress Extract,Nasturtium Officinale Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,Rich in vitamins,Yes,Yes,8,CosDNA,8,8,8,8,8
+Lemon Extract,Citrus Limon Fruit Extract,Skin Active,,,,0,0,No,No,Yes,Medium,"Photosensitising, irritating",Yes,Yes,5,CosDNA,5,4,5,3,5
+Grapefruit Extract,Citrus Grandis Fruit Extract,Skin Active,,,,0,0,No,No,Yes,Medium,Photosensitising citrus,Yes,Yes,5,CosDNA,5,4,5,3,5
+Rosemary Extract,Rosmarinus Officinalis Leaf Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,Low,"Antioxidant, possible sensitizer",Yes,Yes,7,CosDNA,7,7,7,6,7
+Lavender Extract,Lavandula Angustifolia Extract,Soothing Agent,,,,0,0,No,No,Yes,Medium,"Fragrance component, sensitizer",Yes,Yes,5,CosDNA,5,5,5,3,5
+Peppermint Extract,Mentha Piperita Leaf Extract,Skin Active,,,,0,0,No,No,Yes,Medium,"Cooling, irritating for sensitive",Yes,Yes,5,CosDNA,5,4,5,2,5
+Frankincense Extract,Boswellia Serrata Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Anti-inflammatory, anti-ageing",Yes,Yes,8,CosDNA,8,8,8,8,8
+Magnolia Extract,Magnolia Officinalis Bark Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,Honokiol antioxidant,Yes,Yes,8,CosDNA,8,8,8,8,8
+White Willow Bark,Salix Alba Bark Extract,Skin Active,,,,0,0,No,No,Yes,Low,"Natural BHA, avoid sensitive",Yes,Yes,7,CosDNA,8,5,7,4,7
+Wakame Extract,Undaria Pinnatifida Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Marine algae, firming",Yes,Yes,8,CosDNA,8,8,8,8,8
+Spirulina Extract,Spirulina Platensis Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,Microalgae antioxidant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Chlorella Extract,Chlorella Vulgaris Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Green algae, detoxifying",Yes,Yes,8,CosDNA,8,8,8,8,8
+Raspberry Seed Oil,Rubus Idaeus Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Natural UV scatter, antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Pomegranate Seed Oil,Punica Granatum Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"High punicic acid, anti-ageing",Yes,Yes,9,CosDNA,9,9,9,9,9
+Sea Buckthorn CO2 Extract,Hippophae Rhamnoides CO2 Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,Highly concentrated carotenoids,Yes,Yes,9,CosDNA,9,9,9,9,9
+Baobab Oil,Adansonia Digitata Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, rich in omega 3/6/9",Yes,Yes,9,CosDNA,9,9,9,9,9
+Moringa Oil,Moringa Oleifera Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Behenic acid, oxidation stable",Yes,Yes,9,CosDNA,8,9,8,9,9
+Passion Fruit Oil,Passiflora Incarnata Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"High linoleic, lightweight",Yes,Yes,8,CosDNA,9,7,8,8,8
+Chia Seed Oil,Salvia Hispanica Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,Highest plant omega-3 source,Yes,Yes,9,CosDNA,9,8,9,9,9
+Prickly Pear Oil,Opuntia Ficus-Indica Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Rare oil, high Vitamin E",Yes,Yes,9,CosDNA,9,8,9,9,9
+Bakuchiol Seed Extract,Psoralea Corylifolia Seed Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,Natural retinol alternative,Yes,Yes,9,CosDNA,9,9,9,9,9
+Watermelon Seed Oil,Citrullus Lanatus Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"Lightweight, non-comedogenic",Yes,Yes,9,CosDNA,9,8,9,9,9
+Kiwi Seed Oil,Actinidia Chinensis Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,High alpha-linolenic acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Broccoli Seed Oil,Brassica Oleracea Italica Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,"High erucic acid, dry skin",Yes,Yes,8,CosDNA,7,9,8,8,8
+Perilla Seed Oil,Perilla Ocymoides Seed Oil,Emollient,,,,0,0,Yes,Yes,Yes,,Anti-inflammatory omega-3,Yes,Yes,8,CosDNA,8,8,8,9,8
+Inositol,Inositol,Humectant,,,,0,0,Yes,Yes,Yes,,"Vitamin B8, cell membrane support",Yes,Yes,9,CosDNA,9,9,9,9,9
+Xylitol,Xylitol,Humectant,,,,0,0,Yes,Yes,Yes,,"Sugar alcohol, microbiome friendly",Yes,Yes,9,CosDNA,9,9,9,9,9
+Fructooligosaccharides,Fructooligosaccharides,Humectant,,,,0,0,Yes,Yes,Yes,,"Prebiotic, microbiome support",Yes,Yes,9,CosDNA,9,9,9,9,9
+Pullulan,Pullulan,Film Former,,,,0,0,Yes,Yes,Yes,,"Natural polysaccharide, skin tightening",Yes,Yes,9,CosDNA,9,9,9,9,9
+Dextran,Dextran,Humectant,,,,0,0,Yes,Yes,Yes,,Polysaccharide humectant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sodium Hyaluronate Oligomers,Sodium Hyaluronate Oligomers,Humectant,,,,0,0,Yes,Yes,Yes,,"Very small HA, deepest penetration",Yes,Yes,10,CosDNA,10,10,10,10,10
+Acetyl Glucosamine,Acetyl Glucosamine,Skin Active,,,,0,0,Yes,Yes,Yes,,"HA precursor, brightening",Yes,Yes,9,CosDNA,9,9,9,9,9
+Glucosamine HCl,Glucosamine HCl,Skin Active,,,,0,0,Yes,Yes,Yes,,Hydration and brightening,Yes,Yes,8,CosDNA,8,8,8,8,8
+Pseudoalteromonas Ferment Extract,Pseudoalteromonas Ferment Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Marine ferment, anti-ageing",Yes,Yes,9,CosDNA,9,9,9,9,9
+Saccharomyces Ferment Filtrate,Saccharomyces Ferment Filtrate,Skin Active,,,,0,0,Yes,Yes,Yes,,"Yeast ferment, brightening",Yes,Yes,8,CosDNA,8,8,8,8,8
+Leuconostoc Ferment Filtrate,Leuconostoc Ferment Filtrate,Preservative,,,,0,0,Yes,Yes,Yes,,Natural preservative from fermentation,Yes,Yes,9,CosDNA,9,9,9,9,9
+Willow Herb Extract,Epilobium Angustifolium Flower/Leaf/Stem Extract,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Anti-inflammatory, reduces redness",Yes,Yes,9,CosDNA,9,9,9,9,9
+Sea Water,Aqua Marina,Humectant,,,,0,0,Yes,Yes,Yes,,Mineral-rich marine water,Yes,Yes,8,CosDNA,7,8,8,8,8
+Thermal Spring Water,Aqua,Soothing Agent,,,,0,0,Yes,Yes,Yes,,Soothing mineral water,Yes,Yes,9,CosDNA,9,9,9,9,9
+Rosa Damascena Flower Water,Rosa Damascena Flower Water,Soothing Agent,,,,0,0,No,No,Yes,Low,"Rose water, fragrance sensitizer risk",Yes,Yes,6,CosDNA,6,6,6,4,6
+Lavender Water,Lavandula Angustifolia Flower Water,Soothing Agent,,,,0,0,No,No,Yes,Medium,"Hydrosol, fragrance sensitizer",Yes,Yes,5,CosDNA,5,5,5,3,5
+Matricaria Flower Water,Chamomilla Recutita Flower Water,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Chamomile hydrosol, soothing",Yes,Yes,8,CosDNA,8,8,8,9,8
+Ascorbyl Glucoside,Ascorbyl Glucoside,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Stable Vitamin C, brightening",Yes,Yes,9,CosDNA,9,9,9,9,9
+Ascorbyl Tetraisopalmitate,Ascorbyl Tetraisopalmitate,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Oil-soluble Vitamin C, stable",Yes,Yes,9,CosDNA,8,9,9,9,9
+3-O-Ethyl Ascorbic Acid,3-O-Ethyl Ascorbic Acid,Antioxidant,,,,0,0,Yes,Yes,Yes,,Potent stable Vitamin C,Yes,Yes,9,CosDNA,9,9,9,9,9
+Magnesium Ascorbyl Phosphate,Magnesium Ascorbyl Phosphate,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Stable Vitamin C, skin brightening",Yes,Yes,9,CosDNA,9,9,9,9,9
+Tocotrienol,Tocotrienol,Antioxidant,,,,0,0,Yes,Yes,Yes,,Superior form of Vitamin E,Yes,Yes,9,CosDNA,9,9,9,9,9
+Tocophersolan,Tocophersolan,Antioxidant,,,,0,0,Yes,Yes,Yes,,Water-soluble Vitamin E,Yes,Yes,8,CosDNA,8,8,8,8,8
+Pyridoxine HCl,Pyridoxine HCl,Skin Active,,,,0,0,Yes,Yes,Yes,,"Vitamin B6, sebum control",Yes,Yes,8,CosDNA,9,7,8,8,8
+Riboflavin,Riboflavin,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Vitamin B2, antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Biotin,Biotin,Skin Active,,,,0,0,Yes,Yes,Yes,,"Vitamin B7, barrier support",Yes,Yes,8,CosDNA,8,8,8,8,8
+Cholecalciferol,Cholecalciferol,Skin Active,,,,0,0,Yes,Yes,Yes,,"Vitamin D3, barrier repair",Yes,Yes,8,CosDNA,8,8,8,8,8
+Menadione,Menadione,Skin Active,,,,0,0,Yes,Yes,Yes,Low,"Vitamin K3, bruising/redness",Yes,Yes,7,CosDNA,7,7,7,6,7
+Phylloquinone,Phylloquinone,Skin Active,,,,0,0,Yes,Yes,Yes,,"Vitamin K1, dark circles",Yes,Yes,8,CosDNA,8,8,8,8,8
+Argireline,Acetyl Hexapeptide-3,Skin Active,,,,0,0,Yes,Yes,Yes,,"Botox-like peptide, expression lines",Yes,Yes,9,CosDNA,9,9,9,9,9
+Leuphasyl,Pentapeptide-18,Skin Active,,,,0,0,Yes,Yes,Yes,,Neurotransmitter inhibitor peptide,Yes,Yes,9,CosDNA,9,9,9,9,9
+SYN-AKE,Dipeptide Diaminobutyroyl Benzylamide Diacetate,Skin Active,,,,0,0,Yes,Yes,Yes,,"Snake venom peptide, anti-wrinkle",Yes,Yes,9,CosDNA,9,9,9,9,9
+Matrixyl 3000,Palmitoyl Tripeptide-1 & Palmitoyl Tetrapeptide-7,Skin Active,,,,0,0,Yes,Yes,Yes,,Collagen stimulation peptide blend,Yes,Yes,9,CosDNA,9,9,9,9,9
+SNAP-8,Acetyl Octapeptide-3,Skin Active,,,,0,0,Yes,Yes,Yes,,8 amino acid wrinkle peptide,Yes,Yes,9,CosDNA,9,9,9,9,9
+Leupeptin,Acetyl Tetrapeptide-9,Skin Active,,,,0,0,Yes,Yes,Yes,,Lumican stimulating peptide,Yes,Yes,8,CosDNA,8,8,8,8,8
+Tripeptide-1,Tripeptide-1,Skin Active,,,,0,0,Yes,Yes,Yes,,GHK copper peptide precursor,Yes,Yes,9,CosDNA,9,9,9,9,9
+Hexapeptide-9,Hexapeptide-9,Skin Active,,,,0,0,Yes,Yes,Yes,,Collagen IV stimulation,Yes,Yes,8,CosDNA,8,8,8,8,8
+Myristoyl Pentapeptide-17,Myristoyl Pentapeptide-17,Skin Active,,,,0,0,Yes,Yes,Yes,,Lash growth peptide,Yes,Yes,8,CosDNA,8,8,8,8,8
+Palmitoyl Hexapeptide-52,Palmitoyl Hexapeptide-52,Skin Active,,,,0,0,Yes,Yes,Yes,,Skin renewal peptide,Yes,Yes,8,CosDNA,8,8,8,8,8
+Quaternium-15,Quaternium-15,Preservative,,,,0,0,No,No,No,High,"Strong formaldehyde releaser, carcinogen",No,Yes,1,EWG,1,1,1,1,1
+Diazolidinyl Urea,Diazolidinyl Urea,Preservative,,,,0,0,No,No,No,High,"Formaldehyde releaser, sensitizer",Yes,Yes,2,EWG,2,2,2,2,2
+Bromopol,Bronopol,Preservative,,,,0,0,No,No,Yes,High,"Formaldehyde releaser, nitrosamine formation",Yes,Yes,2,EWG,2,2,2,2,2
+Thimerosal,Thimerosal,Preservative,,,,0,0,No,No,No,High,"Mercury-based, banned EU cosmetics",No,No,1,EWG/EU,1,1,1,1,1
+Triclocarban,Triclocarban,Preservative,,,,0,0,No,No,No,High,"Antimicrobial, endocrine disruptor, banned FDA",No,No,1,FDA/EWG,1,1,1,1,1
+Triclosan,Triclosan,Preservative,,,,0,0,No,No,No,High,"Endocrine disruptor, banned FDA rinse-off",No,No,1,FDA/EWG,1,1,1,1,1
+Chloroxylenol,Chloroxylenol,Preservative,,,,0,0,No,No,Yes,High,"Antimicrobial, sensitizer, toxic to aquatic life",Yes,Yes,3,EWG,3,3,3,2,3
+MIT,Methylisothiazolinone,Preservative,,,,0,0,No,No,No,High,"Strong contact allergen, EU banned leave-on",No,Yes,1,EU/EWG,1,1,1,1,1
+Zinc Pyrithione,Zinc Pyrithione,Preservative,,,,0,0,Yes,Yes,Yes,Medium,"Anti-dandruff, aquatic toxicity",Yes,Yes,5,EWG,5,5,5,4,5
+Climbazole,Climbazole,Preservative,,,,0,0,Yes,Yes,Yes,Medium,Antifungal preservative,Yes,Yes,5,CosDNA,5,5,5,4,5
+DEA,Diethanolamine,Emulsifier,,,,0,0,No,No,No,High,"Nitrosamine formation, carcinogen risk",No,Yes,1,EWG,1,1,1,1,1
+TEA,Triethanolamine,pH Adjuster,,,,0,0,Yes,Yes,Yes,Medium,Nitrosamine risk at high pH,Yes,Yes,5,CosDNA/EWG,5,5,5,4,5
+MEA,Cocamide MEA,Emulsifier,,,,0,0,No,No,Yes,High,"Carcinogen risk, nitrosamine",No,Yes,2,EWG,2,2,2,2,2
+Dibutyl Phthalate,Dibutyl Phthalate,Solvent,,,,0,0,No,No,No,High,"Endocrine disruptor, banned EU",No,No,1,EU/EWG,1,1,1,1,1
+Diethyl Phthalate,Diethyl Phthalate,Solvent,,,,0,0,No,No,No,High,"Phthalate, hormone disruption",No,Yes,1,EWG,1,1,1,1,1
+Butyl Benzyl Phthalate,Butyl Benzyl Phthalate,Solvent,,,,0,0,No,No,No,High,"Phthalate, banned EU",No,No,1,EU/EWG,1,1,1,1,1
+Coal Tar,Coal Tar,Skin Active,,,,0,0,No,No,No,High,"Carcinogen, banned EU cosmetics",No,Yes,1,EU/EWG,1,1,1,1,1
+Resorcinol,Resorcinol,Skin Active,,,,0,0,No,No,Yes,High,"Endocrine disruptor, EU restricted",Yes,Yes,3,EWG/EU,3,3,3,2,3
+Bisphenol A,Bisphenol A,Filler,,,,0,0,No,No,No,High,"Endocrine disruptor, banned EU",No,No,1,EU/EWG,1,1,1,1,1
+Styrene,Styrene,Film Former,,,,0,0,No,No,No,High,"Carcinogen, neurotoxin",No,No,1,EWG,1,1,1,1,1
+Lead Acetate,Lead Acetate,Pigment,,,,0,0,No,No,No,High,"Neurotoxin, banned EU and FDA",No,No,1,FDA/EU,1,1,1,1,1
+Mercury Compounds,Mercury,Preservative,,,,0,0,No,No,No,High,"Neurotoxin, banned globally",No,No,1,FDA/EU,1,1,1,1,1
+Formaldehyde,Formaldehyde,Preservative,,,,0,0,No,No,No,High,"Carcinogen, banned EU cosmetics",No,No,1,EU/EWG,1,1,1,1,1
+Disodium Lauryl Sulfosuccinate,Disodium Lauryl Sulfosuccinate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Gentle surfactant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sodium Lauroyl Sarcosinate,Sodium Lauroyl Sarcosinate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Mild amino acid surfactant,Yes,Yes,8,CosDNA,8,7,8,8,8
+Sodium Lauroyl Glutamate,Sodium Lauroyl Glutamate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Very gentle amino acid cleanser,Yes,Yes,9,CosDNA,9,9,9,9,9
+Sodium Lauroyl Methyl Isethionate,Sodium Lauroyl Methyl Isethionate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Gentle synthetic surfactant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Potassium Cocoyl Glycinate,Potassium Cocoyl Glycinate,Emulsifier,,,,0,0,Yes,Yes,Yes,,"Amino acid-based, very gentle",Yes,Yes,9,CosDNA,9,9,9,9,9
+Sodium Methyl Cocoyl Taurate,Sodium Methyl Cocoyl Taurate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Mild taurate surfactant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Decyl Glucoside,Decyl Glucoside,Emulsifier,,,,0,0,Yes,Yes,Yes,,Gentle alkyl glucoside,Yes,Yes,9,CosDNA,9,9,9,9,9
+Caprylyl/Capryl Glucoside,Caprylyl/Capryl Glucoside,Emulsifier,,,,0,0,Yes,Yes,Yes,,Natural surfactant blend,Yes,Yes,9,CosDNA,9,9,9,9,9
+Zinc Sulfate,Zinc Sulfate,Skin Active,,,,0,0,Yes,Yes,Yes,,"Astringent, antiseptic",Yes,Yes,7,CosDNA,8,6,7,6,7
+Copper Sulfate,Copper Sulfate,Skin Active,,,,0,0,Yes,Yes,Yes,Low,Antimicrobial mineral,Yes,Yes,6,CosDNA,6,6,6,5,6
+Magnesium Chloride,Magnesium Chloride,Humectant,,,,0,0,Yes,Yes,Yes,,Mineral humectant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sodium Chloride,Sodium Chloride,Thickener,,,,0,0,Yes,Yes,Yes,,"Salt, thickener",Yes,Yes,7,CosDNA,6,7,7,6,7
+Potassium Chloride,Potassium Chloride,Thickener,,,,0,0,Yes,Yes,Yes,,Mineral salt,Yes,Yes,7,CosDNA,7,7,7,7,7
+Calcium Chloride,Calcium Chloride,Thickener,,,,0,0,Yes,Yes,Yes,,"Mineral salt, emulsion stabiliser",Yes,Yes,7,CosDNA,7,7,7,7,7
+Ammonium Chloride,Ammonium Chloride,Thickener,,,,0,0,Yes,Yes,Yes,Low,"Salt thickener, mild irritant",Yes,Yes,6,CosDNA,6,6,6,5,6
+Colloidal Silver,Colloidal Silver,Preservative,,,,0,0,Yes,Yes,Yes,Medium,"Antimicrobial, argyria risk",Yes,Yes,4,EWG,4,4,4,3,4
+Gold,Gold,Skin Active,,,,0,0,Yes,Yes,Yes,,"Anti-inflammatory, luxury ingredient",Yes,Yes,7,CosDNA,7,7,7,7,7
+Platinum,Platinum,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Antioxidant, luxury ingredient",Yes,Yes,7,CosDNA,7,7,7,7,7
+Colloidal Gold,Colloidal Gold,Skin Active,,,,0,0,Yes,Yes,Yes,,"Nano-gold, anti-inflammatory",Yes,Yes,7,CosDNA,7,7,7,7,7
+Hydrogenated Lecithin,Hydrogenated Lecithin,Emulsifier,,,,0,0,Yes,Yes,Yes,,Stable phospholipid emulsifier,Yes,Yes,9,CosDNA,9,9,9,9,9
+Sodium Stearoyl Glutamate,Sodium Stearoyl Glutamate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Amino acid emulsifier,Yes,Yes,9,CosDNA,9,9,9,9,9
+Glyceryl Laurate,Glyceryl Laurate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Antimicrobial emulsifier,Yes,Yes,8,CosDNA,7,8,8,8,8
+Polyglyceryl-3 Methylglucose Distearate,Polyglyceryl-3 Methylglucose Distearate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Natural mild emulsifier,Yes,Yes,9,CosDNA,9,9,9,9,9
+Polyglyceryl-2 Stearate,Polyglyceryl-2 Stearate,Emulsifier,,,,0,0,Yes,Yes,Yes,,W/O emulsifier,Yes,Yes,8,CosDNA,8,8,8,8,8
+Polyglyceryl-6 Distearate,Polyglyceryl-6 Distearate,Emulsifier,,,,0,0,Yes,Yes,Yes,,Natural emulsifier,Yes,Yes,8,CosDNA,8,8,8,8,8
+Isostearic Acid,Isostearic Acid,Emollient,,,,0,0,Yes,Yes,Yes,,Branched fatty acid emollient,Yes,Yes,8,CosDNA,7,8,8,8,8
+Lauric Acid,Lauric Acid,Emollient,,,,0,0,No,No,Yes,Low,"Comedogenic, found in coconut oil",Yes,Yes,6,CosDNA,4,7,6,6,6
+Myristic Acid,Myristic Acid,Emollient,,,,0,0,No,No,Yes,Low,"Fatty acid, moderate comedogenicity",Yes,Yes,6,CosDNA,5,7,6,6,6
+Behenic Acid,Behenic Acid,Emollient,,,,0,0,Yes,Yes,Yes,,"Long chain fatty acid, skin conditioning",Yes,Yes,8,CosDNA,8,8,8,8,8
+Myristyl Alcohol,Myristyl Alcohol,Emollient,,,,0,0,Yes,Yes,Yes,,"Fatty alcohol, emollient",Yes,Yes,8,CosDNA,7,8,8,8,8
+Stearic Acid SE,Stearic Acid,Emollient,,,,0,0,Yes,Yes,Yes,,Self-emulsifying stearic acid,Yes,Yes,8,CosDNA,7,8,8,8,8
+Spilanthol,Spilanthes Acmella Flower Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,Botox-like plant extract,Yes,Yes,8,CosDNA,8,8,8,8,8
+Acmella Oleracea Extract,Acmella Oleracea Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,Muscle relaxing plant peptide,Yes,Yes,8,CosDNA,8,8,8,8,8
+Plankton Extract,Plankton Extract,Antioxidant,,,,0,0,Yes,Yes,Yes,,Marine antioxidant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Volufiline,Sarsasapogenin,Skin Active,,,,0,0,Yes,Yes,Yes,,"Lipid synthesis, plumping",Yes,Yes,8,CosDNA,8,8,8,8,8
+Hydroxypinacolone Retinoate,Hydroxypinacolone Retinoate,Skin Active,,,,0,0,Yes,Yes,Yes,Low,"Gentlest retinoid ester, anti-ageing",Yes,Yes,8,CosDNA,8,7,8,7,8
+Granactive Retinoid,Hydroxypinacolone Retinoate,Skin Active,,,,0,0,Yes,Yes,Yes,Low,Brand name for HPR retinoid,Yes,Yes,8,CosDNA,8,7,8,7,8
+Ethyl Linoleate,Ethyl Linoleate,Emollient,,,,0,0,Yes,Yes,Yes,,Sebum-identical ester,Yes,Yes,9,CosDNA,9,8,9,9,9
+Bisabolol Oxide,Bisabolol Oxide,Soothing Agent,,,,0,0,Yes,Yes,Yes,,"Oxidised bisabolol, anti-inflammatory",Yes,Yes,8,CosDNA,8,8,8,9,8
+Escin,Aesculus Hippocastanum Seed Extract,Skin Active,,,,0,0,Yes,Yes,Yes,,"Horse chestnut, anti-oedema",Yes,Yes,8,CosDNA,8,8,8,8,8
+Diosmin,Diosmin,Skin Active,,,,0,0,Yes,Yes,Yes,,"Flavonoid, capillary protection",Yes,Yes,8,CosDNA,8,8,8,8,8
+Quercetin,Quercetin,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Flavonoid antioxidant, anti-inflammatory",Yes,Yes,9,CosDNA,9,9,9,9,9
+Kaempferol,Kaempferol,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Flavonoid, antiallergenic",Yes,Yes,8,CosDNA,8,8,8,8,8
+Rutin,Rutin,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Bioflavonoid, strengthens capillaries",Yes,Yes,8,CosDNA,8,8,8,8,8
+Ellagic Acid,Ellagic Acid,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Polyphenol, brightening antioxidant",Yes,Yes,9,CosDNA,9,9,9,9,9
+Pterostilbene,Pterostilbene,Antioxidant,,,,0,0,Yes,Yes,Yes,,More bioavailable than resveratrol,Yes,Yes,9,CosDNA,9,9,9,9,9
+Phloretin,Phloretin,Antioxidant,,,,0,0,Yes,Yes,Yes,,Apple-derived flavonoid,Yes,Yes,9,CosDNA,9,9,9,9,9
+Ergothioneine,Ergothioneine,Antioxidant,,,,0,0,Yes,Yes,Yes,,Mushroom-derived super antioxidant,Yes,Yes,10,CosDNA,10,10,10,10,10
+Carnosine,Carnosine,Antioxidant,,,,0,0,Yes,Yes,Yes,,"Dipeptide antioxidant, anti-glycation",Yes,Yes,9,CosDNA,9,9,9,9,9
+Glutaredoxin,Thioredoxin,Antioxidant,,,,0,0,Yes,Yes,Yes,,Cellular antioxidant enzyme,Yes,Yes,8,CosDNA,8,8,8,8,8
+Superoxide Dismutase,Superoxide Dismutase,Antioxidant,,,,0,0,Yes,Yes,Yes,,Enzyme antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Acetyl Carnitine,Acetyl Carnitine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Energy metabolism, anti-ageing",Yes,Yes,8,CosDNA,8,8,8,8,8
+Carnitine,Carnitine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Fat metabolism, energising",Yes,Yes,8,CosDNA,8,8,8,8,8
+Creatine,Creatine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Energy production, anti-fatigue",Yes,Yes,8,CosDNA,8,8,8,8,8
+Taurine,Taurine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Amino acid, antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Arginine,Arginine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Amino acid, wound healing",Yes,Yes,8,CosDNA,8,8,8,8,8
+Lysine,Lysine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Amino acid, collagen support",Yes,Yes,8,CosDNA,8,8,8,8,8
+Proline,Proline,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Amino acid, collagen synthesis",Yes,Yes,8,CosDNA,8,8,8,8,8
+Glycine,Glycine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Amino acid, skin smoothing",Yes,Yes,8,CosDNA,8,8,8,8,8
+Serine,Serine,Humectant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Natural moisturising factor,Yes,Yes,9,CosDNA,9,9,9,9,9
+Threonine,Threonine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Amino acid, skin barrier",Yes,Yes,8,CosDNA,8,8,8,8,8
+Histidine,Histidine,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Metal chelator, antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Cysteine,Cysteine,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Sulfur amino acid, antioxidant",Yes,Yes,8,CosDNA,8,8,8,8,8
+Leucine,Leucine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Branched chain amino acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Isoleucine,Isoleucine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Antimicrobial amino acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Methionine,Methionine,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Sulfur amino acid, protects from oxidation",Yes,Yes,8,CosDNA,8,8,8,8,8
+Phenylalanine,Phenylalanine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Melanin precursor,Yes,Yes,7,CosDNA,7,7,7,7,7
+Tyrosine,Tyrosine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,Melanin synthesis precursor,Yes,Yes,6,CosDNA,6,6,6,6,6
+Tryptophan,Tryptophan,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Amino acid, anti-ageing",Yes,Yes,8,CosDNA,8,8,8,8,8
+Hydroxyproline,Hydroxyproline,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Collagen amino acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Alanine,Alanine,Humectant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Moisturising amino acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Valine,Valine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Branched chain amino acid,Yes,Yes,7,CosDNA,7,7,7,7,7
+Asparagine,Asparagine,Humectant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Hydrating amino acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Glutamine,Glutamine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Tissue repair amino acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Aspartic Acid,Aspartic Acid,Humectant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,NMF component,Yes,Yes,8,CosDNA,8,8,8,8,8
+Glutamic Acid,Glutamic Acid,Humectant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Amino acid humectant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Sodium PCA Derivative,2-Pyrrolidone-5-Carboxylic Acid,Humectant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,NMF component,Yes,Yes,9,CosDNA,9,9,9,9,9
+Hydroxylysine,Hydroxylysine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Collagen cross-linking amino acid,Yes,Yes,8,CosDNA,8,8,8,8,8
+Carnosol,Carnosol,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Rosemary-derived antioxidant,Yes,Yes,8,CosDNA,8,8,8,8,8
+Oleuropein,Oleuropein,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Olive leaf polyphenol,Yes,Yes,9,CosDNA,9,9,9,9,9
+Hydroxytyrosol,Hydroxytyrosol,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Olive-derived antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Rosmarinic Acid,Rosmarinic Acid,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Potent plant antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
+Ursolic Acid,Ursolic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Collagen synthesis, anti-ageing",Yes,Yes,8,CosDNA,8,8,8,8,8
+Betulinic Acid,Betulinic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Birch bark extract, anti-tumour",Yes,Yes,8,CosDNA,8,8,8,8,8
+Boswellic Acid,Boswellic Acid,Soothing Agent,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Frankincense anti-inflammatory,Yes,Yes,8,CosDNA,8,8,8,9,8
+Shikimic Acid,Shikimic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Star anise-derived exfoliant,Yes,Yes,8,CosDNA,8,7,8,7,8
+Tartaric Acid,Tartaric Acid,Skin Active,None,N/A,N/A,0,0,No,No,Yes,Low,"AHA from grapes, exfoliating",Yes,Yes,7,CosDNA,7,5,7,5,7
+Malic Acid,Malic Acid,Skin Active,None,N/A,N/A,0,0,No,No,Yes,Low,"AHA from apples, gentle",Yes,Yes,7,CosDNA,7,6,7,6,7
+Pyruvic Acid,Pyruvic Acid,Skin Active,None,N/A,N/A,0,0,No,No,Yes,Medium,"Strong exfoliant, irritating",Yes,Yes,5,CosDNA,5,4,5,3,5
+Linolenic Acid,Linolenic Acid,Emollient,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Omega-3 fatty acid,Yes,Yes,9,CosDNA,9,9,9,9,9

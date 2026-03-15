@@ -6,10 +6,29 @@
 # ============================================================
 
 import requests
+import time
 from datetime import datetime
 
 GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search"
 FORECAST_URL  = "https://api.open-meteo.com/v1/forecast"
+
+
+def _get_with_retry(url: str, params: dict, timeout: int = 10) -> requests.Response:
+    """
+    Makes a GET request with automatic retry on 429 rate limit.
+    Uses a browser-like User-Agent to avoid bot detection on cloud IPs.
+    Tries up to 5 times with increasing wait between attempts.
+    """
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; UV-Skincare-Advisor/1.0; +https://github.com/Shriyansh-24/AI-UV-Skincare)"
+    }
+    wait_times = [2, 4, 6, 8, 10]
+    for attempt, wait in enumerate(wait_times):
+        response = requests.get(url, params=params, headers=headers, timeout=timeout)
+        if response.status_code != 429:
+            return response
+        time.sleep(wait)
+    return response  # return last response after all attempts
 
 
 def get_coordinates(city_name: str) -> dict:
@@ -18,7 +37,7 @@ def get_coordinates(city_name: str) -> dict:
     Step 1 of our two-step pipeline.
     """
     try:
-        response = requests.get(
+        response = _get_with_retry(
             GEOCODING_URL,
             params={"name": city_name, "count": 1, "language": "en", "format": "json"},
             timeout=8
@@ -39,8 +58,8 @@ def get_coordinates(city_name: str) -> dict:
             "elevation": top.get("elevation", 0),
         }
 
-    except requests.exceptions.ConnectionError:
-        return {"error": "no_internet"}
+    except requests.exceptions.ConnectionError as e:
+        return {"error": "no_internet", "detail": str(e)}
     except requests.exceptions.Timeout:
         return {"error": "timeout"}
     except requests.exceptions.HTTPError:
@@ -55,7 +74,7 @@ def get_uv_and_weather(lat: float, lon: float, timezone: str) -> dict:
     Step 2 of our two-step pipeline.
     """
     try:
-        response = requests.get(
+        response = _get_with_retry(
             FORECAST_URL,
             params={
                 "latitude":        lat,
@@ -131,8 +150,8 @@ def get_uv_and_weather(lat: float, lon: float, timezone: str) -> dict:
             "hourly_cloud":        hourly_cloud,
         }
 
-    except requests.exceptions.ConnectionError:
-        return {"error": "no_internet"}
+    except requests.exceptions.ConnectionError as e:
+        return {"error": "no_internet", "detail": str(e)}
     except requests.exceptions.Timeout:
         return {"error": "timeout"}
     except requests.exceptions.HTTPError:
@@ -220,7 +239,7 @@ def _weather_code_to_text(code: int) -> str:
     return wmo.get(code, f"Code {code}")
 
 
-def _handle_error(error_code: str) -> dict:
+def _handle_error(error_code: str, detail: str = "") -> dict:
     """Maps error codes to friendly messages."""
     messages = {
         "no_internet": "No internet connection. Please check your network.",
@@ -231,5 +250,6 @@ def _handle_error(error_code: str) -> dict:
     return {
         "success":    False,
         "error_type": error_code,
-        "message":    messages.get(error_code, f"Unexpected error: {error_code}")
+        "message":    messages.get(error_code, f"Unexpected error: {error_code}"),
+        "detail":     detail
     }

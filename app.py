@@ -8,13 +8,15 @@
 import streamlit as st
 from core.uv_fetcher import fetch_uv_data, classify_uv_risk
 from core.skin_advisor import calculate_burn_time, get_spf_recommendation
-from core.ingredient_scanner import (
-    analyze_ingredients, rating_color, rating_label,
+from core.ml_scanner.predict import (
+    analyze_ingredients_ml as analyze_ingredients,
+    rating_color, rating_label,
     protection_color, concern_color
 )
 from core.charts import uv_gauge, hourly_uv_chart, burn_time_chart
 
 # ── PAGE CONFIG ───────────────────────────────────────────────
+
 st.set_page_config(
     page_title="UV Skincare Advisor",
     page_icon="☀️",
@@ -22,7 +24,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ── DARK MOODY CSS ────────────────────────────────────────────
+# ── CSS ────────────────────────────────────────────
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -208,6 +210,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── FITZPATRICK DATA ──────────────────────────────────────────
+
 FITZPATRICK_TYPES = {
     "Type I — Very Fair (Always burns, never tans)":         {"id": 1, "description": "Very fair, often freckles. Red/blonde hair. Blue eyes.",  "color_hex": "#FDDBB4"},
     "Type II — Fair (Usually burns, tans minimally)":        {"id": 2, "description": "Fair skin. Light hair. Blue, green, or hazel eyes.",       "color_hex": "#F5C8A0"},
@@ -283,6 +286,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ── Session state ─────────────────────────────────────────────
 if "uv_result"   not in st.session_state: st.session_state.uv_result   = None
 if "scan_result" not in st.session_state: st.session_state.scan_result = None
+if "scan_ran"    not in st.session_state: st.session_state.scan_ran    = False
 
 @st.cache_data(ttl=3600, show_spinner=False)
 def cached_fetch(city: str):
@@ -361,13 +365,7 @@ with tab_dashboard:
                 st.metric("Unprotected burn time", f"{burn['burn_time_min']} min")
                 st.caption(f"Fitzpatrick Type {selected_skin['id']} · {activity}")
                 st.metric("Today's peak UV", str(result["uv_index_max_today"]))
-                with st.expander("🔬 See the MED formula"):
-                    st.markdown(
-                        f"""<div style='background:#161b2e;border:1px solid #2d3348;
-                        border-radius:10px;padding:14px 18px;font-family:monospace;
-                        font-size:0.86rem;color:#94a3b8;white-space:pre-line;'>
-                        {burn["explanation"]}</div>""", unsafe_allow_html=True)
-                    st.caption("Source: Diffey B.L. (2002) · WHO CIE")
+
         else:
             st.markdown('<div class="card" style="color:#94a3b8;text-align:center;padding:40px;">⏱️<br>Enter city & analyze</div>', unsafe_allow_html=True)
 
@@ -447,22 +445,6 @@ with tab_charts:
         st.plotly_chart(burn_time_chart(uv, activity), use_container_width=True)
         st.caption(f"⚠️ Without sunscreen · UV Index {uv} · {activity}")
 
-        with st.expander("📋 Raw data table (for project report)"):
-            import pandas as pd
-            rows = []
-            for i, name in enumerate(["Type I — Very Fair","Type II — Fair","Type III — Medium",
-                                       "Type IV — Olive","Type V — Brown","Type VI — Dark"]):
-                burn = calculate_burn_time(uv, i+1, activity)
-                rows.append({
-                    "Skin Type": name,
-                    "MED (J/m²)": burn.get("med_j_m2", "N/A"),
-                    "Dose Rate (J/m²/min)": burn.get("effective_rate", "N/A"),
-                    "Burn Time (min)": burn["burn_time_min"] if not burn["no_risk"] else "N/A",
-                    "Activity Multiplier": burn.get("activity_multiplier", "N/A"),
-                })
-            st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-            st.caption("Formula: Burn Time = MED ÷ (UV Index × 1.5 × Activity Multiplier) · Diffey (2002)")
-
 # ══════════════════════════════════════════════════════════════
 #  TAB 3 — AI SCANNER
 # ══════════════════════════════════════════════════════════════
@@ -473,22 +455,51 @@ with tab_ai:
     <div style='background:#13261a;border-left:4px solid #22c55e;border-radius:10px;
     padding:12px 18px;font-size:0.9rem;color:#86efac;margin-bottom:20px;'>
     <b>How to use:</b> Copy the ingredient list from the back of any sunscreen bottle
-    and paste it below. The AI will analyse every UV filter, flag concerns, and give
-    personalised advice based on your Fitzpatrick skin type.
+    and paste it below. Our trained ML model will analyse every ingredient, flag concerns,
+    and give personalised advice based on your Fitzpatrick skin type.
     </div>""", unsafe_allow_html=True)
 
     SAMPLE = """Active Ingredients: Avobenzone 3%, Homosalate 10%, Octisalate 5%, Octocrylene 2.7%, Oxybenzone 4%
 Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethanol, Aloe Barbadensis Leaf Extract, Tocopheryl Acetate"""
 
+    # ── Initialise all scanner session state ─────────────────
+    if "selected_skin_type"  not in st.session_state:
+        st.session_state.selected_skin_type  = "✨ Normal"
+    if "scanner_ingredients" not in st.session_state:
+        st.session_state.scanner_ingredients = ""
+
     ai_col1, ai_col2 = st.columns([1.6, 1], gap="medium")
     with ai_col1:
         st.markdown("**📋 Paste ingredient list**")
-        use_sample = st.checkbox("Use sample ingredients for testing")
-        ingredients_input = st.text_area("Ingredients",
-            value=SAMPLE if use_sample else "", height=180,
+
+        use_sample = st.checkbox("Use sample ingredients for testing",
+                                  key="use_sample_checkbox")
+
+        # When sample is checked, pre-fill session state once
+        if use_sample:
+            st.session_state.scanner_ingredients = SAMPLE
+
+        st.text_area(
+            "Ingredients",
+            height=180,
+            key="scanner_ingredients",
             label_visibility="collapsed",
             placeholder="e.g. Active Ingredients: Zinc Oxide 20%...")
-        scan_button = st.button("🔬 Scan with AI", use_container_width=True, type="primary")
+
+        # Skin type selector
+        st.markdown("**🧴 Your Skin Type**")
+        skin_type_options = ["Oily", "Dry", "Combination", "Sensitive", "Normal"]
+        skin_type_emojis  = ["💧 Oily", "🌵 Dry", "⚖️ Combination", "🌸 Sensitive", "✨ Normal"]
+
+        selected_skin_type_label = st.selectbox(
+            "Skin type", options=skin_type_emojis,
+            index=skin_type_emojis.index(st.session_state.selected_skin_type),
+            key="skin_type_selectbox",
+            label_visibility="collapsed")
+        st.session_state.selected_skin_type = selected_skin_type_label
+        selected_skin_type = skin_type_options[skin_type_emojis.index(selected_skin_type_label)]
+
+        scan_button = st.button("🔬 Scan with ML Model", use_container_width=True, type="primary")
 
     with ai_col2:
         st.markdown("**🧪 What the AI checks**")
@@ -501,8 +512,8 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
         ✅ Skin type compatibility<br>
         ✅ Reapplication guidance<br>
         ✅ Chemistry science fact<br><br>
-        <b style='color:#94a3b8;'>Powered by:</b> Groq · Llama 3.3 70B<br>
-        <b style='color:#94a3b8;'>Science:</b> INCI, EU Cosmetics Reg, FDA
+        <b style='color:#94a3b8;'>Powered by:</b> Our trained ML model<br>
+        <b style='color:#94a3b8;'>Dataset:</b> 300 ingredients · FDA, EWG, EU
         </div>""", unsafe_allow_html=True)
         if result and result.get("success"):
             st.markdown("<br>", unsafe_allow_html=True)
@@ -515,21 +526,31 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
                 </div>""", unsafe_allow_html=True)
 
     if scan_button:
-        if not ingredients_input.strip():
+        active_ingredients = st.session_state.scanner_ingredients
+        if not active_ingredients.strip():
             st.warning("⚠️ Please paste an ingredient list first.")
         else:
             current_uv = result["uv_index"] if (result and result.get("success")) else None
-            with st.spinner("🤖 Analysing ingredients..."):
+            with st.spinner("🔬 Analysing ingredients with ML model..."):
                 st.session_state.scan_result = analyze_ingredients(
-                    ingredients_input, selected_skin["id"], current_uv)
+                    active_ingredients, selected_skin["id"], current_uv,
+                    skin_type=selected_skin_type)
+                st.session_state.scan_ran = True
 
     scan = st.session_state.scan_result
-    if scan:
+    if not st.session_state.scan_ran:
+        st.markdown("""
+        <div style='text-align:center;padding:40px;color:#475569;'>
+            <div style='font-size:2.5rem;'>🔬</div>
+            <div style='font-size:0.95rem;margin-top:10px;'>
+                Paste an ingredient list above and click <b>Scan with ML Model</b>
+            </div>
+        </div>""", unsafe_allow_html=True)
+    elif scan:
         if not scan.get("success"):
             st.error(f"❌ {scan.get('message','Unknown error')}")
-            if scan.get("error") == "no_api_key":
-                st.code("GROQ_API_KEY=your_groq_key_here", language="bash")
-                st.caption("Add this to your `.env` file and restart Streamlit.")
+            if scan.get("error") == "no_model":
+                st.info("💡 Run `python core/ml_scanner/train_model.py` to train the model first.")
         else:
             st.markdown("<hr>", unsafe_allow_html=True)
             st.markdown('<div class="section-header">📊 Analysis Results</div>', unsafe_allow_html=True)
@@ -570,45 +591,59 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
                 <b>AI Verdict:</b> {scan.get("overall_verdict","")}
                 </div>""", unsafe_allow_html=True)
 
+            # ── Skin Type Score Cards ─────────────────────────
+            st.markdown("<hr>", unsafe_allow_html=True)
+            st.markdown('<div class="section-header">🧴 Score by Skin Type</div>',
+                        unsafe_allow_html=True)
+
+            skin_scores = scan.get("skin_type_scores", {})
+            selected_st = scan.get("selected_skin_type", "Normal")
+
+            if skin_scores:
+                st_cols = st.columns(len(skin_scores))
+                for col, (st_name, st_data) in zip(st_cols, skin_scores.items()):
+                    is_selected = (st_name == selected_st)
+                    border = "3px solid " + st_data['color'] if is_selected else "1px solid #2d3348"
+                    bg     = st_data['color'] + "22" if is_selected else "#1e2130"
+                    badge  = "<div style='position:absolute;top:6px;right:8px;font-size:0.6rem;color:" + st_data['color'] + ";font-weight:700;'>YOUR TYPE</div>" if is_selected else ""
+                    score  = str(st_data['score'])
+                    label  = st_data['label']
+                    color  = st_data['color']
+                    emoji  = st_data['emoji']
+                    html = (
+                        "<div style='text-align:center;background:" + bg + ";"
+                        "border:" + border + ";border-radius:14px;"
+                        "padding:16px 8px;position:relative;'>"
+                        + badge +
+                        "<div style='font-size:1.5rem;'>" + emoji + "</div>"
+                        "<div style='font-size:0.78rem;color:#64748b;margin:4px 0;'>" + st_name + "</div>"
+                        "<div style='font-size:2rem;font-weight:900;color:" + color + ";line-height:1;'>" + score + "</div>"
+                        "<div style='font-size:0.65rem;color:" + color + ";font-weight:600;'>/10 · " + label + "</div>"
+                        "</div>"
+                    )
+                    with col:
+                        st.markdown(html, unsafe_allow_html=True)
+
             filters = scan.get("uv_filters_found", [])
             if filters:
-                st.markdown('<div class="section-header">🔬 UV Filters Detected</div>', unsafe_allow_html=True)
                 broad = "✅ Broad Spectrum" if scan.get("broad_spectrum") else "⚠️ Not Broad Spectrum"
-                st.markdown(f"**{broad}** · **Type:** {scan.get('filter_type','Unknown')}")
-                fc = st.columns(min(len(filters), 3))
-                for i, f in enumerate(filters):
-                    cc = concern_color(f.get("concern_level","None"))
-                    ps = "✅ Stable" if f.get("photostable") else "⚠️ Unstable"
-                    with fc[i % 3]:
-                        st.markdown(
-                            f"""<div style='background:#1e2130;border:1px solid #2d3348;
-                            border-left:4px solid {cc};border-radius:12px;
-                            padding:14px;margin-bottom:12px;'>
-                            <b style='color:#f1f5f9;'>{f.get("name","")}</b><br>
-                            <span style='font-size:0.78rem;color:#64748b;'>{f.get("type","")}</span><br>
-                            <span style='font-size:0.83rem;color:#94a3b8;display:block;margin-top:6px;'>
-                            {f.get("function","")}</span>
-                            <div style='margin-top:10px;font-size:0.8rem;'>
-                            {ps} · <span style='color:{cc};font-weight:600;'>
-                            {f.get("concern_level","None")} concern</span>
-                            </div></div>""", unsafe_allow_html=True)
+                st.markdown(
+                    f"""<div style='background:#1e2130;border:1px solid #2d3348;
+                    border-radius:10px;padding:10px 16px;margin-bottom:12px;
+                    font-size:0.88rem;color:#94a3b8;'>
+                    {broad} · <b style='color:#e2e8f0;'>{scan.get('filter_type','Unknown')}</b> ·
+                    Photostability: <b style='color:#e2e8f0;'>{scan.get('photostability','N/A')}</b>
+                    </div>""", unsafe_allow_html=True)
 
-            bc1, bc2 = st.columns(2, gap="medium")
-            with bc1:
-                st.markdown('<div class="section-header">✅ Beneficial Ingredients</div>', unsafe_allow_html=True)
-                for b in scan.get("beneficial_ingredients", []):
-                    st.markdown(
-                        f"""<div style='background:#13261a;border-radius:10px;
-                        border-left:3px solid #22c55e;padding:10px 14px;
-                        margin-bottom:8px;font-size:0.87rem;color:#86efac;'>
-                        <b style='color:#bbf7d0;'>{b.get("name","")}</b><br>{b.get("benefit","")}
-                        </div>""", unsafe_allow_html=True)
-            with bc2:
-                st.markdown('<div class="section-header">⚠️ Ingredients of Concern</div>', unsafe_allow_html=True)
-                concerning = scan.get("concerning_ingredients", [])
-                if concerning:
-                    for c in concerning:
-                        sc_color = concern_color(c.get("severity","Low"))
+            # ── Ingredients of Concern — full width ──────────
+            st.markdown('<div class="section-header">⚠️ Ingredients of Concern</div>',
+                        unsafe_allow_html=True)
+            concerning = scan.get("concerning_ingredients", [])
+            if concerning:
+                concern_cols = st.columns(2)
+                for i, c in enumerate(concerning):
+                    sc_color = concern_color(c.get("severity","Low"))
+                    with concern_cols[i % 2]:
                         st.markdown(
                             f"""<div style='background:#1e1510;border-radius:10px;
                             border-left:3px solid {sc_color};padding:10px 14px;
@@ -618,8 +653,8 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
                             {c.get("severity","")} risk</span><br>
                             {c.get("concern","")}
                             </div>""", unsafe_allow_html=True)
-                else:
-                    st.success("✅ No concerning ingredients detected!")
+            else:
+                st.success("✅ No concerning ingredients detected!")
 
             st.markdown("<hr>", unsafe_allow_html=True)
             n1, n2 = st.columns(2, gap="medium")
@@ -701,6 +736,6 @@ with tab_science:
 st.markdown("<hr>", unsafe_allow_html=True)
 st.caption(
     "🎓 Class 12 Capstone Project · Built with Streamlit · "
-    "UV data via Open-Meteo · AI via Groq (Llama 3.3) · "
+    "UV data via Open-Meteo · AI via self made ML model · "
     "Science: WHO & Fitzpatrick (1975)"
 )
