@@ -284,12 +284,16 @@ st.markdown("<hr>", unsafe_allow_html=True)
 if "uv_result"   not in st.session_state: st.session_state.uv_result   = None
 if "scan_result" not in st.session_state: st.session_state.scan_result = None
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def cached_fetch(city: str):
+    return fetch_uv_data(city)
+
 if analyze_button:
     if not city_name.strip():
         st.warning("⚠️ Please enter a city name.")
     else:
         with st.spinner(f"Fetching live UV data for **{city_name}**..."):
-            st.session_state.uv_result = fetch_uv_data(city_name)
+            st.session_state.uv_result = cached_fetch(city_name.strip().title())
 
 result = st.session_state.uv_result
 
@@ -319,6 +323,8 @@ with tab_dashboard:
             </div>""", unsafe_allow_html=True)
         elif not result.get("success"):
             st.error(f"❌ {result.get('message','Unknown error')}")
+            if result.get("detail"):
+                st.caption(f"Debug: {result.get('detail')}")
         else:
             uv   = result["uv_index"]
             risk = classify_uv_risk(uv)
@@ -355,6 +361,13 @@ with tab_dashboard:
                 st.metric("Unprotected burn time", f"{burn['burn_time_min']} min")
                 st.caption(f"Fitzpatrick Type {selected_skin['id']} · {activity}")
                 st.metric("Today's peak UV", str(result["uv_index_max_today"]))
+                with st.expander("🔬 See the MED formula"):
+                    st.markdown(
+                        f"""<div style='background:#161b2e;border:1px solid #2d3348;
+                        border-radius:10px;padding:14px 18px;font-family:monospace;
+                        font-size:0.86rem;color:#94a3b8;white-space:pre-line;'>
+                        {burn["explanation"]}</div>""", unsafe_allow_html=True)
+                    st.caption("Source: Diffey B.L. (2002) · WHO CIE")
         else:
             st.markdown('<div class="card" style="color:#94a3b8;text-align:center;padding:40px;">⏱️<br>Enter city & analyze</div>', unsafe_allow_html=True)
 
