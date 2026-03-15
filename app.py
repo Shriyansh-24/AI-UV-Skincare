@@ -223,10 +223,10 @@ FITZPATRICK_TYPES = {
 # ══════════════════════════════════════════════════════════════
 #  HEADER
 # ══════════════════════════════════════════════════════════════
-st.markdown('<div class="app-title">☀️ UV <span>Skincare</span> Advisor</div>',
+st.markdown('<div class="app-title">☀️ UVision</div>',
             unsafe_allow_html=True)
 st.markdown(
-    '<div class="app-subtitle">Real-time UV intelligence · Personalised by Fitzpatrick skin type · Powered by Open-Meteo & Groq AI</div>',
+    '<div class="app-subtitle">Real-time UV intelligence · Personalised by Fitzpatrick skin type ·</div>',
     unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════
@@ -513,7 +513,7 @@ Inactive Ingredients: Water, Glycerin, Dimethicone, Cetyl Alcohol, Phenoxyethano
         ✅ Reapplication guidance<br>
         ✅ Chemistry science fact<br><br>
         <b style='color:#94a3b8;'>Powered by:</b> Our trained ML model<br>
-        <b style='color:#94a3b8;'>Dataset:</b> 300 ingredients · FDA, EWG, EU
+        <b style='color:#94a3b8;'>Dataset:</b> 500 ingredients · FDA, EWG, EU
         </div>""", unsafe_allow_html=True)
         if result and result.get("success"):
             st.markdown("<br>", unsafe_allow_html=True)
