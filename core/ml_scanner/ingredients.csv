@@ -4,11 +4,11 @@ Titanium Dioxide,Titanium Dioxide,UV Filter - Mineral,Broad,Physical,Yes,3,5,Yes
 Zinc Oxide Nano,Zinc Oxide,UV Filter - Mineral,Broad,Physical,Yes,5,5,Yes,Yes,Yes,Low,Nanoparticle environmental concern,Yes,Yes,8,EWG,8,8,8,8,8
 Titanium Dioxide Nano,Titanium Dioxide,UV Filter - Mineral,Broad,Physical,Yes,3,5,Yes,Yes,Yes,Low,Nanoparticle inhalation risk,Yes,Yes,7,EWG,7,7,7,7,7
 Avobenzone,Butyl Methoxydibenzoylmethane,UV Filter - Chemical,UVA,Chemical,No,5,1,Yes,Yes,Yes,Medium,"Photounstable, endocrine disruption concern, requires stabiliser",Yes,Yes,6,FDA/EWG,6,6,6,5,6
-Oxybenzone,Benzophenone-3,UV Filter - Chemical,Broad,Chemical,Yes,3,4,No,No,Yes,High,"Hormone disruption, coral reef damage, high skin absorption",Yes,Yes,3,FDA/EWG,3,3,3,3,3
-Octinoxate,Ethylhexyl Methoxycinnamate,UV Filter - Chemical,UVB,Chemical,No,1,5,Yes,Yes,Yes,High,"Endocrine disruption, 16x FDA safety threshold in blood",Yes,Yes,3,FDA/EWG,3,3,3,3,3
+Oxybenzone,Benzophenone-3,UV Filter - Chemical,Broad,Chemical,Yes,3,4,No,No,Yes,High,"EWG highest concern chemical filter. Hormone disruption, coral reef damage, banned Hawaii. Detected in blood at high levels.",Yes,Yes,3,FDA/EWG,3,3,3,3,3
+Octinoxate,Ethylhexyl Methoxycinnamate,UV Filter - Chemical,UVB,Chemical,No,1,5,Yes,Yes,Yes,High,"Endocrine disruptor, reef damage, 16x FDA blood threshold. Hawaii banned. EWG high concern.",Yes,Yes,3,FDA/EWG,3,3,3,3,3
 Octisalate,Ethylhexyl Salicylate,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,Medium,"Skin absorption above FDA threshold, salicylate concerns",Yes,Yes,5,FDA/EWG,5,5,5,5,5
 Octocrylene,Octocrylene,UV Filter - Chemical,UVB,Chemical,Yes,2,5,Yes,Yes,Yes,Medium,"Potential endocrine disruption, coral reef concerns",Yes,Yes,5,FDA/EWG,5,5,5,5,5
-Homosalate,Homosalate,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,High,"Hormone disruption, EU restricting to 0.5-7.34%",Yes,Yes,4,FDA/EWG,3,3,3,3,4
+Homosalate,Homosalate,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,High,Confirmed endocrine disruptor. EU reduced max to 7.34% (2021). EWG high concern.,Yes,Yes,4,FDA/EWG,3,3,3,3,4
 Ensulizole,Phenylbenzimidazole Sulfonic Acid,UV Filter - Chemical,UVB,Chemical,Yes,1,4,Yes,Yes,Yes,Low,"Water-soluble, limited UVA protection",Yes,Yes,6,FDA,6,6,6,6,6
 Dioxybenzone,Benzophenone-8,UV Filter - Chemical,Broad,Chemical,Yes,3,4,No,No,Yes,High,"Turns skin blue on UV, hormone disruption",No,Yes,2,FDA,2,2,2,2,2
 Padimate O,Padimate O,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,Medium,"PABA derivative, allergy risk",Yes,Yes,5,FDA,5,5,5,5,5
@@ -21,7 +21,7 @@ Bemotrizinol,Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine,UV Filter - Chemical
 Bisoctrizole,Methylene Bis-Benzotriazolyl Tetramethylbutylphenol,UV Filter - Chemical,Broad,Chemical,Yes,5,5,Yes,Yes,Yes,None,"Excellent broad spectrum, very stable",Yes,No,9,EU,9,9,9,9,9
 Drometrizole Trisiloxane,Drometrizole Trisiloxane,UV Filter - Chemical,Broad,Chemical,Yes,4,4,Yes,Yes,Yes,None,"Silicone-based, good stability",Yes,No,8,EU,8,8,8,8,8
 Ecamsule,Terephthalylidene Dicamphor Sulfonic Acid,UV Filter - Chemical,UVA,Chemical,Yes,5,2,Yes,Yes,Yes,Low,"Strong UVA filter, limited FDA approval (Mexoryl SX)",Yes,Limited,8,EU/FDA-limited,8,8,8,8,8
-Enzacamene,4-Methylbenzylidene Camphor,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,Medium,Endocrine disruption concerns in EU review,Yes,No,5,EU,5,5,5,5,5
+Enzacamene,4-Methylbenzylidene Camphor,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,High,"EU banned May 2025 (Regulation 2024/996), endocrine disruptor (4-MBC)",No,No,2,EU,2,2,5,1,5
 Amiloxate,Isopentyl 4-Methoxycinnamate,UV Filter - Chemical,UVB,Chemical,No,1,4,Yes,Yes,Yes,Low,"UVB filter, awaiting FDA review",Yes,No,6,EU,6,6,6,6,6
 Octyl Triazone,Ethylhexyl Triazone,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,None,Highly photostable UVB filter,Yes,No,8,EU,8,8,8,8,8
 Iscotrizinol,Diethylhexyl Butamido Triazone,UV Filter - Chemical,UVB,Chemical,Yes,1,5,Yes,Yes,Yes,None,Photostable UVB filter,Yes,No,7,EU,7,7,7,7,7
@@ -100,7 +100,7 @@ Methylparaben,Methylparaben,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,Medium,"Pa
 Propylparaben,Propylparaben,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,Medium,"Paraben, endocrine disruption concern",Yes,Yes,5,EWG,5,5,5,5,5
 Butylparaben,Butylparaben,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,High,"Strongest estrogenic paraben, EU restrictions",Yes,Yes,3,EWG/EU,3,3,3,3,3
 Ethylparaben,Ethylparaben,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,Medium,"Paraben family, moderate concern",Yes,Yes,5,EWG,5,5,5,5,5
-DMDM Hydantoin,DMDM Hydantoin,Preservative,None,N/A,N/A,0,0,No,No,Yes,High,"Formaldehyde releaser, sensitizer",Yes,Yes,3,EWG,3,3,3,1,3
+DMDM Hydantoin,DMDM Hydantoin,Preservative,None,N/A,N/A,0,0,No,No,Yes,High,Formaldehyde releaser. Formaldehyde classified CMR by EU. High sensitizer risk.,Yes,Yes,3,EWG,3,3,3,1,3
 Imidazolidinyl Urea,Imidazolidinyl Urea,Preservative,None,N/A,N/A,0,0,No,No,Yes,High,Formaldehyde releaser,Yes,Yes,3,EWG,3,3,3,1,3
 Pentylene Glycol,Pentylene Glycol,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Gentle preservative and humectant,Yes,Yes,9,CosDNA,9,9,9,9,9
 Sorbic Acid,Sorbic Acid,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Natural preservative, gentle",Yes,Yes,8,CosDNA,8,8,8,8,8
@@ -109,7 +109,7 @@ Tocopheryl Acetate,Tocopheryl Acetate,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,N
 Tocopherol,Tocopherol,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Vitamin E, strong antioxidant",Yes,Yes,9,CosDNA,9,9,9,9,9
 Ascorbic Acid,Ascorbic Acid,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Vitamin C, brightening and antioxidant",Yes,Yes,9,CosDNA,9,9,9,9,9
 Sodium Ascorbyl Phosphate,Sodium Ascorbyl Phosphate,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Stable Vitamin C derivative,Yes,Yes,9,CosDNA,9,9,9,9,9
-Retinyl Palmitate,Retinyl Palmitate,Antioxidant,None,N/A,N/A,0,0,No,No,Yes,Medium,"Vitamin A ester, photosensitising, avoid in sun products",Yes,Yes,5,EWG,5,5,5,5,5
+Retinyl Palmitate,Retinyl Palmitate,Antioxidant,None,N/A,N/A,0,0,No,No,Yes,Medium,EU restricted 2024 (max 0.3% RE in leave-on). Photosensitising in sunscreens (EWG). Not recommended in sun products.,Yes,Yes,4,EWG,5,5,5,5,5
 Niacinamide,Niacinamide,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Vitamin B3, pore minimising, all skin types",Yes,Yes,10,CosDNA,10,10,10,10,10
 Resveratrol,Resveratrol,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Polyphenol antioxidant,Yes,Yes,9,CosDNA,9,9,9,9,9
 Green Tea Extract,Camellia Sinensis Leaf Extract,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Polyphenol antioxidant, anti-inflammatory",Yes,Yes,9,CosDNA,9,9,9,9,9
@@ -137,14 +137,14 @@ Trimethylsiloxysilicate,Trimethylsiloxysilicate,Film Former,None,N/A,N/A,0,0,Yes
 Styrene/Acrylates Copolymer,Styrene/Acrylates Copolymer,Film Former,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Water resistance,Yes,Yes,8,CosDNA,8,8,8,8,8
 Fragrance,Fragrance,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,Can contain hundreds of undisclosed allergens,Yes,Yes,4,EWG,4,4,4,2,4
 Parfum,Parfum,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"EU term for fragrance mix, allergen risk",Yes,Yes,4,EWG,4,4,4,2,4
-Linalool,Linalool,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Common fragrance allergen, EU disclosure required",Yes,Yes,4,EU/EWG,4,4,4,2,4
-Limonene,Limonene,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Citrus fragrance, allergen",Yes,Yes,4,EU/EWG,4,4,4,2,4
-Benzyl Benzoate,Benzyl Benzoate,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Fragrance allergen, EU restricted",Yes,Yes,4,EU/EWG,4,4,4,5,4
-Geraniol,Geraniol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Floral fragrance, allergen",Yes,Yes,4,EU/EWG,4,4,4,2,4
-Citronellol,Citronellol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Rose fragrance, allergen",Yes,Yes,4,EU/EWG,4,4,4,2,4
-Eugenol,Eugenol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,High,"Clove fragrance, sensitizer",Yes,Yes,3,EU/EWG,3,3,3,2,3
-Cinnamal,Cinnamal,Fragrance,None,N/A,N/A,0,0,No,No,Yes,High,"Cinnamon fragrance, strong sensitizer",Yes,Yes,2,EU/EWG,2,2,2,2,2
-Isoeugenol,Isoeugenol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,High,"Strong sensitizer, EU restricted",Yes,Yes,2,EU/EWG,2,2,2,2,2
+Linalool,Linalool,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Common fragrance allergen, EU disclosure required EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Limonene,Limonene,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Citrus fragrance, allergen EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Benzyl Benzoate,Benzyl Benzoate,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Fragrance allergen, EU restricted EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,4,EU/EWG,4,4,4,5,4
+Geraniol,Geraniol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Floral fragrance, allergen EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Citronellol,Citronellol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,Medium,"Rose fragrance, allergen EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,4,EU/EWG,4,4,4,2,4
+Eugenol,Eugenol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,High,"Clove fragrance, sensitizer EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,3,EU/EWG,3,3,3,2,3
+Cinnamal,Cinnamal,Fragrance,None,N/A,N/A,0,0,No,No,Yes,High,"Cinnamon fragrance, strong sensitizer EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,2,EU/EWG,2,2,2,2,2
+Isoeugenol,Isoeugenol,Fragrance,None,N/A,N/A,0,0,No,No,Yes,High,"Strong sensitizer, EU restricted EU 2023/1545 expanded allergen labelling requirements from July 2026.",Yes,Yes,2,EU/EWG,2,2,2,2,2
 Water,Aqua,Solvent,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Primary solvent in most formulations,Yes,Yes,10,FDA,10,10,10,10,10
 Alcohol Denat,Alcohol Denat,Solvent,None,N/A,N/A,0,0,No,No,Yes,Medium,"Drying, disrupts skin barrier, sensitizer",Yes,Yes,4,CosDNA/EWG,5,3,4,3,4
 Ethanol,Ethanol,Solvent,None,N/A,N/A,0,0,No,No,Yes,Low,Drying at high concentrations,Yes,Yes,6,CosDNA,6,3,6,3,6
@@ -163,7 +163,7 @@ Palmitic Acid,Palmitic Acid,Emollient,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Fatty a
 Linoleic Acid,Linoleic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Essential fatty acid, acne-prone skin benefit",Yes,Yes,9,CosDNA,9,9,9,9,9
 Salicylic Acid,Salicylic Acid,Skin Active,None,N/A,N/A,0,0,No,No,Yes,Low,"BHA exfoliant, great for acne-prone skin",Yes,Yes,8,CosDNA,8,6,8,8,8
 Lactic Acid,Lactic Acid,Skin Active,None,N/A,N/A,0,0,No,No,Yes,None,"AHA, gentle exfoliant, good for dry skin",Yes,Yes,8,CosDNA,8,8,8,8,8
-Kojic Acid,Kojic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,"Brightening agent, avoid high concentrations",Yes,Yes,7,CosDNA,7,7,7,7,7
+Kojic Acid,Kojic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,EU new concentration limits (2024/996). Irritant at high concentrations. Use with caution.,Yes,Yes,7,CosDNA,7,7,7,7,7
 Azelaic Acid,Azelaic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Brightening, anti-acne, rosacea",Yes,Yes,9,CosDNA,9,9,9,9,9
 Caffeine,Caffeine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Antioxidant, anti-inflammatory, reduces puffiness",Yes,Yes,9,CosDNA,9,9,9,9,9
 Ceramide NP,Ceramide NP,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Skin barrier repair, all skin types",Yes,Yes,10,CosDNA,10,10,10,10,10
@@ -220,7 +220,7 @@ Retinaldehyde,Retinaldehyde,Skin Active,None,N/A,N/A,0,0,No,No,Yes,Medium,"More 
 Glycolic Acid,Glycolic Acid,Skin Active,None,N/A,N/A,0,0,No,No,Yes,Low,"AHA, increases sun sensitivity",Yes,Yes,7,CosDNA,7,5,7,7,7
 Mandelic Acid,Mandelic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Gentle AHA, good for sensitive skin",Yes,Yes,8,CosDNA,8,8,8,8,8
 Tranexamic Acid,Tranexamic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Brightening, hyperpigmentation",Yes,Yes,9,CosDNA,9,9,9,9,9
-Alpha Arbutin,Alpha-Arbutin,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Brightening, gentler than hydroquinone",Yes,Yes,9,CosDNA,9,9,9,9,9
+Alpha Arbutin,Alpha-Arbutin,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,EU new concentration limits (2024/996). Can release trace hydroquinone.,Yes,Yes,8,CosDNA,9,9,9,9,9
 Hydroquinone,Hydroquinone,Skin Active,None,N/A,N/A,0,0,No,No,Yes,High,"Skin lightening, banned EU cosmetics",No,Yes,3,EU/EWG,3,3,3,3,3
 Glutathione,Glutathione,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Master antioxidant, brightening",Yes,Yes,9,CosDNA,9,9,9,9,9
 Phytic Acid,Phytic Acid,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Brightening, chelating",Yes,Yes,8,CosDNA,8,8,8,8,8
@@ -239,9 +239,9 @@ Gluconolactone,Gluconolactone,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"PH
 Lactobionic Acid,Lactobionic Acid,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"PHA, antioxidant properties",Yes,Yes,9,CosDNA,9,9,9,9,9
 Dehydroacetic Acid,Dehydroacetic Acid,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,"Preservative, low toxicity",Yes,Yes,7,CosDNA,7,7,7,7,7
 Iodopropynyl Butylcarbamate,Iodopropynyl Butylcarbamate,Preservative,None,N/A,N/A,0,0,No,No,Yes,High,"Strong preservative, not for face or children",Yes,Yes,3,EWG,3,3,3,1,3
-Methylisothiazolinone,Methylisothiazolinone,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Strong sensitizer, banned in EU leave-on",No,Yes,2,EU/EWG,2,2,2,1,2
+Methylisothiazolinone,Methylisothiazolinone,Preservative,None,N/A,N/A,0,0,No,No,No,High,"EU banned in all leave-on cosmetics. Strong contact allergen, neurotoxin concerns.",No,Yes,2,EU/EWG,2,2,2,1,2
 Methylchloroisothiazolinone,Methylchloroisothiazolinone,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Strong sensitizer, banned EU leave-on",No,Yes,2,EU/EWG,2,2,2,1,2
-BHA,Butylated Hydroxyanisole,Antioxidant,None,N/A,N/A,0,0,No,No,Yes,High,"Possible carcinogen, endocrine disruptor",Yes,Yes,3,EWG/EU,3,3,3,3,3
+BHA,Butylated Hydroxyanisole,Antioxidant,None,N/A,N/A,0,0,No,No,Yes,High,EU restricted as suspected carcinogen and endocrine disruptor. EWG high concern.,No,Yes,2,EWG/EU,3,3,3,3,3
 BHT,Butylated Hydroxytoluene,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,"Synthetic antioxidant, low concern at cosmetic levels",Yes,Yes,6,CosDNA/EWG,6,6,6,6,6
 Sodium Sulfate,Sodium Sulfate,Filler,None,N/A,N/A,0,0,No,No,Yes,Low,Can be drying and irritating,Yes,Yes,5,CosDNA,5,5,5,5,5
 Magnesium Sulfate,Magnesium Sulfate,Filler,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Skin conditioning, Epsom salt",Yes,Yes,8,CosDNA,8,8,8,8,8
@@ -263,7 +263,7 @@ Lauryl Glucoside,Lauryl Glucoside,Emulsifier,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"
 Cocamidopropyl Betaine,Cocamidopropyl Betaine,Emulsifier,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,"Mild surfactant, possible sensitizer",Yes,Yes,7,CosDNA,7,7,7,7,7
 Sodium Cocoyl Isethionate,Sodium Cocoyl Isethionate,Emulsifier,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Gentle cleansing agent,Yes,Yes,9,CosDNA,9,9,9,9,9
 Coco Glucoside,Coco Glucoside,Emulsifier,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Natural surfactant,Yes,Yes,9,CosDNA,9,9,9,9,9
-Sodium Lauryl Sulfate,Sodium Lauryl Sulfate,Emulsifier,None,N/A,N/A,0,0,No,No,No,High,"Harsh surfactant, strips skin barrier",Yes,Yes,3,CosDNA/EWG,3,3,3,3,3
+Sodium Lauryl Sulfate,Sodium Lauryl Sulfate,Emulsifier,None,N/A,N/A,0,0,No,No,No,High,"Harsh surfactant, strips skin barrier. Irritant at >1% in leave-on products. Avoid sensitive skin.",Yes,Yes,3,CosDNA/EWG,3,3,3,3,3
 Sodium Laureth Sulfate,Sodium Laureth Sulfate,Emulsifier,None,N/A,N/A,0,0,No,No,Yes,Medium,Milder than SLS but still stripping,Yes,Yes,5,CosDNA/EWG,5,5,5,5,5
 Hexylresorcinol,Hexylresorcinol,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Brightening, more potent than kojic",Yes,Yes,8,CosDNA,8,8,8,8,8
 Diacetyl Boldine,Diacetyl Boldine,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Brightening agent,Yes,Yes,8,CosDNA,8,8,8,8,8
@@ -386,14 +386,14 @@ Tripeptide-1,Tripeptide-1,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,GHK copp
 Hexapeptide-9,Hexapeptide-9,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Collagen IV stimulation,Yes,Yes,8,CosDNA,8,8,8,8,8
 Myristoyl Pentapeptide-17,Myristoyl Pentapeptide-17,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Lash growth peptide,Yes,Yes,8,CosDNA,8,8,8,8,8
 Palmitoyl Hexapeptide-52,Palmitoyl Hexapeptide-52,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Skin renewal peptide,Yes,Yes,8,CosDNA,8,8,8,8,8
-Quaternium-15,Quaternium-15,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Strong formaldehyde releaser, carcinogen",No,Yes,1,EWG,1,1,1,1,1
+Quaternium-15,Quaternium-15,Preservative,None,N/A,N/A,0,0,No,No,No,High,Strongest formaldehyde releaser in cosmetics. Carcinogen. Banned EU cosmetics.,No,Yes,1,EWG,1,1,1,1,1
 Diazolidinyl Urea,Diazolidinyl Urea,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Formaldehyde releaser, sensitizer",Yes,Yes,2,EWG,2,2,2,2,2
 Bromopol,Bronopol,Preservative,None,N/A,N/A,0,0,No,No,Yes,High,"Formaldehyde releaser, nitrosamine formation",Yes,Yes,2,EWG,2,2,2,2,2
 Thimerosal,Thimerosal,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Mercury-based, banned EU cosmetics",No,No,1,EWG/EU,1,1,1,1,1
-Triclocarban,Triclocarban,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Antimicrobial, endocrine disruptor, banned FDA",No,No,1,FDA/EWG,1,1,1,1,1
-Triclosan,Triclosan,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Endocrine disruptor, banned FDA rinse-off",No,No,1,FDA/EWG,1,1,1,1,1
+Triclocarban,Triclocarban,Preservative,None,N/A,N/A,0,0,No,No,No,High,"EU fully banned (Annex II). Endocrine disruptor, environmental persistence.",No,No,1,FDA/EWG,1,1,1,1,1
+Triclosan,Triclosan,Preservative,None,N/A,N/A,0,0,No,No,No,High,"EU fully banned (Annex II, EU 2024/996). FDA banned from OTC antiseptics 2016. Endocrine disruptor.",No,No,1,FDA/EWG,1,1,1,1,1
 Chloroxylenol,Chloroxylenol,Preservative,None,N/A,N/A,0,0,No,No,Yes,High,"Antimicrobial, sensitizer, toxic to aquatic life",Yes,Yes,3,EWG,3,3,3,2,3
-MIT,Methylisothiazolinone,Preservative,None,N/A,N/A,0,0,No,No,No,High,"Strong contact allergen, EU banned leave-on",No,Yes,1,EU/EWG,1,1,1,1,1
+MIT,Methylisothiazolinone,Preservative,None,N/A,N/A,0,0,No,No,No,High,"EU banned in all leave-on cosmetics. Strong contact allergen, neurotoxin concerns.",No,Yes,1,EU/EWG,1,1,1,1,1
 Zinc Pyrithione,Zinc Pyrithione,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,Medium,"Anti-dandruff, aquatic toxicity",Yes,Yes,5,EWG,5,5,5,4,5
 Climbazole,Climbazole,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,Medium,Antifungal preservative,Yes,Yes,5,CosDNA,5,5,5,4,5
 DEA,Diethanolamine,Emulsifier,None,N/A,N/A,0,0,No,No,No,High,"Nitrosamine formation, carcinogen risk",No,Yes,1,EWG,1,1,1,1,1
@@ -402,7 +402,7 @@ MEA,Cocamide MEA,Emulsifier,None,N/A,N/A,0,0,No,No,Yes,High,"Carcinogen risk, ni
 Dibutyl Phthalate,Dibutyl Phthalate,Solvent,None,N/A,N/A,0,0,No,No,No,High,"Endocrine disruptor, banned EU",No,No,1,EU/EWG,1,1,1,1,1
 Diethyl Phthalate,Diethyl Phthalate,Solvent,None,N/A,N/A,0,0,No,No,No,High,"Phthalate, hormone disruption",No,Yes,1,EWG,1,1,1,1,1
 Butyl Benzyl Phthalate,Butyl Benzyl Phthalate,Solvent,None,N/A,N/A,0,0,No,No,No,High,"Phthalate, banned EU",No,No,1,EU/EWG,1,1,1,1,1
-Coal Tar,Coal Tar,Skin Active,None,N/A,N/A,0,0,No,No,No,High,"Carcinogen, banned EU cosmetics",No,Yes,1,EU/EWG,1,1,1,1,1
+Coal Tar,Coal Tar,Skin Active,None,N/A,N/A,0,0,No,No,No,High,EU banned in cosmetics (Annex II). Known carcinogen (Group 1 IARC). Never use in skincare.,No,No,1,EU/EWG,1,1,1,1,1
 Resorcinol,Resorcinol,Skin Active,None,N/A,N/A,0,0,No,No,Yes,High,"Endocrine disruptor, EU restricted",Yes,Yes,3,EWG/EU,3,3,3,2,3
 Bisphenol A,Bisphenol A,Filler,None,N/A,N/A,0,0,No,No,No,High,"Endocrine disruptor, banned EU",No,No,1,EU/EWG,1,1,1,1,1
 Styrene,Styrene,Film Former,None,N/A,N/A,0,0,No,No,No,High,"Carcinogen, neurotoxin",No,No,1,EWG,1,1,1,1,1
@@ -424,10 +424,10 @@ Sodium Chloride,Sodium Chloride,Thickener,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Sal
 Potassium Chloride,Potassium Chloride,Thickener,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Mineral salt,Yes,Yes,7,CosDNA,7,7,7,7,7
 Calcium Chloride,Calcium Chloride,Thickener,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Mineral salt, emulsion stabiliser",Yes,Yes,7,CosDNA,7,7,7,7,7
 Ammonium Chloride,Ammonium Chloride,Thickener,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,"Salt thickener, mild irritant",Yes,Yes,6,CosDNA,6,6,6,5,6
-Colloidal Silver,Colloidal Silver,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,Medium,"Antimicrobial, argyria risk",Yes,Yes,4,EWG,4,4,4,3,4
-Gold,Gold,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Anti-inflammatory, luxury ingredient",Yes,Yes,7,CosDNA,7,7,7,7,7
-Platinum,Platinum,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Antioxidant, luxury ingredient",Yes,Yes,7,CosDNA,7,7,7,7,7
-Colloidal Gold,Colloidal Gold,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,None,"Nano-gold, anti-inflammatory",Yes,Yes,7,CosDNA,7,7,7,7,7
+Colloidal Silver,Colloidal Silver,Preservative,None,N/A,N/A,0,0,Yes,Yes,Yes,High,"EU restricting nano silver (Omnibus VIII 2025). Argyria risk, environmental toxicity.",No,Yes,3,EWG,4,4,4,3,4
+Gold,Gold,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,EU banned nano form (2024). Luxury ingredient with limited efficacy evidence.,No,Yes,6,CosDNA,7,7,7,7,7
+Platinum,Platinum,Antioxidant,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,EU banned nano form (2024). Luxury ingredient with limited efficacy evidence.,No,Yes,6,CosDNA,7,7,7,7,7
+Colloidal Gold,Colloidal Gold,Skin Active,None,N/A,N/A,0,0,Yes,Yes,Yes,Low,EU banned nano form (2024). Luxury ingredient with limited efficacy evidence.,No,Yes,6,CosDNA,7,7,7,7,7
 Hydrogenated Lecithin,Hydrogenated Lecithin,Emulsifier,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Stable phospholipid emulsifier,Yes,Yes,9,CosDNA,9,9,9,9,9
 Sodium Stearoyl Glutamate,Sodium Stearoyl Glutamate,Emulsifier,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Amino acid emulsifier,Yes,Yes,9,CosDNA,9,9,9,9,9
 Glyceryl Laurate,Glyceryl Laurate,Emulsifier,None,N/A,N/A,0,0,Yes,Yes,Yes,None,Antimicrobial emulsifier,Yes,Yes,8,CosDNA,7,8,8,8,8

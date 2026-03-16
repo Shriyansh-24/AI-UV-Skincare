@@ -1,8 +1,14 @@
 # ============================================================
-# UV Skincare Advisor — core/uv_fetcher.py
-# Responsible for: Fetching real-time UV Index data
-# API Used: Open-Meteo (free, no API key required)
-# Team role: DATA COLLECTOR owns this file
+# Solara — core/uv_fetcher.py
+# Fetches real-time UV + weather data from Open-Meteo API
+# No API key required — Open-Meteo is free and open source
+#
+# TWO-STEP PIPELINE:
+#   Step 1 — Geocoding:  city name → lat/lon/timezone
+#   Step 2 — Forecast:   lat/lon  → UV index + weather data
+#
+# The only function app.py calls is fetch_uv_data()
+# Everything else is a private helper.
 # ============================================================
 
 import requests
@@ -12,35 +18,66 @@ from datetime import datetime
 GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search"
 FORECAST_URL  = "https://api.open-meteo.com/v1/forecast"
 
+# Browser-like User-Agent prevents bot-detection blocks on cloud IPs
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; Solara-UV-Advisor/1.0)"
+}
+
+# Friendly error messages shown to the user
+ERROR_MESSAGES = {
+    "no_internet": "No internet connection. Please check your network.",
+    "timeout":     "The weather API timed out. Please try again.",
+    "http_400":    "Bad request sent to the weather API.",
+    "http_429":    "Too many requests. Wait a moment and try again.",
+}
+
+# WMO weather code → readable description
+WEATHER_CODES = {
+    0: "Clear sky",
+    1: "Mainly clear",  2: "Partly cloudy",   3: "Overcast",
+    45: "Foggy",        48: "Icy fog",
+    51: "Light drizzle",53: "Drizzle",         55: "Heavy drizzle",
+    61: "Light rain",   63: "Rain",            65: "Heavy rain",
+    71: "Light snow",   73: "Snow",            75: "Heavy snow",
+    80: "Rain showers", 81: "Showers",         82: "Heavy showers",
+    95: "Thunderstorm", 99: "Thunderstorm with hail",
+}
+
 
 def _get_with_retry(url: str, params: dict, timeout: int = 10) -> requests.Response:
     """
-    Makes a GET request with automatic retry on 429 rate limit.
-    Uses a browser-like User-Agent to avoid bot detection on cloud IPs.
-    Tries up to 5 times with increasing wait between attempts.
+    GET request with automatic retry on HTTP 429 (rate limit).
+    Waits increasingly longer between each attempt (2, 4, 6, 8, 10 sec).
+    This is needed because Streamlit Cloud's shared IPs get throttled.
     """
-    headers = {
-        "User-Agent": "Mozilla/5.0 (compatible; UV-Skincare-Advisor/1.0; +https://github.com/Shriyansh-24/AI-UV-Skincare)"
-    }
-    wait_times = [2, 4, 6, 8, 10]
-    for attempt, wait in enumerate(wait_times):
-        response = requests.get(url, params=params, headers=headers, timeout=timeout)
+    for wait in [2, 4, 6, 8, 10]:
+        response = requests.get(url, params=params, headers=HEADERS, timeout=timeout)
         if response.status_code != 429:
             return response
         time.sleep(wait)
-    return response  # return last response after all attempts
+    return response
 
 
-def get_coordinates(city_name: str) -> dict:
+def _handle_error(error_code: str, detail: str = "") -> dict:
+    """Returns a standardised error dict with a user-friendly message."""
+    return {
+        "success":    False,
+        "error_type": error_code,
+        "message":    ERROR_MESSAGES.get(error_code, f"Unexpected error: {error_code}"),
+        "detail":     detail,
+    }
+
+
+def _get_coordinates(city_name: str) -> dict:
     """
-    Converts a city name to latitude, longitude, and timezone.
-    Step 1 of our two-step pipeline.
+    Step 1 — Geocoding.
+    Converts city name to lat, lon, timezone, and elevation.
+    Returns a dict with location data, or {"error": ...} on failure.
     """
     try:
         response = _get_with_retry(
             GEOCODING_URL,
             params={"name": city_name, "count": 1, "language": "en", "format": "json"},
-            timeout=8
         )
         response.raise_for_status()
         data = response.json()
@@ -50,11 +87,11 @@ def get_coordinates(city_name: str) -> dict:
 
         top = data["results"][0]
         return {
-            "lat":      top["latitude"],
-            "lon":      top["longitude"],
-            "city":     top.get("name", city_name),
-            "country":  top.get("country", ""),
-            "timezone": top.get("timezone", "UTC"),
+            "lat":       top["latitude"],
+            "lon":       top["longitude"],
+            "city":      top.get("name", city_name),
+            "country":   top.get("country", ""),
+            "timezone":  top.get("timezone", "UTC"),
             "elevation": top.get("elevation", 0),
         }
 
@@ -68,10 +105,11 @@ def get_coordinates(city_name: str) -> dict:
         return {"error": str(e)}
 
 
-def get_uv_and_weather(lat: float, lon: float, timezone: str) -> dict:
+def _get_weather(lat: float, lon: float, timezone: str) -> dict:
     """
-    Fetches current UV Index and weather data for given coordinates.
-    Step 2 of our two-step pipeline.
+    Step 2 — Forecast.
+    Fetches UV Index, weather, and hourly arrays for the Charts tab.
+    Returns a dict with all weather data, or {"error": ...} on failure.
     """
     try:
         response = _get_with_retry(
@@ -81,73 +119,38 @@ def get_uv_and_weather(lat: float, lon: float, timezone: str) -> dict:
                 "longitude":       lon,
                 "timezone":        timezone,
                 "forecast_days":   1,
-                "hourly": ",".join([
-                    "uv_index",
-                    "cloud_cover",
-                    "temperature_2m",
-                    "weather_code",
-                ]),
-                "daily": ",".join([
-                    "uv_index_max",
-                    "temperature_2m_max",
-                    "sunrise",
-                    "sunset",
-                ]),
+                "hourly":          "uv_index,cloud_cover,temperature_2m,weather_code",
+                "daily":           "uv_index_max,temperature_2m_max,sunrise,sunset",
                 "current_weather": "true",
             },
-            timeout=8
         )
         response.raise_for_status()
         data = response.json()
 
-        # ── Find the current hour index ───────────────────────
-        # Use the API's own current_weather.time (already in city's
-        # local timezone) to find the correct hourly slot.
-        hourly_times     = data["hourly"]["time"]
-        api_current_time = data.get("current_weather", {}).get("time", "")
+        hourly = data["hourly"]
+        daily  = data["daily"]
 
-        if api_current_time:
-            now_str = api_current_time[:13] + ":00"
-        else:
-            now_str = datetime.now().strftime("%Y-%m-%dT%H:00")
-
-        current_hour_idx = 0
-        for i, t in enumerate(hourly_times):
-            if t == now_str:
-                current_hour_idx = i
-                break
-
-        # ── Extract current hour values ───────────────────────
-        uv_now    = data["hourly"]["uv_index"][current_hour_idx]
-        cloud_now = data["hourly"]["cloud_cover"][current_hour_idx]
-        temp_now  = data["hourly"]["temperature_2m"][current_hour_idx]
-        wcode_now = data["hourly"]["weather_code"][current_hour_idx]
-
-        # ── Daily summary ─────────────────────────────────────
-        uv_max_today = data["daily"]["uv_index_max"][0]
-        temp_max     = data["daily"]["temperature_2m_max"][0]
-        sunrise      = data["daily"]["sunrise"][0].split("T")[1]
-        sunset       = data["daily"]["sunset"][0].split("T")[1]
-
-        # ── Hourly arrays for Charts tab ──────────────────────
-        hourly_labels = [t.split("T")[1] for t in hourly_times]
-        hourly_uv     = [round(v or 0, 1) for v in data["hourly"]["uv_index"]]
-        hourly_cloud  = [v or 0 for v in data["hourly"]["cloud_cover"]]
+        # Find which hourly index matches "now" in the city's local timezone.
+        # We use the API's own current_weather.time (already in local time)
+        # instead of datetime.now() which would use the server's timezone.
+        api_time     = data.get("current_weather", {}).get("time", "")
+        now_str      = (api_time[:13] + ":00") if api_time else datetime.now().strftime("%Y-%m-%dT%H:00")
+        current_idx  = next((i for i, t in enumerate(hourly["time"]) if t == now_str), 0)
 
         return {
-            "uv_index":            round(uv_now or 0, 1),
-            "uv_index_max_today":  round(uv_max_today or 0, 1),
-            "cloud_cover_pct":     cloud_now or 0,
-            "temperature_c":       round(temp_now or 0, 1),
-            "temp_max_c":          round(temp_max or 0, 1),
-            "weather_code":        wcode_now,
-            "weather_description": _weather_code_to_text(wcode_now),
-            "sunrise":             sunrise,
-            "sunset":              sunset,
-            "current_hour_idx":    current_hour_idx,
-            "hourly_labels":       hourly_labels,
-            "hourly_uv":           hourly_uv,
-            "hourly_cloud":        hourly_cloud,
+            "uv_index":            round(hourly["uv_index"][current_idx]   or 0, 1),
+            "uv_index_max_today":  round(daily["uv_index_max"][0]          or 0, 1),
+            "cloud_cover_pct":     hourly["cloud_cover"][current_idx]      or 0,
+            "temperature_c":       round(hourly["temperature_2m"][current_idx] or 0, 1),
+            "temp_max_c":          round(daily["temperature_2m_max"][0]    or 0, 1),
+            "weather_description": WEATHER_CODES.get(hourly["weather_code"][current_idx], "Unknown"),
+            "sunrise":             daily["sunrise"][0].split("T")[1],
+            "sunset":              daily["sunset"][0].split("T")[1],
+            "current_hour_idx":    current_idx,
+            # Hourly arrays used by the Charts tab
+            "hourly_labels":       [t.split("T")[1] for t in hourly["time"]],
+            "hourly_uv":           [round(v or 0, 1) for v in hourly["uv_index"]],
+            "hourly_cloud":        [v or 0 for v in hourly["cloud_cover"]],
         }
 
     except requests.exceptions.ConnectionError as e:
@@ -160,31 +163,27 @@ def get_uv_and_weather(lat: float, lon: float, timezone: str) -> dict:
         return {"error": str(e)}
 
 
+# ── Public functions ──────────────────────────────────────────
+
 def fetch_uv_data(city_name: str) -> dict:
     """
-    FACADE FUNCTION — the only function app.py needs to call.
-    Orchestrates: city name → coordinates → UV + weather data.
+    Facade function — the only function app.py calls.
+    Runs the full two-step pipeline and returns one clean dict.
     """
-
-    # ── Step 1: Geocode ───────────────────────────────────────
-    coords = get_coordinates(city_name)
-
+    # Step 1: city name → coordinates
+    coords = _get_coordinates(city_name)
     if "error" in coords:
         if coords["error"] == "city_not_found":
-            return {
-                "success":    False,
-                "error_type": "city_not_found",
-                "message":    f"Could not find '{city_name}'. Try a different spelling."
-            }
-        return _handle_error(coords["error"])
+            return {"success": False, "error_type": "city_not_found",
+                    "message": f"Could not find '{city_name}'. Try a different spelling."}
+        return _handle_error(coords["error"], coords.get("detail", ""))
 
-    # ── Step 2: Fetch UV + weather ────────────────────────────
-    weather = get_uv_and_weather(coords["lat"], coords["lon"], coords["timezone"])
-
+    # Step 2: coordinates → UV + weather
+    weather = _get_weather(coords["lat"], coords["lon"], coords["timezone"])
     if "error" in weather:
-        return _handle_error(weather["error"])
+        return _handle_error(weather["error"], weather.get("detail", ""))
 
-    # ── Success ───────────────────────────────────────────────
+    # Merge into one flat result dict
     return {
         "success":             True,
         "city":                coords["city"],
@@ -193,63 +192,19 @@ def fetch_uv_data(city_name: str) -> dict:
         "lon":                 coords["lon"],
         "elevation_m":         coords["elevation"],
         "timezone":            coords["timezone"],
-        "uv_index":            weather["uv_index"],
-        "uv_index_max_today":  weather["uv_index_max_today"],
-        "cloud_cover_pct":     weather["cloud_cover_pct"],
-        "temperature_c":       weather["temperature_c"],
-        "temp_max_c":          weather["temp_max_c"],
-        "weather_description": weather["weather_description"],
-        "sunrise":             weather["sunrise"],
-        "sunset":              weather["sunset"],
-        "current_hour_idx":    weather["current_hour_idx"],
-        "hourly_labels":       weather["hourly_labels"],
-        "hourly_uv":           weather["hourly_uv"],
-        "hourly_cloud":        weather["hourly_cloud"],
+        **{k: weather[k] for k in [
+            "uv_index", "uv_index_max_today", "cloud_cover_pct",
+            "temperature_c", "temp_max_c", "weather_description",
+            "sunrise", "sunset", "current_hour_idx",
+            "hourly_labels", "hourly_uv", "hourly_cloud",
+        ]},
     }
 
 
 def classify_uv_risk(uv_index: float) -> dict:
-    """Maps UV Index to WHO risk band with colour and emoji."""
-    if uv_index <= 2:
-        return {"level": "Low",       "color": "#4CAF50", "emoji": "🟢"}
-    elif uv_index <= 5:
-        return {"level": "Moderate",  "color": "#FFC107", "emoji": "🟡"}
-    elif uv_index <= 7:
-        return {"level": "High",      "color": "#FF9800", "emoji": "🟠"}
-    elif uv_index <= 10:
-        return {"level": "Very High", "color": "#F44336", "emoji": "🔴"}
-    else:
-        return {"level": "Extreme",   "color": "#9C27B0", "emoji": "🟣"}
-
-
-def _weather_code_to_text(code: int) -> str:
-    """Converts WMO weather code to human-readable string."""
-    if code is None:
-        return "Unknown"
-    wmo = {
-        0: "Clear sky",
-        1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
-        45: "Foggy", 48: "Icy fog",
-        51: "Light drizzle", 53: "Drizzle", 55: "Heavy drizzle",
-        61: "Light rain", 63: "Rain", 65: "Heavy rain",
-        71: "Light snow", 73: "Snow", 75: "Heavy snow",
-        80: "Rain showers", 81: "Showers", 82: "Heavy showers",
-        95: "Thunderstorm", 99: "Thunderstorm with hail",
-    }
-    return wmo.get(code, f"Code {code}")
-
-
-def _handle_error(error_code: str, detail: str = "") -> dict:
-    """Maps error codes to friendly messages."""
-    messages = {
-        "no_internet": "No internet connection. Please check your network.",
-        "timeout":     "The weather API timed out. Please try again.",
-        "http_400":    "Bad request sent to the weather API.",
-        "http_429":    "Too many requests. Wait a moment and try again.",
-    }
-    return {
-        "success":    False,
-        "error_type": error_code,
-        "message":    messages.get(error_code, f"Unexpected error: {error_code}"),
-        "detail":     detail
-    }
+    """Maps UV Index value to WHO risk level, colour, and emoji."""
+    if uv_index <= 2:  return {"level": "Low",       "color": "#4CAF50", "emoji": "🟢"}
+    if uv_index <= 5:  return {"level": "Moderate",  "color": "#FFC107", "emoji": "🟡"}
+    if uv_index <= 7:  return {"level": "High",      "color": "#FF9800", "emoji": "🟠"}
+    if uv_index <= 10: return {"level": "Very High", "color": "#F44336", "emoji": "🔴"}
+    return             {"level": "Extreme",   "color": "#9C27B0", "emoji": "🟣"}
