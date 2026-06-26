@@ -1,63 +1,326 @@
-☀️ UV-Guard: AI-Powered Personalized Skincare Advisor
-Empowering skin health through AI-driven UV risk assessment and personalized dermatological guidance.
+# ☀️ Solara — UV Skincare Advisor
 
-🚀 Project Overview
-UV-Guard is an AI-based application developed to address the health challenges posed by ultraviolet (UV) radiation. By integrating real-time environmental data with individual skin profiles, the system provides tailored skincare routines and protection strategies. This project is directly aligned with UN Sustainable Development Goal 3 (Good Health and Well-being), focusing on the prevention of non-communicable diseases related to skin health.
+> Real-time UV intelligence, personalised by Fitzpatrick skin type, with an in-house machine learning ingredient scanner. Built as a Class 12 Computer Science capstone project.
 
-✨ Key Features
-Personalized Skincare Logic: Generates routines based on user-specific skin types (Fitzpatrick scale), age, and current skin concerns.
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-FF4B4B?logo=streamlit&logoColor=white)](https://share.streamlit.io)
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-RandomForest-orange?logo=scikitlearn)](https://scikit-learn.org/)
+[![License](https://img.shields.io/badge/License-Educational-lightgrey)]()
 
-Dynamic UV Risk Assessment: Analyzes environmental factors to determine immediate protection requirements (SPF levels, clothing recommendations).
+---
 
-Interactive UI: A sleek, user-friendly interface built with Streamlit for seamless interaction.
+## 📖 Table of Contents
 
-Scientific Foundation: Built using dermatological best practices to ensure reliable health outcomes.
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [The Science](#-the-science)
+- [The Machine Learning Model](#-the-machine-learning-model)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Deployment](#-deployment)
+- [Dataset](#-dataset)
+- [Model Evaluation](#-model-evaluation)
+- [Known Limitations](#-known-limitations)
+- [Future Improvements](#-future-improvements)
+- [Credits & Sources](#-credits--sources)
 
-🛠️ Tech Stack
-Frontend: Streamlit (for real-time data visualization and user interaction)
+---
 
-Backend/Logic: Python 3.x
+## 🌞 Overview
 
-Core Modules: Custom Python logic for skin classification and risk modeling.
+**Solara** solves three everyday problems in one app:
 
-Deployment: Ready for Streamlit Cloud or local hosting.
+1. People don't know how strong UV radiation is where they are, right now
+2. Generic sun-safety advice ("wear sunscreen") ignores that different skin types burn at very different rates
+3. Sunscreen ingredient labels are full of unreadable chemical names with no way to know what's actually good or bad for your skin
 
-📂 Repository Structure
-Plaintext
-├── .streamlit/         # Configuration for Streamlit deployment
-├── core/               # Backend logic and algorithm processing
-├── app.py              # Main application entry point
-├── requirements.txt    # Project dependencies
-└── .gitignore          # Version control exclusions
-⚙️ Installation & Usage
-Prerequisites
-Python 3.9 or higher
+Solara fixes this by combining a **live weather API**, a **physics-based burn time calculator**, and a **self-trained machine learning model** that reads sunscreen ingredient lists and scores them — personalised to your exact skin type.
 
-Pip (Python package manager)
+---
 
-Setup
-Clone the repository:
+## ✨ Features
 
-```Bash```
-```git clone https://github.com/Shriyansh-24/AI-UV-Skincare.git```
+### 🏠 Dashboard
+- Live UV Index for any city worldwide, color-coded by WHO risk band
+- Personalised burn time estimate based on Fitzpatrick skin type and activity
+- SPF recommendation with reapplication schedule
+- Altitude-adjusted UV warnings (Beer-Lambert Law)
+- Contextual protection tips (clothing, shade, hydration, sunglasses)
+
+### 📊 Charts
+- Interactive UV Index gauge (speedometer style)
+- Hourly UV forecast chart with cloud cover overlay
+- Burn time comparison across all 6 Fitzpatrick skin types
+
+### 🤖 AI Ingredient Scanner
+- Paste any sunscreen's ingredient list and get an instant breakdown
+- Self-trained **Random Forest** ML model — no external AI API required
+- Per-ingredient lookup against a hand-researched 500-ingredient dataset
+- Overall formulation score (1–10) plus **separate scores for 5 skin types** (Oily, Dry, Combination, Sensitive, Normal)
+- Flags ingredients of concern with severity level and reasoning
+- UV-A / UV-B coverage rating, broad spectrum check, photostability check
+- Personalised skin type notes and reapplication guidance
+
+### 🔬 Science Corner
+- The physics of UV radiation (UV-A / UV-B / UV-C)
+- The biology of melanin and skin cancer risk
+- How the UV forecast data pipeline actually works
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend / App | [Streamlit](https://streamlit.io/) |
+| Charts | [Plotly](https://plotly.com/python/) |
+| Weather / UV Data | [Open-Meteo API](https://open-meteo.com/) (free, no API key) |
+| Machine Learning | [scikit-learn](https://scikit-learn.org/) — Random Forest Classifier + Regressor |
+| Data Handling | [pandas](https://pandas.pydata.org/), NumPy |
+| Hosting | [Streamlit Community Cloud](https://share.streamlit.io/) |
+
+---
+
+## 📁 Project Structure
+
+```
+solara/
+├── app.py                          # Main Streamlit application
+├── requirements.txt                # Python dependencies
+├── .env                             # API keys (NOT committed — see .env.example)
+├── .gitignore
+├── .streamlit/
+│   └── config.toml                 # Forces dark theme on deployment
+└── core/
+    ├── __init__.py
+    ├── uv_fetcher.py                # Open-Meteo API client (geocoding + forecast)
+    ├── skin_advisor.py              # MED-based burn time + SPF formulas
+    ├── charts.py                    # Plotly chart builders (gauge, hourly, burn time)
+    └── ml_scanner/
+        ├── __init__.py
+        ├── ingredients.csv          # 500-row hand-researched ingredient dataset
+        ├── train_model.py           # Trains the Random Forest model (run once)
+        ├── predict.py                # Runtime inference used by app.py
+        └── model.pkl                 # Saved trained model (generated by train_model.py)
+```
+
+---
+
+## 🔬 The Science
+
+### UV Index & Risk Bands
+The UV Index is a WHO-standardised scale measuring erythemally-weighted solar irradiance. 1 UV Index unit ≈ 0.025 W/m² of biologically effective UV.
+
+| UV Index | Risk Level |
+|---|---|
+| 0–2 | 🟢 Low |
+| 3–5 | 🟡 Moderate |
+| 6–7 | 🟠 High |
+| 8–10 | 🔴 Very High |
+| 11+ | 🟣 Extreme |
+
+### The Fitzpatrick Scale (1975)
+Skin is classified into 6 types based on melanin content and burn response, each with its own **Minimal Erythemal Dose (MED)** — the UV dose (J/m²) needed to cause visible reddening:
+
+| Type | Description | MED (J/m²) |
+|---|---|---|
+| I | Very fair, always burns | 200 |
+| II | Fair, usually burns | 250 |
+| III | Medium, sometimes burns | 300 |
+| IV | Olive, rarely burns | 450 |
+| V | Brown, very rarely burns | 600 |
+| VI | Dark, never burns | 1000 |
+
+### Burn Time Formula
+
+```
+Dose rate (J/m²/min) = UV Index × 0.025 × 60 = UV Index × 1.5
+Burn Time (min)       = MED ÷ (UV Index × 1.5 × Activity Multiplier)
+```
+
+Source: Diffey, B.L. (2002) — *UV Index and its application*
+
+### Beer-Lambert Law (Altitude Effect)
+UV intensity increases by approximately **10% per 1000m of altitude** because there is less atmosphere and ozone to absorb UV photons. The same principle is used in spectroscopy to measure light absorption through a medium.
+
+---
+
+## 🤖 The Machine Learning Model
+
+The AI Ingredient Scanner is a **hybrid lookup + ML system**, not a large language model:
+
+```
+Pasted ingredient text
+        ↓
+Parse into individual ingredient names
+        ↓
+Look up each name in ingredients.csv (exact / partial match)
+        ↓
+  Found? ──────────────► Use researched data directly
+        │
+  Not found? ──────────► Random Forest predicts concern level + score
+        ↓
+Aggregate into overall score + 5 skin-type-specific scores
+        ↓
+Return formatted analysis to app.py
+```
+
+**Why this design?** Most real sunscreen ingredients already exist in the 500-row dataset, so the lookup path handles the majority of cases with verified, sourced data. The Random Forest model is a safety net for ingredients the dataset hasn't seen — it learned patterns like *"ends in -paraben → usually Medium/Low concern"* from the training data.
+
+### Models Trained
+
+| Model | Type | Predicts |
+|---|---|---|
+| Concern Classifier | `RandomForestClassifier` | Concern level: None / Low / Medium / High |
+| Score Regressor | `RandomForestRegressor` | Overall safety score (1–10) |
+
+Both use `class_weight="balanced"` (classifier) to compensate for the dataset being mostly safe ingredients.
+
+### Skin-Type-Specific Scoring
+
+Each ingredient in the dataset has 5 separate scores — `oily_score`, `dry_score`, `combination_score`, `sensitive_score`, `normal_score` — researched individually rather than derived from a single generic score. On top of these base scores, the scoring engine applies extra rule-based penalties:
+
+- **Sensitive skin** — fragrance ingredients penalised harder
+- **Oily skin** — comedogenic oils (coconut oil, cocoa butter, lanolin) penalised
+- **Dry skin** — drying alcohols (alcohol denat, ethanol) penalised
+
+---
+
+## 💻 Installation
+
+### Prerequisites
+- Python 3.10+
+- pip
+
+### Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Shriyansh-24/AI-UV-Skincare.git
 cd AI-UV-Skincare
-Install dependencies:
 
-```Bash```
-```pip install -r requirements.txt```
-Run the application:
+# 2. Install dependencies
+pip install -r requirements.txt
 
-```Bash```
+# 3. Train the ML model (creates model.pkl)
+python core/ml_scanner/train_model.py
+
+# 4. Run the app
 streamlit run app.py
+```
 
-🌍 Impact & Alignment
-As part of a commitment to global health, this project focuses on:
+The app will open automatically at `http://localhost:8501`.
 
-Early Prevention: Reducing the incidence of UV-induced skin damage through education and personalized alerts.
+> **Note:** No API key is required. Open-Meteo's weather/UV API is free and open. The ML scanner runs entirely locally — there is no external AI service dependency.
 
-Accessibility: Providing expert-level skincare insights through a free, open-source platform.
+---
 
-Data-Driven Health: Utilizing AI to bridge the gap between environmental science and personal wellness.
+## 📱 Usage
 
-🤝 Contributing
-Contributions are welcome! If you have ideas for improving the AI model or adding new features (like API integration for real-time local UV indices), please feel free to fork the repository and submit a pull request.
+1. **Enter a city** in the controls bar and click **Analyze**
+2. **Select your Fitzpatrick skin type** and current activity
+3. View your **live UV Index**, **burn time**, and **SPF recommendation** on the Dashboard tab
+4. Switch to **Charts** to see the UV gauge, hourly forecast, and a burn-time comparison across all skin types
+5. Go to **AI Scanner**, paste a sunscreen's ingredient list, select your skin type (Oily/Dry/Combination/Sensitive/Normal), and click **Scan with ML Model**
+6. Read **Science Corner** for the physics and biology behind every number on screen
+
+---
+
+## 🚀 Deployment
+
+This app is deployed on **Streamlit Community Cloud**.
+
+To deploy your own fork:
+
+1. Push your repo to GitHub (ensure `model.pkl` is committed — train it locally first)
+2. Go to [share.streamlit.io](https://share.streamlit.io) and connect your GitHub account
+3. Create a new app pointing to `app.py` on the `main` branch
+4. Deploy — Streamlit Cloud installs `requirements.txt` automatically and runs the app
+
+No secrets or API keys need to be configured for this project.
+
+---
+
+## 📊 Dataset
+
+`core/ml_scanner/ingredients.csv` contains **500 cosmetic ingredients**, each with 22 columns covering:
+
+- UV filter type & mechanism (chemical vs. mineral)
+- Photostability
+- UV-A / UV-B protection rating (0–5)
+- Skin-type-specific safety flags and scores
+- Regulatory concern level (None / Low / Medium / High) with cited reasoning
+- EU and FDA approval status
+- Overall safety score (1–10)
+
+### Sources
+Data was manually researched and cross-referenced against:
+- **FDA** Sunscreen Monograph & GRASE ingredient list
+- **EWG Skin Deep** ingredient safety database
+- **EU Cosmetics Regulation** (including 2024/996 and Omnibus amendments)
+- **CosDNA** ingredient database
+- **PubChem** chemical safety data
+
+This dataset doubles as the project's primary data collection exercise.
+
+---
+
+## 📈 Model Evaluation
+
+| Metric | Score |
+|---|---|
+| Concern Classifier Accuracy | ~80% |
+| Concern Classifier F1 (weighted) | ~0.80 |
+| Concern Classifier F1 (High concern class) | ~0.95 |
+| Score Regressor MAE | ~0.63 / 10 |
+
+The model achieves **100% precision on High-concern ingredients** — it never falsely clears a dangerous ingredient as safe, which is the most important safety property for this use case. The weakest area is distinguishing "Low" from "None" concern, due to class imbalance in the training data (most ingredients are genuinely safe).
+
+Run `train_model.py` to reproduce the full evaluation report, including the confusion matrix and feature importances.
+
+---
+
+## ⚠️ Known Limitations
+
+- **Geocoding ambiguity** — searching a city name that exists in multiple countries (e.g. "Kochi" exists in both Japan and India) returns the highest-ranked match, which may not be the intended one.
+- **Single-ingredient inputs** score artificially high/low since real formulations always contain 10–20+ ingredients working together.
+- **Dataset imbalance** — concern levels are skewed toward "None" (most ingredients are safe), which limits the model's ability to learn the rarer "Low" and "Medium" classes.
+- **Skin type scores 4 and 5 in the original Fitzpatrick safety columns** (darker skin types) had near-zero variance in early dataset versions and were removed as model features for this reason.
+
+---
+
+## 🔭 Future Improvements
+
+- Expand the dataset beyond 500 ingredients, particularly in underrepresented categories
+- Apply SMOTE oversampling to address class imbalance in the concern classifier
+- Add character-level TF-IDF features on ingredient names to improve predictions for ingredients not in the dataset
+- Compare Random Forest against XGBoost and SVM classifiers
+- Let users select multiple matching cities when a search is ambiguous
+
+---
+
+## 🙏 Credits & Sources
+
+- **UV & Weather Data:** [Open-Meteo](https://open-meteo.com/) — powered by the NOAA GFS atmospheric model
+- **Fitzpatrick Scale:** Fitzpatrick, T.B. (1975)
+- **Burn Time Formula:** Diffey, B.L. (2002) — *UV Index and its application*
+- **WHO Global Solar UV Index:** World Health Organization practical guide
+- **Ingredient Safety Data:** FDA, EWG Skin Deep, EU Cosmetics Regulation, CosDNA, PubChem
+
+---
+
+## 🎓 About This Project
+
+Built as a Class 12 Computer Science capstone project, demonstrating:
+- REST API integration and a two-step data pipeline (geocoding → forecast)
+- Supervised machine learning (Random Forest classification & regression)
+- Manual dataset collection, cleaning, and labelling
+- Interactive data visualisation with Plotly
+- Full-stack web app development with Streamlit
+- Physics and biology concepts applied to a real-world health problem
+
+---
+
+<p align="center">Made with ☀️ and 🐍 Python</p>
